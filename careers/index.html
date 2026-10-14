@@ -866,7 +866,7 @@ body.apply-modal-open{overflow:hidden}
         <h3>Explore</h3>
         <div class="site-footer-locs">
           <a href="/">Home</a><a href="/about/">About Us</a><a href="/projects/">Projects</a>
-          <a href="/stellarheights/">Stellar Heights</a><a href="/careers/">Careers</a>
+          <a href="/steller.html">Stellar Heights</a><a href="/careers/">Careers</a>
         </div>
       </div>
       <div class="site-footer-contact">
@@ -1058,7 +1058,7 @@ body.apply-modal-open{overflow:hidden}
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><nav class="site-menu-links" id="siteMenuLinks"><a href="/">Home</a><a href="/about/">About Us</a><a href="/about/#vision-mission">Vision & Mission</a><a href="/about/#vision-mission">Philosophy</a><a href="/about/#leadership">Leadership</a><a href="/about/#leadership">Our Logo</a><a href="/projects/">Projects</a><a href="/careers/">Careers</a><a href="/stellarheights/">Stellar Heights</a><a href="/previous-projects/">Previous Projects</a></nav></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><nav class="site-menu-links" id="siteMenuLinks"><a href="/">Home</a><a href="/about/">About Us</a><a href="/about/#vision-mission">Vision & Mission</a><a href="/about/#vision-mission">Philosophy</a><a href="/about/#leadership">Leadership</a><a href="/about/#leadership">Our Logo</a><a href="/projects/">Projects</a><a href="/careers/">Careers</a><a href="/steller.html">Stellar Heights</a><a href="/previous-projects/">Previous Projects</a></nav></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
@@ -1066,7 +1066,7 @@ body.apply-modal-open{overflow:hidden}
       a.classList.remove("is-active");
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
-      if (path.indexOf("/stellarheights") === 0 && base.indexOf("/stellarheights") === 0) a.classList.add("is-active");
+      if ((path.indexOf("/stellarheights") === 0 || path.indexOf("/steller") === 0) && (base.indexOf("/stellarheights") === 0 || base.indexOf("/steller") === 0)) a.classList.add("is-active");
       else if (path.indexOf("/about") === 0 && a.textContent.trim() === "About Us" && href.indexOf("#") === -1) a.classList.add("is-active");
       else if (base === path && href.indexOf("#") === -1) a.classList.add("is-active");
     });
