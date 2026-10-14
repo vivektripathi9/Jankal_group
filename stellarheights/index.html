@@ -850,8 +850,271 @@
       .hero-media video { animation: none; }
     }
   </style>
+
+<style id="syndicate-shared-style">
+section.syndicate{
+  overflow:hidden!important;
+  border:0!important;
+  padding:clamp(2.75rem,5vw,4rem) 0!important;
+}
+section.syndicate .syndicate-label{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.75rem!important;
+  margin:0 0 clamp(1.75rem,3vw,2.5rem)!important;
+  padding:0!important;
+  opacity:1!important;
+  color:#D4A574!important;
+}
+section.syndicate .syndicate-label svg{
+  width:18px!important;
+  height:18px!important;
+  stroke:currentColor!important;
+  fill:none!important;
+  stroke-width:1.2!important;
+  flex:0 0 auto;
+}
+section.syndicate .syndicate-label-text{
+  font-family:"Outfit",system-ui,sans-serif!important;
+  font-size:.72rem!important;
+  font-weight:400!important;
+  letter-spacing:.28em!important;
+  text-transform:uppercase!important;
+  color:#D4A574!important;
+}
+section.syndicate .syndicate-track{
+  display:flex!important;
+  width:max-content!important;
+  padding:0!important;
+  animation:syndicateMarquee 42s linear infinite!important;
+}
+section.syndicate .syndicate-track:hover{animation-play-state:paused}
+section.syndicate .syndicate-group{
+  display:flex!important;
+  align-items:center!important;
+  gap:clamp(2.5rem,6vw,4.5rem)!important;
+  padding-right:clamp(2.5rem,6vw,4.5rem)!important;
+}
+section.syndicate .syndicate-item{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+  min-width:7.5rem!important;
+  color:#2b3a52!important;
+}
+section.syndicate .syndicate-name{
+  font-family:"Cormorant Garamond",Georgia,serif!important;
+  font-size:clamp(1.45rem,2.4vw,2rem)!important;
+  font-weight:400!important;
+  letter-spacing:.08em!important;
+  line-height:1.1!important;
+  color:#2b3a52!important;
+}
+section.syndicate .syndicate-sub{
+  margin-top:.35rem!important;
+  font-family:"Outfit",system-ui,sans-serif!important;
+  font-size:.68rem!important;
+  font-weight:400!important;
+  letter-spacing:.22em!important;
+  text-transform:uppercase!important;
+  color:#2b3a52!important;
+  opacity:.72!important;
+}
+@keyframes syndicateMarquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion:reduce){
+  section.syndicate .syndicate-track{
+    animation:none!important;
+    flex-wrap:wrap!important;
+    width:100%!important;
+    justify-content:center!important;
+  }
+  section.syndicate .syndicate-group{padding-right:0!important;flex-wrap:wrap!important;justify-content:center!important}
+  section.syndicate .syndicate-group[aria-hidden="true"]{display:none!important}
+}
+</style>
+
+<style id="syndicate-page-bg">section.syndicate{background:#ffffff!important}</style>
+
+<style id="syndicate-force-visible">
+section.syndicate{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  background:#ffffff!important;
+  padding:clamp(2.75rem,5vw,4rem) 0!important;
+  min-height:180px!important;
+  position:relative!important;
+  z-index:2!important;
+}
+section.syndicate .syndicate-label,
+section.syndicate .syndicate-track,
+section.syndicate .syndicate-group,
+section.syndicate .syndicate-item{
+  visibility:visible!important;
+  opacity:1!important;
+}
+section.syndicate .syndicate-label span,
+section.syndicate .syndicate-label-text{
+  display:inline!important;
+  color:#D4A574!important;
+}
+</style>
+
+<style id="site-nav-style">
+/* Match main-site React navbar (index/projects/careers) */
+.site-nav{
+  position:fixed!important;
+  top:0!important;left:0!important;right:0!important;
+  z-index:10000!important;
+  display:flex!important;
+  align-items:center;
+  justify-content:space-between;
+  padding:1.5rem; /* p-6 */
+  pointer-events:none;
+  visibility:visible!important;
+  opacity:1!important;
+  background:transparent;
+}
+@media (min-width:640px){
+  .site-nav{padding:2rem} /* sm:p-8 */
+}
+.site-nav > *{pointer-events:auto}
+.site-nav-logo{
+  position:relative;
+  display:block!important;
+  width:5rem;height:5rem; /* h-20 w-20 */
+  visibility:visible!important;
+  opacity:1!important;
+}
+@media (min-width:640px){
+  .site-nav-logo{width:6rem;height:6rem} /* sm:h-24 sm:w-24 */
+}
+.site-nav-logo img{
+  width:100%;height:100%;object-fit:contain;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-burger{
+  width:3rem;height:3rem; /* h-12 w-12 */
+  border:0;border-radius:999px;
+  background:rgba(255,255,255,.80);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  display:flex!important;
+  align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:none;
+  transition:transform .2s ease, background .2s ease;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-burger:hover{
+  transform:scale(1.05);
+  background:#fff;
+}
+.site-nav-burger-lines{
+  display:flex;
+  flex-direction:column;
+  gap:.375rem; /* space-y-1.5 */
+}
+.site-nav-burger span,
+.site-nav-burger-lines span{
+  display:block;
+  width:1.25rem; /* w-5 */
+  height:2px; /* h-0.5 */
+  background:#000;
+  margin:0;
+}
+/* Main site has no scrolled cream bar */
+.site-nav.is-scrolled{
+  background:transparent;
+  backdrop-filter:none;
+  border-bottom:0;
+}
+/* Right drawer — match main site */
+.site-menu{
+  position:fixed;inset:0;z-index:10001!important;
+  display:flex;
+  justify-content:flex-end;
+  background:rgba(0,0,0,.50);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.site-menu.open{opacity:1;visibility:visible;pointer-events:auto}
+.site-menu-panel{
+  position:relative;
+  height:100%;
+  width:100%;
+  max-width:28rem; /* max-w-md */
+  background:#0f172a;
+  padding:2rem;
+  box-shadow:0 25px 50px -12px rgba(0,0,0,.35);
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  display:flex;
+  flex-direction:column;
+}
+@media (min-width:640px){
+  .site-menu-panel{width:400px;max-width:400px}
+}
+.site-menu.open .site-menu-panel{transform:translateX(0)}
+.site-menu-close{
+  position:absolute;top:2rem;right:2rem;
+  width:2.5rem;height:2.5rem;
+  border:0;border-radius:999px;
+  background:#fff;color:#000;
+  display:grid;place-items:center;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.site-menu-close:hover{transform:scale(1.1)}
+.site-menu-close svg{width:1.5rem;height:1.5rem}
+.site-menu-links{
+  margin-top:5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+.site-menu-links a{
+  font-family:inherit;
+  font-size:1.25rem; /* text-xl */
+  font-weight:500;
+  color:#fff;
+  text-decoration:none;
+  transition:opacity .2s ease,color .2s ease;
+}
+.site-menu-links a:hover{opacity:.8}
+.site-menu-links a.is-active{color:#D4AF37}
+html.has-site-nav main > nav.fixed,
+html.has-site-nav nav.fixed.top-0:not(.site-nav){
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+</style>
 </head>
 <body>
+
+<header class="site-nav" id="siteNav" data-site-nav>
+  <a class="site-nav-logo" href="/" aria-label="Jankal Group home">
+    <img src="/logo.png" alt="Jankal Group Logo" />
+  </a>
+  <button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">
+    <span class="site-nav-burger-lines"><span></span><span></span></span>
+  </button>
+</header>
+<div class="site-menu" id="siteMenu" hidden>
+<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><nav class="site-menu-links" id="siteMenuLinks"><a href="/">Home</a><a href="/about/">About Us</a><a href="/about/#vision-mission">Vision & Mission</a><a href="/about/#vision-mission">Philosophy</a><a href="/about/#leadership">Leadership</a><a href="/about/#leadership">Our Logo</a><a href="/projects/">Projects</a><a href="/careers/">Careers</a><a href="/stellarheights/">Stellar Heights</a><a href="/previous-projects/">Previous Projects</a></nav></div>
+</div>
+
   <main>
     <section class="hero" aria-label="Stellar Heights">
       <div class="hero-media">
@@ -1080,40 +1343,42 @@
     </section>
   </main>
 
-  <section class="syndicate" aria-label="The Jankal Syndicate">
-    <div class="syndicate-label">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" />
-        <line x1="12" y1="8" x2="12" y2="12" />
-        <line x1="12" y1="12" x2="15" y2="15" />
-        <line x1="12" y1="2" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="22" />
-        <line x1="2" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="22" y2="12" />
-      </svg>
-      <span>The Jankal Syndicate — Jankal Vistara</span>
-    </div>
-    <div class="syndicate-track">
-      <div class="syndicate-group">
-        <div class="syndicate-item"><strong>SR</strong><small>Construction</small></div>
-        <div class="syndicate-item"><strong>SR</strong><small>Industries</small></div>
-        <div class="syndicate-item"><strong>Jankal</strong><small>Infitniy Projects</small></div>
-        <div class="syndicate-item"><strong>Akshaya</strong><small>Infra Projects</small></div>
-        <div class="syndicate-item"><strong>Tavaster</strong><small>Pvt Ltd</small></div>
-        <div class="syndicate-item"><strong>Skyfinity</strong><small>Infratech</small></div>
-      </div>
-      <div class="syndicate-group" aria-hidden="true">
-        <div class="syndicate-item"><strong>SR</strong><small>Construction</small></div>
-        <div class="syndicate-item"><strong>SR</strong><small>Industries</small></div>
-        <div class="syndicate-item"><strong>Jankal</strong><small>Infitniy Projects</small></div>
-        <div class="syndicate-item"><strong>Akshaya</strong><small>Infra Projects</small></div>
-        <div class="syndicate-item"><strong>Tavaster</strong><small>Pvt Ltd</small></div>
-        <div class="syndicate-item"><strong>Skyfinity</strong><small>Infratech</small></div>
-      </div>
-    </div>
-  </section>
+  
 
-  <footer class="site-footer">
+  
+<section class="syndicate" aria-label="The Jankal Syndicate">
+  <div class="syndicate-label">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <line x1="12" y1="8" x2="12" y2="12" />
+      <line x1="12" y1="12" x2="15" y2="15" />
+      <line x1="12" y1="2" x2="12" y2="4" />
+      <line x1="12" y1="20" x2="12" y2="22" />
+      <line x1="2" y1="12" x2="4" y2="12" />
+      <line x1="20" y1="12" x2="22" y2="12" />
+    </svg>
+    <span class="syndicate-label-text">The Jankal Syndicate — Jankal Vistara</span>
+  </div>
+  <div class="syndicate-track">
+    <div class="syndicate-group">
+      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Construction</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Industries</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Jankal</strong><small class="syndicate-sub">Infitniy Projects</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Akshaya</strong><small class="syndicate-sub">Infra Projects</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Tavaster</strong><small class="syndicate-sub">Pvt Ltd</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Skyfinity</strong><small class="syndicate-sub">Infratech</small></div>
+    </div>
+    <div class="syndicate-group" aria-hidden="true">
+      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Construction</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Industries</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Jankal</strong><small class="syndicate-sub">Infitniy Projects</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Akshaya</strong><small class="syndicate-sub">Infra Projects</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Tavaster</strong><small class="syndicate-sub">Pvt Ltd</small></div>
+      <div class="syndicate-item"><strong class="syndicate-name">Skyfinity</strong><small class="syndicate-sub">Infratech</small></div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
     <div class="site-footer-inner">
       <div class="site-footer-top">
         <div>
@@ -1193,5 +1458,91 @@
     );
     document.querySelectorAll(".reveal, .faq-item").forEach((el) => io.observe(el));
   </script>
+
+
+
+<script id="site-nav-script">
+(function(){
+  if (window.__jankalSiteNavBooted) return;
+  window.__jankalSiteNavBooted = true;
+
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><nav class="site-menu-links" id="siteMenuLinks"><a href="/">Home</a><a href="/about/">About Us</a><a href="/about/#vision-mission">Vision & Mission</a><a href="/about/#vision-mission">Philosophy</a><a href="/about/#leadership">Leadership</a><a href="/about/#leadership">Our Logo</a><a href="/projects/">Projects</a><a href="/careers/">Careers</a><a href="/stellarheights/">Stellar Heights</a><a href="/previous-projects/">Previous Projects</a></nav></div>';
+
+  function markActive(menu){
+    var path = location.pathname.replace(/\/$/, "") || "/";
+    menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      a.classList.remove("is-active");
+      var href = a.getAttribute("href") || "";
+      var base = href.split("#")[0].replace(/\/$/, "") || "/";
+      if (path.indexOf("/stellarheights") === 0 && base.indexOf("/stellarheights") === 0) a.classList.add("is-active");
+      else if (path.indexOf("/about") === 0 && a.textContent.trim() === "About Us" && href.indexOf("#") === -1) a.classList.add("is-active");
+      else if (base === path && href.indexOf("#") === -1) a.classList.add("is-active");
+    });
+  }
+
+  function ensure(){
+    if (!document.body) return;
+    var nav = document.getElementById("siteNav");
+    if (!nav) {
+      nav = document.createElement("header");
+      nav.className = "site-nav";
+      nav.id = "siteNav";
+      nav.setAttribute("data-site-nav", "1");
+      document.body.appendChild(nav);
+    }
+    if (!nav.querySelector(".site-nav-burger-lines")) {
+      nav.innerHTML =
+        '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
+        '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
+        '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
+        '<span class="site-nav-burger-lines"><span></span><span></span></span></button>';
+    }
+
+    var menu = document.getElementById("siteMenu");
+    if (!menu) {
+      menu = document.createElement("div");
+      menu.className = "site-menu";
+      menu.id = "siteMenu";
+      document.body.appendChild(menu);
+    }
+    if (!menu.querySelector(".site-menu-panel")) {
+      menu.className = "site-menu";
+      menu.innerHTML = MENU_INNER;
+      menu.dataset.bound = "";
+    }
+    menu.hidden = false;
+
+    document.documentElement.classList.add("has-site-nav");
+    document.querySelectorAll("main > nav.fixed").forEach(function(el){
+      if (!el.classList.contains("site-nav")) el.style.setProperty("display","none","important");
+    });
+    markActive(menu);
+  }
+
+  function bind(){
+    var menu = document.getElementById("siteMenu");
+    var burger = document.getElementById("siteNavBurger");
+    var closeBtn = document.getElementById("siteMenuClose");
+    if (!menu || !burger || menu.dataset.bound === "1") return;
+    menu.dataset.bound = "1";
+    function openMenu(){ menu.classList.add("open"); document.body.style.overflow = "hidden"; }
+    function closeMenu(){ menu.classList.remove("open"); document.body.style.overflow = ""; }
+    burger.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    menu.addEventListener("click", function(e){
+      if (e.target === menu) closeMenu();
+    });
+    menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      a.addEventListener("click", closeMenu);
+    });
+  }
+
+  function boot(){ ensure(); bind(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setTimeout(boot, 300);
+  setTimeout(boot, 1200);
+})();
+</script>
 </body>
 </html>
