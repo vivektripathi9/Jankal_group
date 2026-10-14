@@ -106,120 +106,6 @@
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
 
-    /* Nav */
-    .nav {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 50;
-      padding: 1.1rem 0;
-      transition: background 0.4s var(--ease), backdrop-filter 0.4s var(--ease), padding 0.4s var(--ease);
-    }
-    .nav.is-scrolled {
-      background: rgba(250, 250, 248, 0.88);
-      backdrop-filter: blur(16px);
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      width: min(1280px, calc(100% - 2.5rem));
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .nav-brand img {
-      height: 36px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      transition: filter 0.35s var(--ease);
-    }
-    .nav.is-scrolled .nav-brand img { filter: none; }
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 2rem;
-      font-size: 0.84rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .nav:not(.is-scrolled) .nav-links { color: rgba(255,255,255,0.88); }
-    .nav-links a {
-      position: relative;
-      opacity: 0.8;
-      transition: opacity 0.25s;
-    }
-    .nav-links a:hover { opacity: 1; }
-    .nav-cta {
-      display: none;
-      padding: 0.7rem 1.25rem;
-      border: 1px solid currentColor;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      transition: background 0.3s, color 0.3s;
-    }
-    .nav:not(.is-scrolled) .nav-cta { color: #fff; }
-    .nav.is-scrolled .nav-cta { color: var(--ink); }
-    .nav-cta:hover {
-      background: var(--ink);
-      color: #fff !important;
-      border-color: var(--ink);
-    }
-    .nav-toggle {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      gap: 5px;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: #fff;
-      transition: background 0.3s;
-    }
-    .nav.is-scrolled .nav-toggle span { background: var(--ink); }
-    @media (min-width: 900px) {
-      .nav-links, .nav-cta { display: flex; }
-      .nav-toggle { display: none; }
-    }
-
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
-      background: var(--paper);
-      display: grid;
-      place-content: center;
-      gap: 1.75rem;
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s var(--ease);
-    }
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .mobile-menu a {
-      font-family: var(--display);
-      font-size: 2.4rem;
-      font-weight: 300;
-    }
-    .mobile-close {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 400;
-    }
-
     /* Hero */
     .hero {
       position: relative;
@@ -966,34 +852,6 @@
   </style>
 </head>
 <body>
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a class="nav-brand" href="/" aria-label="Jankal Group home">
-        <img src="/logo.png" alt="Jankal Group" />
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/about/">About</a>
-        <a href="/projects/">Projects</a>
-        <a href="/stellarheights/">Stellar Heights</a>
-        <a href="/careers/">Careers</a>
-      </nav>
-      <a class="nav-cta" href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer">Enquire</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">Close</button>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/projects/">Projects</a>
-    <a href="/stellarheights/">Stellar Heights</a>
-    <a href="/careers/">Careers</a>
-    <a href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer">Enquire</a>
-  </div>
-
   <main>
     <section class="hero" aria-label="Stellar Heights">
       <div class="hero-media">
@@ -1306,16 +1164,6 @@
   </a>
 
   <script>
-    const nav = document.getElementById("nav");
-    const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    const menu = document.getElementById("mobileMenu");
-    document.getElementById("navToggle").addEventListener("click", () => menu.classList.add("open"));
-    document.getElementById("mobileClose").addEventListener("click", () => menu.classList.remove("open"));
-    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => menu.classList.remove("open")));
-
     document.querySelectorAll(".faq-item").forEach((item) => {
       const openItem = () => {
         const willOpen = !item.classList.contains("open");
