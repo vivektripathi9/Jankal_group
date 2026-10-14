@@ -6,16 +6,23 @@ alwaysApply: true
 
 # About + Stellar Heights — nav & redesign safety
 
+## Typography
+- Do **not** use em dashes (`—`) or en dashes (`–`) in visible website copy. Prefer commas, periods, colons, or a spaced hyphen (` - `).
+
 ## Shared navbar (match the rest of the site)
 - `/about/` and `/stellarheights/` must use the **same** `#site-nav-style` and `#site-nav-script`.
 - That nav must **match the main-site React nav** (home/projects/careers): logo `5rem→6rem`, padding `1.5rem→2rem`, white/80 round burger with hover scale, **right drawer** `#0f172a` (not full-screen Cormorant overlay), links `text-xl font-medium`, accent `#D4AF37`.
 - When changing the navbar, update **both** pages together. Do not restyle one page only.
 
-## Never repeat the About wipe
-The About luxury redesign lives in static HTML (`about-mvp`, founders, logo flip, syndicate, etc.). Next.js client hydration reverts it to the old React tree.
+## Next.js client runtime is removed on redesigned pages
+Home (`index.html`), About, Projects, and Stellar Heights are **static HTML**. All `/_next/static/chunks/*.js` and `__next_f` flight scripts were purged so React cannot remount the old page (that caused “old design until second refresh”).
 
 **Do not:**
-- Re-enable Next bootstrap / `__next_f` / about page chunks that were commented as disabled on `about/index.html`
+- Re-add `<script src="/_next/static/chunks/...js">`, `__next_f`, or Turbopack bootstrap to these pages
+- “Fix” broken interactivity by restoring Next hydration — use our `#site-nav-script` / page scripts instead
+- Leave new edits depending on React IntersectionObserver; use `#jankal-static-reveal` / `animate-fade-up`
+
+**Keep:** Next **CSS** (`/_next/static/chunks/*.css`) is fine for Tailwind utilities on About/Projects/Home.
 - Use `MutationObserver` on `document` / `documentElement` with `subtree:true` for nav (it fights React and triggers a full old-design remount)
 - Hide the React nav with CSS while also removing our nav (leaves no logo/hamburger)
 - Run broad regex replaces across `<body>` that can delete redesign sections

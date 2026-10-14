@@ -1,1 +1,30 @@
 ErrorDocument 404 /404.html
+
+# Stop stale HTML (old page until hard refresh)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/avif "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType video/webm "access plus 30 days"
+</IfModule>
+
+# Directory index pages (/, /about/, etc.) are also HTML responses
+<IfModule mod_headers.c>
+  SetEnvIf Request_URI "\.(css|js|png|jpe?g|gif|webp|avif|svg|woff2|webm|ico)$" IS_ASSET
+  Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0" env=!IS_ASSET
+</IfModule>

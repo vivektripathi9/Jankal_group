@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="jankal-static" content="1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stellar Heights | Jankal Group</title>
-  <meta name="description" content="Stellar Heights in Sarjapur — exclusive 3 BHK homes where opulence embraces serenity." />
+  <meta name="description" content="Stellar Heights in Sarjapur: exclusive 3 BHK homes where opulence embraces serenity." />
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -483,7 +487,7 @@
       filter: grayscale(0.25) contrast(1.04);
     }
 
-    /* FAQ — chat style */
+    /* FAQ  -  chat style */
     .faq {
       padding: var(--space) 0;
       background: #fff;
@@ -686,10 +690,16 @@
       .syndicate-group + .syndicate-group { display: none; }
     }
 
-    /* Footer — original site footer (unchanged) */
+    /* Footer  -  original site footer (unchanged) */
     .site-footer {
       width: 100%;
-      background: #1a2a3a;
+      background-color: transparent;
+      background-image:
+        linear-gradient(90deg, rgba(10, 22, 35, 0.5), rgba(10, 22, 35, 0.82)),
+        url("/images/footer-background.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #8a9aaa;
     }
     .site-footer-inner {
@@ -716,13 +726,13 @@
     }
     .site-footer-logo {
       display: block;
-      width: 10rem;
-      height: 10rem;
+      width: 4.5rem;
+      height: 4.5rem;
     }
     @media (min-width: 640px) {
       .site-footer-logo {
-        width: 12rem;
-        height: 12rem;
+        width: 5.5rem;
+        height: 5.5rem;
       }
     }
     .site-footer-logo img {
@@ -738,17 +748,17 @@
     .site-footer-copy h2 {
       margin-bottom: 1rem;
       font-family: "Instrument Serif", "Times New Roman", serif;
-      font-size: 1.875rem;
+      font-size: 1.35rem;
       font-weight: 400;
       line-height: 135%;
       letter-spacing: -0.02em;
       color: #fff;
     }
     @media (min-width: 640px) {
-      .site-footer-copy h2 { font-size: 2.25rem; }
+      .site-footer-copy h2 { font-size: 1.6rem; }
     }
     @media (min-width: 1024px) {
-      .site-footer-copy h2 { font-size: 3rem; }
+      .site-footer-copy h2 { font-size: 1.85rem; }
     }
     .site-footer-copy h2 span {
       font-style: italic;
@@ -791,11 +801,15 @@
       transition: color 0.3s;
     }
     .site-footer-locs a:hover { color: #fff; }
+    .site-footer-nav h3,
     .site-footer-contact h3 {
       margin-bottom: 1rem;
       font-size: 0.875rem;
       font-weight: 500;
       color: #fff;
+    }
+    .site-footer-nav .site-footer-locs {
+      flex-direction: column;
     }
     .site-footer-contact a {
       font-size: 0.875rem;
@@ -812,13 +826,20 @@
       transition: color 0.3s;
     }
     .site-footer-address:hover { color: #fff; }
-    .site-footer-copyright {
+    .site-footer-copyright,
+    .footer-credit {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      grid-column: 1 / -1;
     }
-    @media (min-width: 1024px) {
-      .site-footer-copyright { align-items: flex-end; }
+    .footer-credit p,
+    .site-footer-copyright p {
+      font-size: 0.8rem;
+      color: #8a9aaa;
+      letter-spacing: 0.04em;
     }
     .site-footer-copyright p {
       font-size: 0.875rem;
@@ -1037,7 +1058,7 @@ section.syndicate .syndicate-label-text{
   backdrop-filter:none;
   border-bottom:0;
 }
-/* Right drawer — match main site */
+/* Right drawer  -  match main site */
 .site-menu{
   position:fixed;inset:0;z-index:10001!important;
   display:flex;
@@ -1100,6 +1121,201 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
   pointer-events:none!important;
 }
 </style>
+<style id="jankal-no-next-force-visible">
+/* Without Next IntersectionObserver, don't leave content invisible */
+main .opacity-0:not(.animate-fade-up){
+  animation:jankalShow .01s linear .35s forwards;
+}
+@keyframes jankalShow{to{opacity:1;transform:none}}
+</style><style id="site-footer-normalize">
+.site-footer-inner{
+  padding:2rem 1.5rem!important;
+}
+@media (min-width:640px){
+  .site-footer-inner{padding:2.25rem 2rem!important}
+}
+@media (min-width:1024px){
+  .site-footer-inner{padding:2.5rem 2.5rem!important}
+}
+.site-footer-logo{width:3.85rem!important;height:3.85rem!important}
+@media (min-width:640px){
+  .site-footer-logo{width:4.35rem!important;height:4.35rem!important}
+}
+.site-footer-copy h2{
+  font-size:clamp(1.3rem,2vw,1.65rem)!important;
+  font-family:"Cormorant Garamond",Georgia,serif!important;
+  font-weight:300!important;
+  margin-bottom:0.4rem!important;
+}
+.site-footer-copy p{font-size:0.9rem!important;line-height:1.5!important;max-width:26rem}
+.site-footer-bottom{margin-top:1.35rem!important;padding-top:1.25rem!important;gap:1.1rem!important}
+@media (min-width:1024px){
+  .site-footer-bottom{margin-top:1.5rem!important;gap:1.5rem!important}
+}
+
+.site-footer-nav.footer-nav-col,
+.site-footer-nav{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+  justify-self:center!important;
+}
+.site-footer-nav h3{
+  text-align:center!important;
+  width:100%;
+}
+.site-footer-nav .site-footer-locs,
+.site-footer-nav > div{
+  align-items:center!important;
+  text-align:center!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.site-footer-nav a{
+  text-align:center!important;
+}
+.site-footer-nav h3,
+.site-footer-contact h3{font-size:0.8125rem!important;margin-bottom:0.55rem!important;text-transform:uppercase;letter-spacing:0.06em}
+.site-footer-locs a,
+.site-footer-contact a,
+.site-footer-address,
+.site-footer-copyright p,
+.footer-credit p{font-size:0.85rem!important;line-height:1.45!important}
+.footer-social{gap:0.55rem;margin-bottom:0.55rem}
+.footer-social-link{width:1.75rem;height:1.75rem}
+.footer-social-link svg{width:0.8rem;height:0.8rem}
+</style><style id="footer-social-style">
+.footer-social{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.85rem;
+  margin-bottom:0.85rem;
+}
+.footer-social-link{
+  width:2.15rem;
+  height:2.15rem;
+  border-radius:999px;
+  border:1px solid rgba(138,154,170,.45);
+  color:#8a9aaa;
+  display:grid;
+  place-items:center;
+  transition:color .25s ease, border-color .25s ease, background .25s ease, transform .25s ease;
+}
+.footer-social-link svg{
+  width:1rem;
+  height:1rem;
+  display:block;
+}
+.footer-social-link:hover{
+  color:#fff;
+  border-color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.06);
+  transform:translateY(-1px);
+}
+</style><style id="footer-align-style">
+.site-footer-copy{text-align:right!important;margin-left:auto!important;align-items:flex-end!important}
+.site-footer-copy h2,.site-footer-copy p{text-align:right!important}
+.site-footer-bottom{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:1.25rem!important;
+}
+@media (min-width:640px){
+  .site-footer-bottom{grid-template-columns:1fr 1fr!important}
+}
+@media (min-width:1024px){
+  .site-footer-bottom{grid-template-columns:1fr 1fr 1.2fr!important}
+  .site-footer-contact{
+    justify-self:end!important;
+    text-align:right!important;
+    max-width:22rem;
+  }
+  .site-footer-contact h3,
+  .site-footer-contact a,
+  .site-footer-address{text-align:right!important}
+}
+.site-footer-copyright,
+.footer-credit{grid-column:1 / -1!important;text-align:center!important;align-items:center!important}
+@media (max-width:1023px){
+  .site-footer-copy{text-align:center!important;align-items:center!important;margin-left:0!important}
+  .site-footer-copy h2,.site-footer-copy p{text-align:center!important}
+  .site-footer-contact{justify-self:start!important;text-align:left!important}
+  .site-footer-contact h3,.site-footer-contact a,.site-footer-address{text-align:left!important}
+}
+</style>
+<style id="footer-text-contrast">
+.site-footer,
+.site-footer *{
+  color:#fff!important;
+}
+.site-footer-copy h2 span{
+  color:#D4A574!important;
+}
+.site-footer-copy h2{
+  font-size:clamp(1.55rem,2.4vw,2rem)!important;
+  color:#fff!important;
+}
+.site-footer-copy p{
+  font-size:1.05rem!important;
+  line-height:1.55!important;
+  color:#fff!important;
+}
+.site-footer-nav h3,
+.site-footer-contact h3{
+  font-size:0.95rem!important;
+  color:#fff!important;
+}
+.site-footer-locs a,
+.site-footer-nav a,
+.site-footer-contact a,
+.site-footer-address,
+.site-footer-copyright p,
+.footer-credit p{
+  font-size:0.98rem!important;
+  line-height:1.55!important;
+  color:#fff!important;
+}
+.site-footer a:hover,
+.site-footer-locs a:hover,
+.site-footer-contact a:hover,
+.site-footer-address:hover{
+  color:#D4AF37!important;
+}
+.footer-social-link{
+  color:#fff!important;
+  border-color:rgba(255,255,255,.45)!important;
+}
+.footer-social-link:hover{
+  color:#D4AF37!important;
+  border-color:rgba(212,175,55,.7)!important;
+}
+</style>
+
+<style id="footer-full-width">
+.site-footer-inner{
+  max-width:none!important;
+  width:100%!important;
+  padding-left:clamp(1.25rem,4vw,3.5rem)!important;
+  padding-right:clamp(1.25rem,4vw,3.5rem)!important;
+}
+@media (min-width:1024px){
+  .site-footer-inner{
+    padding-left:clamp(2rem,5vw,4.5rem)!important;
+    padding-right:clamp(2rem,5vw,4.5rem)!important;
+  }
+  .site-footer-top{
+    grid-template-columns:auto 1fr!important;
+    gap:3rem!important;
+  }
+  .site-footer-bottom{
+    grid-template-columns:1.4fr 1fr 1.6fr!important;
+    gap:2rem 3.5rem!important;
+  }
+  .site-footer-copy p{max-width:42rem!important}
+}
+</style>
 </head>
 <body>
 
@@ -1144,7 +1360,7 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
             </div>
             <div>
               <dt>Scale</dt>
-              <dd>1690–1990 sq.ft</dd>
+              <dd>1690-1990 sq.ft</dd>
             </div>
             <div>
               <dt>Locale</dt>
@@ -1227,7 +1443,7 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
         <div class="section-head reveal">
           <p class="eyebrow">Floor plan &amp; key plan</p>
           <h2 class="display">Three zones of living</h2>
-          <p>A clear hierarchy of homes — Exclusive, Premium, and Classic — each composed with intention.</p>
+          <p>A clear hierarchy of homes: Exclusive, Premium, and Classic, each composed with intention.</p>
         </div>
         <div class="zone-grid reveal">
           <article class="zone">
@@ -1261,11 +1477,11 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
           <div class="location-copy reveal">
             <p class="eyebrow">Connectivity</p>
             <h2>A place with purpose</h2>
-            <p>Billapura Cross, Sarjapur–Attibele Road — beside Indus International School.</p>
+            <p>Billapura Cross, Sarjapur-Attibele Road, beside Indus International School.</p>
             <div class="location-note">
               <span>No. 236 &amp; 237, S Medahalli Village</span>
               <span>Sarjapur Hobli, Anekal Taluk</span>
-              <span>Bengaluru Urban — 562125</span>
+              <span>Bengaluru Urban - 562125</span>
               <a href="https://www.google.com/maps/search/?api=1&query=12.833666687469163,77.77423067544876" target="_blank" rel="noopener noreferrer">Open in Maps</a>
             </div>
           </div>
@@ -1297,7 +1513,7 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
               </div>
               <div class="faq-a">
                 <div>
-                  <p>Billapura Cross, Sarjapur–Attibele Road. Address: No. 236 &amp; 237, S Medahalli Village, Sarjapur Hobli, Anekal Taluk, Bengaluru Urban District — 562125, Karnataka. Besides Indus International School.</p>
+                  <p>Billapura Cross, Sarjapur-Attibele Road. Address: No. 236 &amp; 237, S Medahalli Village, Sarjapur Hobli, Anekal Taluk, Bengaluru Urban District - 562125, Karnataka. Besides Indus International School.</p>
                 </div>
               </div>
             </div>
@@ -1308,7 +1524,7 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
               </div>
               <div class="faq-a">
                 <div>
-                  <p>2.5 &amp; 3 BHK apartments, approximately 1150–1595 sq.ft, with exclusive 3 BHK residences offered in the 1690–1990 sq.ft range.</p>
+                  <p>2.5 &amp; 3 BHK apartments, approximately 1150-1595 sq.ft, with exclusive 3 BHK residences offered in the 1690-1990 sq.ft range.</p>
                 </div>
               </div>
             </div>
@@ -1346,38 +1562,7 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
   
 
   
-<section class="syndicate" aria-label="The Jankal Syndicate">
-  <div class="syndicate-label">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <line x1="12" y1="8" x2="12" y2="12" />
-      <line x1="12" y1="12" x2="15" y2="15" />
-      <line x1="12" y1="2" x2="12" y2="4" />
-      <line x1="12" y1="20" x2="12" y2="22" />
-      <line x1="2" y1="12" x2="4" y2="12" />
-      <line x1="20" y1="12" x2="22" y2="12" />
-    </svg>
-    <span class="syndicate-label-text">The Jankal Syndicate — Jankal Vistara</span>
-  </div>
-  <div class="syndicate-track">
-    <div class="syndicate-group">
-      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Construction</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Industries</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Jankal</strong><small class="syndicate-sub">Infitniy Projects</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Akshaya</strong><small class="syndicate-sub">Infra Projects</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Tavaster</strong><small class="syndicate-sub">Pvt Ltd</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Skyfinity</strong><small class="syndicate-sub">Infratech</small></div>
-    </div>
-    <div class="syndicate-group" aria-hidden="true">
-      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Construction</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">SR</strong><small class="syndicate-sub">Industries</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Jankal</strong><small class="syndicate-sub">Infitniy Projects</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Akshaya</strong><small class="syndicate-sub">Infra Projects</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Tavaster</strong><small class="syndicate-sub">Pvt Ltd</small></div>
-      <div class="syndicate-item"><strong class="syndicate-name">Skyfinity</strong><small class="syndicate-sub">Infratech</small></div>
-    </div>
-  </div>
-</section>
+
 <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="site-footer-top">
@@ -1402,6 +1587,16 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
             <a href="#">Sira</a>
           </div>
         </div>
+        <div class="site-footer-nav footer-nav-col">
+          <h3>Explore</h3>
+          <div class="site-footer-locs">
+            <a href="/">Home</a>
+            <a href="/about/">About Us</a>
+            <a href="/projects/">Projects</a>
+            <a href="/stellarheights/">Stellar Heights</a>
+            <a href="/careers/">Careers</a>
+          </div>
+        </div>
         <div class="site-footer-contact">
           <h3>Contact</h3>
           <a href="mailto:info@jankal.in">Email : info@jankal.in</a><br />
@@ -1417,8 +1612,14 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
             Bengaluru, Karnataka 560086
           </a>
         </div>
-        <div class="site-footer-copyright">
-          <p>© 2024 Jankal Group</p>
+        <div class="site-footer-copyright footer-credit">
+          <div class="footer-social" aria-label="Social media">
+            <a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+            <a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a>
+            <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
+          </div>
+          <p>design by pinakkaa</p>
         </div>
       </div>
     </div>
@@ -1542,6 +1743,30 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
   else boot();
   setTimeout(boot, 300);
   setTimeout(boot, 1200);
+})();
+</script>
+<script id="jankal-static-reveal">
+(function(){
+  function boot(){
+    var els = document.querySelectorAll("main .opacity-0");
+    if (!els.length) return;
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function(el){ el.classList.add("animate-fade-up"); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add("animate-fade-up");
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.08});
+    els.forEach(function(el){ io.observe(el); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setTimeout(boot, 200);
 })();
 </script>
 </body>
