@@ -396,6 +396,41 @@ section.syndicate .syndicate-sub{
   visibility:visible!important;
   opacity:1!important;
 }
+.site-nav-actions{
+  display:flex!important;
+  align-items:center;
+  gap:.7rem;
+  pointer-events:auto;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-contact{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1.15rem;
+  border:0;
+  border-radius:999px;
+  background:#D4AF37;
+  color:#0f172a;
+  font-family:inherit;
+  font-size:.8rem;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease, background .2s ease;
+  visibility:visible!important;
+  opacity:1!important;
+  white-space:nowrap;
+}
+.site-nav-contact:hover{
+  transform:scale(1.05);
+  background:#c4a030;
+}
+@media (max-width:420px){
+  .site-nav-contact{padding:.62rem .9rem;font-size:.72rem;letter-spacing:.04em}
+}
 .site-nav-burger{
   width:3rem;height:3rem; /* h-12 w-12 */
   border:0;border-radius:999px;
@@ -419,7 +454,6 @@ section.syndicate .syndicate-sub{
   flex-direction:column;
   gap:.375rem; /* space-y-1.5 */
 }
-.site-nav-burger span,
 .site-nav-burger-lines span{
   display:block;
   width:1.25rem; /* w-5 */
@@ -433,35 +467,58 @@ section.syndicate .syndicate-sub{
   backdrop-filter:none;
   border-bottom:0;
 }
-/* Right drawer  -  match main site */
+/* Right drawer  -  page links only + enter/exit motion */
 .site-menu{
   position:fixed;inset:0;z-index:10001!important;
   display:flex;
   justify-content:flex-end;
+  background:rgba(0,0,0,0);
+  backdrop-filter:blur(0);
+  -webkit-backdrop-filter:blur(0);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .45s cubic-bezier(.22,1,.36,1),visibility .45s cubic-bezier(.22,1,.36,1),background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease;
+}
+.site-menu.open,
+.site-menu.is-closing{
+  opacity:1;visibility:visible;pointer-events:auto;
   background:rgba(0,0,0,.50);
   backdrop-filter:blur(4px);
   -webkit-backdrop-filter:blur(4px);
-  opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity .3s ease,visibility .3s ease;
 }
-.site-menu.open{opacity:1;visibility:visible;pointer-events:auto}
+.site-menu.is-closing{pointer-events:none}
 .site-menu-panel{
   position:relative;
   height:100%;
   width:100%;
-  max-width:28rem; /* max-w-md */
+  max-width:28rem;
   background:#0f172a;
-  padding:2rem;
+  padding:2rem 2rem 2.25rem;
   box-shadow:0 25px 50px -12px rgba(0,0,0,.35);
   transform:translateX(100%);
-  transition:transform .3s ease;
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
   display:flex;
   flex-direction:column;
+  overflow:hidden;
+}
+.site-menu-panel::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:2px;
+  background:linear-gradient(180deg, transparent, #D4AF37 30%, #D4AF37 70%, transparent);
+  opacity:0;
+  transition:opacity .45s ease .12s;
 }
 @media (min-width:640px){
   .site-menu-panel{width:400px;max-width:400px}
 }
 .site-menu.open .site-menu-panel{transform:translateX(0)}
+.site-menu.is-closing .site-menu-panel{
+  transform:translateX(100%);
+  transition-delay:.08s;
+}
+.site-menu.open .site-menu-panel::before{opacity:.55}
+.site-menu.is-closing .site-menu-panel::before{opacity:0;transition-delay:0s}
 .site-menu-close{
   position:absolute;top:2rem;right:2rem;
   width:2.5rem;height:2.5rem;
@@ -469,26 +526,140 @@ section.syndicate .syndicate-sub{
   background:#fff;color:#000;
   display:grid;place-items:center;
   cursor:pointer;
-  transition:transform .2s ease;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .35s ease;
+  z-index:2;
+  opacity:0;
+  transform:scale(.85);
+}
+.site-menu.open .site-menu-close{
+  opacity:1;
+  transform:scale(1);
+  transition-delay:.18s;
+}
+.site-menu.is-closing .site-menu-close{
+  opacity:0;
+  transform:scale(.85);
+  transition-delay:0s;
 }
 .site-menu-close:hover{transform:scale(1.1)}
+.site-menu.open .site-menu-close:hover{transform:scale(1.1)}
 .site-menu-close svg{width:1.5rem;height:1.5rem}
-.site-menu-links{
+.site-menu-kicker{
+  margin:0 0 .35rem;
   margin-top:5rem;
+  font-size:.68rem;
+  font-weight:500;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(212,175,55,.85);
+  opacity:0;
+  transform:translate3d(18px,0,0);
+  transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);
+}
+.site-menu.open .site-menu-kicker{
+  opacity:1;
+  transform:none;
+  transition-delay:.14s;
+}
+.site-menu.is-closing .site-menu-kicker{
+  opacity:0;
+  transform:translate3d(14px,0,0);
+  transition-delay:.02s;
+}
+.site-menu-links{
+  margin-top:1.25rem;
   display:flex;
   flex-direction:column;
-  gap:1.5rem;
+  gap:0;
+  flex:1;
 }
 .site-menu-links a{
+  position:relative;
+  display:flex;
+  align-items:baseline;
+  gap:1rem;
+  padding:.95rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
   font-family:inherit;
-  font-size:1.25rem; /* text-xl */
+  font-size:1.25rem;
   font-weight:500;
   color:#fff;
   text-decoration:none;
-  transition:opacity .2s ease,color .2s ease;
+  opacity:0;
+  transform:translate3d(28px,0,0);
+  transition:color .2s ease, opacity .4s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
 }
-.site-menu-links a:hover{opacity:.8}
-.site-menu-links a.is-active{color:#D4AF37}
+.site-menu.open .site-menu-links a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-links a:nth-child(1){transition-delay:.18s}
+.site-menu.open .site-menu-links a:nth-child(2){transition-delay:.24s}
+.site-menu.open .site-menu-links a:nth-child(3){transition-delay:.3s}
+.site-menu.open .site-menu-links a:nth-child(4){transition-delay:.36s}
+.site-menu.open .site-menu-links a:nth-child(5){transition-delay:.42s}
+.site-menu.open .site-menu-links a:nth-child(6){transition-delay:.48s}
+.site-menu.is-closing .site-menu-links a{
+  opacity:0;
+  transform:translate3d(22px,0,0);
+}
+.site-menu.is-closing .site-menu-links a:nth-child(1){transition-delay:.16s}
+.site-menu.is-closing .site-menu-links a:nth-child(2){transition-delay:.12s}
+.site-menu.is-closing .site-menu-links a:nth-child(3){transition-delay:.08s}
+.site-menu.is-closing .site-menu-links a:nth-child(4){transition-delay:.04s}
+.site-menu.is-closing .site-menu-links a:nth-child(5){transition-delay:.02s}
+.site-menu.is-closing .site-menu-links a:nth-child(6){transition-delay:0s}
+.site-menu-links a .site-menu-idx{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  color:rgba(255,255,255,.35);
+  min-width:1.5rem;
+}
+.site-menu-links a:hover,
+.site-menu-links a:focus-visible{
+  color:#D4AF37;
+  padding-left:.35rem;
+}
+.site-menu-links a:hover .site-menu-idx,
+.site-menu-links a:focus-visible .site-menu-idx{color:rgba(212,175,55,.7)}
+.site-menu-links a.is-active{color:#fff}
+.site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
+.site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-foot{
+  margin:1.75rem 0 0;
+  padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:.78rem;
+  font-weight:400;
+  letter-spacing:.04em;
+  color:rgba(255,255,255,.45);
+  opacity:0;
+  transform:translate3d(0,12px,0);
+  transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);
+}
+.site-menu.open .site-menu-foot{
+  opacity:1;
+  transform:none;
+  transition-delay:.48s;
+}
+.site-menu.is-closing .site-menu-foot{
+  opacity:0;
+  transform:translate3d(0,10px,0);
+  transition-delay:0s;
+}
+@media (prefers-reduced-motion:reduce){
+  .site-menu,
+  .site-menu-panel,
+  .site-menu-panel::before,
+  .site-menu-close,
+  .site-menu-kicker,
+  .site-menu-links a,
+  .site-menu-foot{
+    transition-duration:.01ms!important;
+    transition-delay:0s!important;
+  }
+}
 html.has-site-nav main > nav.fixed,
 html.has-site-nav nav.fixed.top-0:not(.site-nav){
   display:none!important;
@@ -772,9 +943,16 @@ footer.w-full .footer-credit{
   footer.w-full .footer-tagline-col{
     text-align:center!important;
     align-items:center!important;
+    margin-left:0!important;
+    width:100%!important;
   }
   footer.w-full .footer-tagline-col h2,
-  footer.w-full .footer-tagline-col p{text-align:center!important}
+  footer.w-full .footer-tagline-col p{
+    text-align:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    width:100%!important;
+  }
   footer.w-full .footer-contact-col{
     justify-self:start!important;
     align-items:flex-start!important;
@@ -866,7 +1044,171 @@ footer.w-full > div{
   }
 }
 </style>
-</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero px-6 sm:px-12 lg:px-16" aria-labelledby="projects-hero-title"><div class="projects-hero-inner animate-fade-up"><h1 id="projects-hero-title" class="projects-hero-title">Our Projects</h1><p class="projects-hero-copy">Take a look at Jankal&#x27;s signature projects, crafted to elevate everyday living with spaces that blend quality, style, and timeless appeal.</p></div></section><section class="project-feature animate-fade-up" id="columbia-bellaza" aria-labelledby="columbia-title">
+<style id="footer-mobile-opt">
+/* Mobile footer: stacked, centered, readable */
+@media (max-width:767px){
+  footer.w-full > div{
+    padding-top:1.5rem!important;
+    padding-bottom:1.35rem!important;
+    padding-left:1.25rem!important;
+    padding-right:1.25rem!important;
+  }
+  footer.w-full .max-w-7xl > .grid.grid-cols-1,
+  footer.w-full .max-w-7xl > .grid{
+    grid-template-columns:1fr!important;
+    gap:0.9rem!important;
+    justify-items:center!important;
+  }
+  footer.w-full .max-w-7xl > .grid > div{width:100%!important}
+  footer.w-full .flex.items-start{justify-content:center!important}
+  footer.w-full .footer-logo-link,
+  footer.w-full a.footer-logo-link{
+    width:3.25rem!important;
+    height:3.25rem!important;
+    margin-inline:auto;
+  }
+  footer.w-full .footer-tagline-col{
+    align-items:center!important;
+    text-align:center!important;
+    margin-left:0!important;
+    width:100%!important;
+  }
+  footer.w-full .footer-tagline-col h2,
+  footer.w-full h2{
+    font-size:1.45rem!important;
+    line-height:1.25!important;
+    margin-bottom:0.35rem!important;
+    text-align:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    width:100%!important;
+  }
+  footer.w-full h2 + p,
+  footer.w-full .footer-tagline-col p{
+    font-size:0.9rem!important;
+    line-height:1.5!important;
+    max-width:32ch!important;
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  footer.w-full .mt-16,
+  footer.w-full .footer-bottom-grid{
+    margin-top:1.1rem!important;
+    padding-top:1.1rem!important;
+  }
+  footer.w-full .footer-bottom-grid{
+    grid-template-columns:1fr!important;
+    gap:1.35rem!important;
+    justify-items:center!important;
+  }
+  footer.w-full .footer-bottom-grid > div{
+    width:100%!important;
+    max-width:22rem!important;
+  }
+  footer.w-full .footer-bottom-grid > div:first-child{
+    grid-column:auto!important;
+    max-width:100%!important;
+  }
+  footer.w-full .footer-bottom-grid > div:first-child .flex.flex-col{
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:0.35rem 0.9rem!important;
+  }
+  footer.w-full .footer-bottom-grid > div:first-child a{
+    font-size:0.86rem!important;
+    line-height:1.4!important;
+  }
+  footer.w-full .footer-nav-col,
+  footer.w-full .footer-contact-col{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+    justify-self:center!important;
+    max-width:22rem!important;
+  }
+  footer.w-full .footer-nav-col > div{
+    align-items:center!important;
+    text-align:center!important;
+  }
+  footer.w-full .footer-nav-col h3,
+  footer.w-full .footer-contact-col h3,
+  footer.w-full .footer-nav-col a,
+  footer.w-full .footer-contact-col a{
+    text-align:center!important;
+  }
+  footer.w-full h3{
+    font-size:0.8rem!important;
+    letter-spacing:0.1em!important;
+    margin-bottom:0.55rem!important;
+  }
+  footer.w-full a,
+  footer.w-full a.text-sm,
+  footer.w-full .text-sm,
+  footer.w-full .footer-nav-col a,
+  footer.w-full .footer-contact-col a{
+    font-size:0.9rem!important;
+    line-height:1.55!important;
+  }
+  footer.w-full .footer-contact-col a{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    display:block;
+  }
+  footer.w-full .footer-credit{
+    margin-top:0.25rem!important;
+    max-width:100%!important;
+  }
+  footer.w-full .footer-credit p{font-size:0.8rem!important}
+  footer.w-full .footer-social{
+    margin-bottom:0.45rem!important;
+    justify-content:center!important;
+  }
+  footer.w-full .footer-social-link{
+    width:1.75rem!important;
+    height:1.75rem!important;
+  }
+  footer.w-full .gap-12{gap:0.9rem!important}
+  footer.w-full .pt-12{padding-top:1.1rem!important}
+}
+@media (min-width:768px) and (max-width:1023px){
+  footer.w-full .footer-bottom-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:1.5rem!important;
+  }
+  footer.w-full .footer-bottom-grid > div:first-child{
+    grid-column:1 / -1!important;
+  }
+  footer.w-full .footer-bottom-grid > div:first-child .flex.flex-col{
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:0.35rem 1rem!important;
+  }
+  footer.w-full .footer-nav-col{
+    align-items:flex-start!important;
+    text-align:left!important;
+  }
+  footer.w-full .footer-contact-col{
+    align-items:flex-start!important;
+    text-align:left!important;
+  }
+  footer.w-full h2{font-size:1.65rem!important}
+}
+</style>
+
+<style id="projects-contact-btn-style">
+.projects-contact-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:1.5rem;padding:.8rem 1.4rem;
+  background:#D4AF37;color:#0f172a;text-decoration:none;
+  font-size:.82rem;font-weight:500;letter-spacing:.06em;
+  transition:transform .2s ease,background .2s ease;
+}
+.projects-contact-btn:hover{transform:scale(1.03);background:#c4a030}
+</style>
+</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero px-6 sm:px-12 lg:px-16" aria-labelledby="projects-hero-title"><div class="projects-hero-inner animate-fade-up"><h1 id="projects-hero-title" class="projects-hero-title">Our Projects</h1><p class="projects-hero-copy">Take a look at Jankal&#x27;s signature projects, crafted to elevate everyday living with spaces that blend quality, style, and timeless appeal.</p><a class="projects-contact-btn" href="/contact.html">Contact</a></div></section><section class="project-feature animate-fade-up" id="columbia-bellaza" aria-labelledby="columbia-title">
   <div class="project-feature-inner">
     <header class="project-feature-head">
       <div class="project-feature-meta">
@@ -900,13 +1242,13 @@ footer.w-full > div{
       </div>
     </div>
   </div>
-</section><footer class="w-full bg-[#1a2a3a]"><div class="px-6 py-8 opacity-0 sm:px-8 lg:px-10 lg:py-10"><div class="mx-auto max-w-7xl"><div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16"><div class="flex items-start"><a class="relative block footer-logo-link" href="/"><img alt="Jankal Group Logo" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a></div><div class="flex flex-col justify-center footer-tagline-col"><h2 class="mb-4 text-3xl font-normal leading-[135%] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">Building for <span class="italic text-[#D4A574]">Eternity</span></h2><p class="text-base leading-relaxed text-[#8a9aaa] sm:text-lg">Every structure we build is a monument to the power of human imagination and hard work.</p></div></div><div class="footer-bottom-grid mt-16"><div><div class="flex flex-col gap-2"><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Bengaluru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Hassan</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Tumakuru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Dodballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Chickballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Sira</a></div></div><div class="footer-nav-col"><h3 class="mb-4 text-sm font-medium text-white">Explore</h3><div class="flex flex-col gap-2"><a href="/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Home</a><a href="/about/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">About Us</a><a href="/projects/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Projects</a><a href="/steller.html" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Stellar Heights</a><a href="/careers/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Careers</a></div></div><div class="footer-contact-col"><h3 class="mb-4 text-sm font-medium text-white">Contact</h3><a href="mailto:info@jankal.in" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Email : info@jankal.in</a><br/><a href="tel:9740702358" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Office : 9740702358</a><a href="https://www.google.com/maps/search/?api=1&amp;query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer" class="mt-4 block text-sm leading-relaxed text-[#8a9aaa] transition-colors duration-300 hover:text-white">Address : 272, 12th Cross Rd, near Srinivas Temple, <br/>Mahalakshmipuram Layout, Nagapura, <br/>Bengaluru, Karnataka 560086</a></div><div class="footer-credit flex flex-col items-center justify-center text-center"><div class="footer-social" aria-label="Social media"><a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a><a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a><a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a></div></div></div></div></footer></main><!--$--><!--/$--><a href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#128C7E] active:scale-95" aria-label="Contact us on WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.411 0 .01 5.403.007 12.04c0 2.12.54 4.19 1.566 6.02L0 24l6.149-1.613a11.77 11.77 0 005.9 1.594h.005c6.642 0 12.042-5.405 12.045-12.042.003-3.218-1.248-6.242-3.518-8.514z"></path></svg></a><!-- next-bootstrap disabled to preserve projects redesign -->
+</section><footer class="w-full bg-[#1a2a3a]"><div class="px-6 py-8 opacity-0 sm:px-8 lg:px-10 lg:py-10"><div class="mx-auto max-w-7xl"><div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16"><div class="flex items-start"><a class="relative block footer-logo-link" href="/"><img alt="Jankal Group Logo" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a></div><div class="flex flex-col justify-center footer-tagline-col"><h2 class="mb-4 text-3xl font-normal leading-[135%] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">Building for <span class="italic text-[#D4A574]">Eternity</span></h2><p class="text-base leading-relaxed text-[#8a9aaa] sm:text-lg">Every structure we build is a monument to the power of human imagination and hard work.</p></div></div><div class="footer-bottom-grid mt-16"><div><div class="flex flex-col gap-2"><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Bengaluru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Hassan</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Tumakuru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Dodballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Chickballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Sira</a></div></div><div class="footer-nav-col"><h3 class="mb-4 text-sm font-medium text-white">Explore</h3><div class="flex flex-col gap-2"><a href="/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Home</a><a href="/about/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">About Us</a><a href="/projects/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Projects</a><a href="/steller.html" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Stellar Heights</a><a href="/careers/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Careers</a><a href="/contact.html" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Contact</a></div></div><div class="footer-contact-col"><h3 class="mb-4 text-sm font-medium text-white"><a href="/contact.html" class="text-white transition-colors duration-300 hover:text-[#D4AF37]">Contact</a></h3><a href="mailto:info@jankal.in" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Email : info@jankal.in</a><br/><a href="tel:9740702358" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Office : 9740702358</a><a href="https://www.google.com/maps/search/?api=1&amp;query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer" class="mt-4 block text-sm leading-relaxed text-[#8a9aaa] transition-colors duration-300 hover:text-white">Address : 272, 12th Cross Rd, near Srinivas Temple, <br/>Mahalakshmipuram Layout, Nagapura, <br/>Bengaluru, Karnataka 560086</a><br/><a href="/contact.html" class="text-sm text-[#D4AF37] transition-colors duration-300 hover:text-white">View contact page</a></div><div class="footer-credit flex flex-col items-center justify-center text-center"><div class="footer-social" aria-label="Social media"><a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a><a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a><a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a></div></div></div></div></footer></main><!--$--><!--/$--><a href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#128C7E] active:scale-95" aria-label="Contact us on WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.411 0 .01 5.403.007 12.04c0 2.12.54 4.19 1.566 6.02L0 24l6.149-1.613a11.77 11.77 0 005.9 1.594h.005c6.642 0 12.042-5.405 12.045-12.042.003-3.218-1.248-6.242-3.518-8.514z"></path></svg></a><!-- next-bootstrap disabled to preserve projects redesign -->
 <script id="site-nav-script">
 (function(){
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><nav class="site-menu-links" id="siteMenuLinks"><a href="/">Home</a><a href="/about/">About Us</a><a href="/about/#vision-mission">Vision & Mission</a><a href="/about/#vision-mission">Philosophy</a><a href="/about/#leadership">Leadership</a><a href="/about/#leadership">Our Logo</a><a href="/projects/">Projects</a><a href="/careers/">Careers</a><a href="/steller.html">Stellar Heights</a><a href="/previous-projects/">Previous Projects</a></nav></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
@@ -914,9 +1256,11 @@ footer.w-full > div{
       a.classList.remove("is-active");
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
+      var label = (a.querySelector("span:last-child") || a).textContent.trim();
       if ((path.indexOf("/stellarheights") === 0 || path.indexOf("/steller") === 0) && (base.indexOf("/stellarheights") === 0 || base.indexOf("/steller") === 0)) a.classList.add("is-active");
-      else if (path.indexOf("/about") === 0 && a.textContent.trim() === "About Us" && href.indexOf("#") === -1) a.classList.add("is-active");
-      else if (base === path && href.indexOf("#") === -1) a.classList.add("is-active");
+      else if (path.indexOf("/about") === 0 && label === "About") a.classList.add("is-active");
+      else if (path.indexOf("/contact") === 0 && label === "Contact") a.classList.add("is-active");
+      else if (base === path) a.classList.add("is-active");
     });
   }
 
@@ -930,12 +1274,15 @@ footer.w-full > div{
       nav.setAttribute("data-site-nav", "1");
       document.body.appendChild(nav);
     }
-    if (!nav.querySelector(".site-nav-burger-lines")) {
+    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
       nav.innerHTML =
         '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
         '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
+        '<div class="site-nav-actions">' +
+        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
         '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
-        '<span class="site-nav-burger-lines"><span></span><span></span></span></button>';
+        '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
+        '</div>';
     }
 
     var menu = document.getElementById("siteMenu");
@@ -945,9 +1292,10 @@ footer.w-full > div{
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (!menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
+      menu.dataset.menuV = "pages-v3";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
@@ -965,8 +1313,23 @@ footer.w-full > div{
     var closeBtn = document.getElementById("siteMenuClose");
     if (!menu || !burger || menu.dataset.bound === "1") return;
     menu.dataset.bound = "1";
-    function openMenu(){ menu.classList.add("open"); document.body.style.overflow = "hidden"; }
-    function closeMenu(){ menu.classList.remove("open"); document.body.style.overflow = ""; }
+    var closeTimer = null;
+    function openMenu(){
+      if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+      menu.classList.remove("is-closing");
+      menu.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMenu(){
+      if (!menu.classList.contains("open") || menu.classList.contains("is-closing")) return;
+      menu.classList.add("is-closing");
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = setTimeout(function(){
+        menu.classList.remove("open", "is-closing");
+        document.body.style.overflow = "";
+        closeTimer = null;
+      }, 420);
+    }
     burger.addEventListener("click", openMenu);
     if (closeBtn) closeBtn.addEventListener("click", closeMenu);
     menu.addEventListener("click", function(e){
@@ -1006,6 +1369,26 @@ footer.w-full > div{
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
   setTimeout(boot, 200);
+})();
+</script>
+
+<script id="jankal-scroll-top">
+(function(){
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  function toHero(){
+    if (location.hash) return;
+    window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+  }
+  toHero();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", toHero);
+  }
+  window.addEventListener("load", toHero);
+  window.addEventListener("pageshow", function(e){
+    if (e.persisted) toHero();
+  });
 })();
 </script>
 </body></html>

@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="jankal-static" content="1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Jankal Group</title>
+  <meta name="description" content="Contact Jankal Group in Bengaluru. Email, phone, office address, and enquiry form for projects across Karnataka." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+<style id="site-nav-style">
+/* Match main-site React navbar (index/projects/careers) */
+.site-nav{
+  position:fixed!important;
+  top:0!important;left:0!important;right:0!important;
+  z-index:10000!important;
+  display:flex!important;
+  align-items:center;
+  justify-content:space-between;
+  padding:1.5rem; /* p-6 */
+  pointer-events:none;
+  visibility:visible!important;
+  opacity:1!important;
+  background:transparent;
+}
+@media (min-width:640px){
+  .site-nav{padding:2rem} /* sm:p-8 */
+}
+.site-nav > *{pointer-events:auto}
+.site-nav-logo{
+  position:relative;
+  display:block!important;
+  width:5rem;height:5rem; /* h-20 w-20 */
+  visibility:visible!important;
+  opacity:1!important;
+}
+@media (min-width:640px){
+  .site-nav-logo{width:6rem;height:6rem} /* sm:h-24 sm:w-24 */
+}
+.site-nav-logo img{
+  width:100%;height:100%;object-fit:contain;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-actions{
+  display:flex!important;
+  align-items:center;
+  gap:.7rem;
+  pointer-events:auto;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-contact{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1.15rem;
+  border:0;
+  border-radius:999px;
+  background:#D4AF37;
+  color:#0f172a;
+  font-family:inherit;
+  font-size:.8rem;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease, background .2s ease;
+  visibility:visible!important;
+  opacity:1!important;
+  white-space:nowrap;
+}
+.site-nav-contact:hover{
+  transform:scale(1.05);
+  background:#c4a030;
+}
+@media (max-width:420px){
+  .site-nav-contact{padding:.62rem .9rem;font-size:.72rem;letter-spacing:.04em}
+}
+.site-nav-burger{
+  width:3rem;height:3rem; /* h-12 w-12 */
+  border:0;border-radius:999px;
+  background:rgba(255,255,255,.80);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  display:flex!important;
+  align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:none;
+  transition:transform .2s ease, background .2s ease;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.site-nav-burger:hover{
+  transform:scale(1.05);
+  background:#fff;
+}
+.site-nav-burger-lines{
+  display:flex;
+  flex-direction:column;
+  gap:.375rem; /* space-y-1.5 */
+}
+.site-nav-burger-lines span{
+  display:block;
+  width:1.25rem; /* w-5 */
+  height:2px; /* h-0.5 */
+  background:#000;
+  margin:0;
+}
+/* Main site has no scrolled cream bar */
+.site-nav.is-scrolled{
+  background:transparent;
+  backdrop-filter:none;
+  border-bottom:0;
+}
+/* Right drawer  -  page links only + enter/exit motion */
+.site-menu{
+  position:fixed;inset:0;z-index:10001!important;
+  display:flex;
+  justify-content:flex-end;
+  background:rgba(0,0,0,0);
+  backdrop-filter:blur(0);
+  -webkit-backdrop-filter:blur(0);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .45s cubic-bezier(.22,1,.36,1),visibility .45s cubic-bezier(.22,1,.36,1),background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease;
+}
+.site-menu.open,
+.site-menu.is-closing{
+  opacity:1;visibility:visible;pointer-events:auto;
+  background:rgba(0,0,0,.50);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.site-menu.is-closing{pointer-events:none}
+.site-menu-panel{
+  position:relative;
+  height:100%;
+  width:100%;
+  max-width:28rem;
+  background:#0f172a;
+  padding:2rem 2rem 2.25rem;
+  box-shadow:0 25px 50px -12px rgba(0,0,0,.35);
+  transform:translateX(100%);
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.site-menu-panel::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:2px;
+  background:linear-gradient(180deg, transparent, #D4AF37 30%, #D4AF37 70%, transparent);
+  opacity:0;
+  transition:opacity .45s ease .12s;
+}
+@media (min-width:640px){
+  .site-menu-panel{width:400px;max-width:400px}
+}
+.site-menu.open .site-menu-panel{transform:translateX(0)}
+.site-menu.is-closing .site-menu-panel{
+  transform:translateX(100%);
+  transition-delay:.08s;
+}
+.site-menu.open .site-menu-panel::before{opacity:.55}
+.site-menu.is-closing .site-menu-panel::before{opacity:0;transition-delay:0s}
+.site-menu-close{
+  position:absolute;top:2rem;right:2rem;
+  width:2.5rem;height:2.5rem;
+  border:0;border-radius:999px;
+  background:#fff;color:#000;
+  display:grid;place-items:center;
+  cursor:pointer;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .35s ease;
+  z-index:2;
+  opacity:0;
+  transform:scale(.85);
+}
+.site-menu.open .site-menu-close{
+  opacity:1;
+  transform:scale(1);
+  transition-delay:.18s;
+}
+.site-menu.is-closing .site-menu-close{
+  opacity:0;
+  transform:scale(.85);
+  transition-delay:0s;
+}
+.site-menu-close:hover{transform:scale(1.1)}
+.site-menu.open .site-menu-close:hover{transform:scale(1.1)}
+.site-menu-close svg{width:1.5rem;height:1.5rem}
+.site-menu-kicker{
+  margin:0 0 .35rem;
+  margin-top:5rem;
+  font-size:.68rem;
+  font-weight:500;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(212,175,55,.85);
+  opacity:0;
+  transform:translate3d(18px,0,0);
+  transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);
+}
+.site-menu.open .site-menu-kicker{
+  opacity:1;
+  transform:none;
+  transition-delay:.14s;
+}
+.site-menu.is-closing .site-menu-kicker{
+  opacity:0;
+  transform:translate3d(14px,0,0);
+  transition-delay:.02s;
+}
+.site-menu-links{
+  margin-top:1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  flex:1;
+}
+.site-menu-links a{
+  position:relative;
+  display:flex;
+  align-items:baseline;
+  gap:1rem;
+  padding:.95rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-family:inherit;
+  font-size:1.25rem;
+  font-weight:500;
+  color:#fff;
+  text-decoration:none;
+  opacity:0;
+  transform:translate3d(28px,0,0);
+  transition:color .2s ease, opacity .4s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
+}
+.site-menu.open .site-menu-links a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-links a:nth-child(1){transition-delay:.18s}
+.site-menu.open .site-menu-links a:nth-child(2){transition-delay:.24s}
+.site-menu.open .site-menu-links a:nth-child(3){transition-delay:.3s}
+.site-menu.open .site-menu-links a:nth-child(4){transition-delay:.36s}
+.site-menu.open .site-menu-links a:nth-child(5){transition-delay:.42s}
+.site-menu.open .site-menu-links a:nth-child(6){transition-delay:.48s}
+.site-menu.is-closing .site-menu-links a{
+  opacity:0;
+  transform:translate3d(22px,0,0);
+}
+.site-menu.is-closing .site-menu-links a:nth-child(1){transition-delay:.16s}
+.site-menu.is-closing .site-menu-links a:nth-child(2){transition-delay:.12s}
+.site-menu.is-closing .site-menu-links a:nth-child(3){transition-delay:.08s}
+.site-menu.is-closing .site-menu-links a:nth-child(4){transition-delay:.04s}
+.site-menu.is-closing .site-menu-links a:nth-child(5){transition-delay:.02s}
+.site-menu.is-closing .site-menu-links a:nth-child(6){transition-delay:0s}
+.site-menu-links a .site-menu-idx{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  color:rgba(255,255,255,.35);
+  min-width:1.5rem;
+}
+.site-menu-links a:hover,
+.site-menu-links a:focus-visible{
+  color:#D4AF37;
+  padding-left:.35rem;
+}
+.site-menu-links a:hover .site-menu-idx,
+.site-menu-links a:focus-visible .site-menu-idx{color:rgba(212,175,55,.7)}
+.site-menu-links a.is-active{color:#fff}
+.site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
+.site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-foot{
+  margin:1.75rem 0 0;
+  padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:.78rem;
+  font-weight:400;
+  letter-spacing:.04em;
+  color:rgba(255,255,255,.45);
+  opacity:0;
+  transform:translate3d(0,12px,0);
+  transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);
+}
+.site-menu.open .site-menu-foot{
+  opacity:1;
+  transform:none;
+  transition-delay:.54s;
+}
+.site-menu.is-closing .site-menu-foot{
+  opacity:0;
+  transform:translate3d(0,10px,0);
+  transition-delay:0s;
+}
+@media (prefers-reduced-motion:reduce){
+  .site-menu,
+  .site-menu-panel,
+  .site-menu-panel::before,
+  .site-menu-close,
+  .site-menu-kicker,
+  .site-menu-links a,
+  .site-menu-foot{
+    transition-duration:.01ms!important;
+    transition-delay:0s!important;
+  }
+}
+html.has-site-nav main > nav.fixed,
+html.has-site-nav nav.fixed.top-0:not(.site-nav){
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+</style>
+<style id="contact-page-style">
+:root{
+  --bg:#F5F4F0;
+  --ink:#1a2a3a;
+  --muted:#5a6a7a;
+  --gold:#D4AF37;
+  --warm:#D4A574;
+  --line:rgba(26,42,58,.12);
+  --display:"Cormorant Garamond",Georgia,serif;
+  --sans:"Outfit",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.contact-main{min-height:100vh}
+
+.contact-hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  align-items:flex-end;
+  color:#fff;
+  overflow:hidden;
+}
+.contact-hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,22,35,.32) 0%, rgba(10,22,35,.58) 48%, rgba(10,22,35,.9) 100%),
+    url("/images/building-for-eternity.png") center/cover no-repeat;
+}
+.contact-hero-inner{
+  position:relative;
+  z-index:1;
+  width:min(72rem, calc(100% - 3rem));
+  margin:0 auto;
+  padding:0 0 clamp(3.5rem,8vh,5.5rem);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.contact-hero-brand{
+  margin:0 0 .85rem;
+  font-family:var(--display);
+  font-weight:300;
+  font-size:clamp(3.4rem,9vw,6.5rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+}
+.contact-hero-brand em{
+  font-style:italic;
+  color:var(--warm);
+}
+.contact-hero-lead{
+  margin:0 auto 1.6rem;
+  max-width:32rem;
+  font-size:clamp(1rem,1.6vw,1.15rem);
+  line-height:1.65;
+  color:rgba(255,255,255,.88);
+  font-weight:300;
+}
+.contact-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.75rem;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  padding:.85rem 1.25rem;
+  font-family:var(--sans);
+  font-size:.88rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  text-decoration:none;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.btn svg{width:1.05rem;height:1.05rem;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-gold{background:var(--gold);color:#0f172a;border-color:var(--gold)}
+.btn-gold:hover{background:#c4a030;border-color:#c4a030}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+.contact-section{
+  padding:clamp(3.5rem,8vw,6rem) 0;
+}
+.contact-shell{
+  width:min(72rem, calc(100% - 3rem));
+  margin:0 auto;
+}
+.contact-kicker{
+  margin:0 0 .75rem;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--warm);
+}
+.contact-title{
+  margin:0 0 .85rem;
+  font-family:var(--display);
+  font-weight:300;
+  font-size:clamp(2.1rem,4.5vw,3.25rem);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.contact-sub{
+  margin:0 0 2.5rem;
+  max-width:36rem;
+  font-size:1.05rem;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+.contact-reach-head{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:clamp(2.25rem,5vw,3.25rem);
+}
+.contact-reach-head .contact-kicker{margin-bottom:.85rem}
+.contact-reach-head .contact-title{margin-bottom:.9rem}
+.contact-reach-head .contact-sub{
+  margin:0 auto;
+  max-width:34rem;
+}
+.contact-reach-rule{
+  display:block;
+  width:2.75rem;
+  height:1px;
+  margin:1.15rem auto 0;
+  background:rgba(212,165,116,.85);
+}
+
+.contact-channels{
+  display:grid;
+  gap:1.15rem;
+}
+@media (min-width:840px){
+  .contact-channels{
+    grid-template-columns:repeat(3,1fr);
+    gap:1.35rem;
+  }
+}
+.contact-channel{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.55rem;
+  min-height:100%;
+  padding:1.65rem 1.5rem 1.55rem;
+  text-decoration:none;
+  background:#fff;
+  border:1px solid rgba(26,42,58,.1);
+  color:var(--ink);
+  transition:
+    background .35s cubic-bezier(.22,1,.36,1),
+    border-color .35s ease,
+    color .25s ease,
+    transform .35s cubic-bezier(.22,1,.36,1),
+    box-shadow .35s ease;
+}
+@media (min-width:840px){
+  .contact-channel{padding:1.9rem 1.7rem 1.7rem}
+}
+.contact-channel:hover{
+  background:#0f172a;
+  border-color:#0f172a;
+  color:#fff;
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(15,23,42,.18);
+}
+.contact-channel-idx{
+  font-size:.68rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  color:rgba(26,42,58,.35);
+  margin-bottom:.15rem;
+  transition:color .25s ease;
+}
+.contact-channel-label{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  transition:color .25s ease;
+}
+.contact-channel-value{
+  font-family:var(--display);
+  font-size:clamp(1.35rem,2.5vw,1.85rem);
+  font-weight:400;
+  line-height:1.3;
+  color:var(--ink);
+  transition:color .25s ease;
+}
+.contact-channel-hint{
+  margin-top:.15rem;
+  font-size:.85rem;
+  line-height:1.45;
+  color:var(--muted);
+  transition:color .25s ease;
+  flex:1;
+}
+.contact-channel-cta{
+  margin-top:.85rem;
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--warm);
+  transition:color .25s ease;
+}
+.contact-channel:hover .contact-channel-idx{color:rgba(212,175,55,.85)}
+.contact-channel:hover .contact-channel-label{color:rgba(255,255,255,.55)}
+.contact-channel:hover .contact-channel-value{color:#fff}
+.contact-channel:hover .contact-channel-hint{color:rgba(255,255,255,.68)}
+.contact-channel:hover .contact-channel-cta{color:var(--gold)}
+
+.contact-split{
+  display:grid;
+  gap:3rem;
+}
+@media (min-width:960px){
+  .contact-split{
+    grid-template-columns:1fr 1.1fr;
+    gap:4rem;
+    align-items:start;
+  }
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.contact-form-row{
+  display:grid;
+  gap:1rem;
+}
+@media (min-width:640px){
+  .contact-form-row{grid-template-columns:1fr 1fr}
+}
+.contact-field{display:flex;flex-direction:column;gap:.35rem}
+.contact-field label{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.contact-field input,
+.contact-field select,
+.contact-field textarea{
+  width:100%;
+  border:0;
+  border-bottom:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  font:inherit;
+  font-size:.98rem;
+  padding:.75rem 0;
+  border-radius:0;
+  outline:none;
+  transition:border-color .2s ease;
+}
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus{border-bottom-color:var(--gold)}
+.contact-field textarea{min-height:7rem;resize:vertical}
+.contact-form-note{
+  margin:.15rem 0 0;
+  font-size:.82rem;
+  color:var(--muted);
+  line-height:1.5;
+}
+.contact-form-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.35rem}
+.contact-form-actions .btn-ghost{
+  color:var(--ink);
+  border-color:rgba(26,42,58,.25);
+}
+.contact-form-actions .btn-ghost:hover{
+  border-color:var(--ink);
+  background:rgba(26,42,58,.04);
+}
+.contact-form-success{
+  display:none;
+  padding:1rem 0;
+  color:#1f3a24;
+  font-size:.95rem;
+  line-height:1.5;
+  border-top:1px solid #c7d9c2;
+}
+.contact-form-success.show{display:block}
+
+.contact-section--blue{
+  background:#0f172a;
+  color:#fff;
+}
+.contact-section--blue .contact-kicker{color:var(--warm)}
+.contact-section--blue .contact-title{color:#fff}
+.contact-section--blue .contact-sub{color:rgba(255,255,255,.72)}
+.contact-section--blue .contact-field label{color:rgba(255,255,255,.55)}
+.contact-section--blue .contact-field input,
+.contact-section--blue .contact-field select,
+.contact-section--blue .contact-field textarea{
+  color:#fff;
+  border-bottom-color:rgba(255,255,255,.22);
+}
+.contact-section--blue .contact-field input::placeholder,
+.contact-section--blue .contact-field textarea::placeholder{
+  color:rgba(255,255,255,.4);
+}
+.contact-section--blue .contact-field select option{color:var(--ink);background:#fff}
+.contact-section--blue .contact-field input:focus,
+.contact-section--blue .contact-field select:focus,
+.contact-section--blue .contact-field textarea:focus{border-bottom-color:var(--gold)}
+.contact-section--blue .contact-form-note{color:rgba(255,255,255,.55)}
+.contact-section--blue .contact-form-actions .btn-ghost{
+  color:#fff;
+  border-color:rgba(255,255,255,.4);
+}
+.contact-section--blue .contact-form-actions .btn-ghost:hover{
+  border-color:#fff;
+  background:rgba(255,255,255,.08);
+}
+.contact-section--blue .contact-form-success{
+  color:#d8e8d4;
+  border-top-color:rgba(199,217,194,.35);
+}
+
+.contact-map{
+  position:relative;
+  width:100%;
+  min-height:min(52vh,28rem);
+  background:#0f172a;
+}
+.contact-map iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:0;
+  filter:grayscale(.15) contrast(1.05);
+}
+.contact-map-caption{
+  position:absolute;
+  left:clamp(1.25rem,4vw,3rem);
+  bottom:clamp(1.25rem,3vw,2rem);
+  z-index:1;
+  color:#fff;
+  max-width:22rem;
+  pointer-events:none;
+}
+.contact-map-caption strong{
+  display:block;
+  font-family:var(--display);
+  font-weight:400;
+  font-size:1.35rem;
+  margin-bottom:.25rem;
+}
+.contact-map-caption span{
+  font-size:.88rem;
+  line-height:1.5;
+  color:rgba(255,255,255,.82);
+}
+
+.reveal{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+}
+.reveal.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+.site-footer{
+  width:100%;
+  background-color:transparent;
+  background-image:
+    linear-gradient(90deg, rgba(10, 22, 35, 0.5), rgba(10, 22, 35, 0.82)),
+    url("/images/footer-background.png");
+  background-position:center;background-size:cover;background-repeat:no-repeat;color:#fff;
+}
+.site-footer *{color:#fff!important}
+.site-footer-copy h2 span{color:#D4A574!important}
+.site-footer a:hover{color:#D4AF37!important}
+.site-footer-inner{max-width:80rem;margin:0 auto;padding:2rem 1.5rem}
+@media (min-width:640px){.site-footer-inner{padding:2.25rem 2rem}}
+@media (min-width:1024px){.site-footer-inner{padding:2.5rem 2.5rem}}
+.site-footer-top{display:grid;gap:1.25rem}
+@media (min-width:1024px){.site-footer-top{grid-template-columns:auto 1fr;gap:2rem;align-items:start}}
+.site-footer-logo{display:block;width:3.85rem;height:3.85rem}
+@media (min-width:640px){.site-footer-logo{width:4.35rem;height:4.35rem}}
+.site-footer-logo img{width:100%;height:100%;object-fit:contain}
+.site-footer-copy h2{font-family:var(--display);font-weight:300;font-size:clamp(1.55rem,2.4vw,2rem);margin:0 0 .4rem}
+.site-footer-copy p{margin:0;font-size:1.05rem;line-height:1.55;max-width:26rem}
+.site-footer-bottom{
+  display:grid;grid-template-columns:1fr;gap:1.25rem;
+  margin-top:1.35rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.2);
+}
+@media (min-width:640px){.site-footer-bottom{grid-template-columns:1fr 1fr}}
+@media (min-width:1024px){
+  .site-footer-bottom{grid-template-columns:1fr 1fr 1.2fr}
+  .site-footer-contact{justify-self:end;text-align:right;max-width:22rem}
+  .site-footer-contact h3,.site-footer-contact a,.site-footer-address{text-align:right}
+}
+.site-footer-locs{display:flex;flex-direction:column;gap:.3rem}
+.site-footer-locs a,.site-footer-contact a,.site-footer-address{text-decoration:none;font-size:.98rem;line-height:1.55;opacity:.95}
+.site-footer-nav{display:flex;flex-direction:column;align-items:center;text-align:center;justify-self:center}
+.site-footer-nav h3,.site-footer-contact h3{font-size:.95rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .55rem}
+.site-footer-address{display:block;margin-top:.55rem}
+.footer-credit{grid-column:1/-1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.footer-social{display:flex;gap:.55rem;margin-bottom:.55rem}
+.footer-social-link{
+  width:1.75rem;height:1.75rem;border-radius:999px;border:1px solid rgba(255,255,255,.45);
+  color:#fff;display:grid;place-items:center;text-decoration:none;
+}
+.footer-social-link svg{width:.8rem;height:.8rem}
+.footer-credit p{font-size:.9rem;margin:0;opacity:.9}
+.wa{
+  position:fixed;right:1.5rem;bottom:1.5rem;z-index:9999;
+  width:3.5rem;height:3.5rem;border-radius:999px;background:#25D366;color:#fff;
+  display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.2);
+  transition:transform .2s ease, background .2s ease;
+}
+.wa:hover{transform:scale(1.08);background:#128C7E}
+.wa svg{width:1.75rem;height:1.75rem;fill:currentColor}
+
+</style>
+<style id="footer-full-width">
+.site-footer-inner{
+  max-width:none!important;
+  width:100%!important;
+  padding-left:clamp(1.25rem,4vw,3.5rem)!important;
+  padding-right:clamp(1.25rem,4vw,3.5rem)!important;
+}
+@media (min-width:1024px){
+  .site-footer-inner{
+    padding-left:clamp(2rem,5vw,4.5rem)!important;
+    padding-right:clamp(2rem,5vw,4.5rem)!important;
+  }
+  .site-footer-top{
+    grid-template-columns:auto 1fr!important;
+    gap:3rem!important;
+  }
+  .site-footer-bottom{
+    grid-template-columns:1.4fr 1fr 1.6fr!important;
+    gap:2rem 3.5rem!important;
+  }
+  .site-footer-copy p{max-width:42rem!important}
+}
+</style>
+<style id="footer-mobile-opt">
+@media (max-width:767px){
+  .site-footer-inner{padding:1.5rem 1.25rem!important}
+  .site-footer-top{
+    grid-template-columns:1fr!important;
+    gap:0.85rem!important;
+    justify-items:center;
+    text-align:center;
+  }
+  .site-footer-logo{width:3.25rem!important;height:3.25rem!important;margin-inline:auto}
+  .site-footer-copy{
+    width:100%!important;
+    text-align:center!important;
+  }
+  .site-footer-copy h2{
+    font-size:1.45rem!important;
+    margin-bottom:0.35rem!important;
+    line-height:1.25;
+    text-align:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    width:100%!important;
+  }
+  .site-footer-copy p{
+    font-size:0.9rem!important;
+    line-height:1.5!important;
+    max-width:32ch!important;
+    margin-inline:auto;
+    text-align:center;
+  }
+  .site-footer-bottom{
+    grid-template-columns:1fr!important;
+    gap:1.35rem!important;
+    margin-top:1.1rem!important;
+    padding-top:1.1rem!important;
+    justify-items:center!important;
+  }
+  .site-footer-bottom > div{
+    width:100%!important;
+    max-width:22rem!important;
+  }
+  .site-footer-bottom > div:first-child{
+    grid-column:auto!important;
+    max-width:100%!important;
+  }
+  .site-footer-bottom > div:first-child .site-footer-locs{
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:0.35rem 0.9rem!important;
+  }
+  .site-footer-bottom > div:first-child .site-footer-locs a{
+    font-size:0.86rem!important;
+    line-height:1.4!important;
+  }
+  .site-footer-nav,
+  .site-footer-contact{
+    align-items:center!important;
+    text-align:center!important;
+    justify-self:center!important;
+    max-width:22rem!important;
+  }
+  .site-footer-nav h3,
+  .site-footer-contact h3,
+  .site-footer-contact a,
+  .site-footer-address,
+  .site-footer-nav .site-footer-locs{
+    text-align:center!important;
+  }
+  .site-footer-nav .site-footer-locs{
+    align-items:center!important;
+  }
+  .site-footer-nav h3,
+  .site-footer-contact h3{
+    font-size:0.8rem!important;
+    margin-bottom:0.55rem!important;
+    letter-spacing:0.1em;
+  }
+  .site-footer-locs a,
+  .site-footer-contact a,
+  .site-footer-address{
+    font-size:0.9rem!important;
+    line-height:1.55!important;
+  }
+  .site-footer-address{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    margin-top:0.45rem!important;
+  }
+  .footer-credit{margin-top:0.25rem!important;max-width:100%!important}
+  .footer-credit p{font-size:0.8rem!important}
+  .footer-social{margin-bottom:0.45rem!important;justify-content:center}
+  .footer-social-link{width:1.75rem!important;height:1.75rem!important}
+}
+@media (min-width:768px) and (max-width:1023px){
+  .site-footer-bottom{
+    grid-template-columns:1fr 1fr!important;
+    gap:1.5rem!important;
+  }
+  .site-footer-bottom > div:first-child{grid-column:1 / -1!important}
+  .site-footer-bottom > div:first-child .site-footer-locs{
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:0.35rem 1rem!important;
+  }
+  .site-footer-nav{align-items:flex-start!important;text-align:left!important}
+  .site-footer-contact{align-items:flex-start!important;text-align:left!important}
+  .site-footer-contact h3,
+  .site-footer-contact a,
+  .site-footer-address{text-align:left!important}
+  .site-footer-copy h2{font-size:1.65rem!important}
+}
+</style>
+</head>
+<body>
+<header class="site-nav" id="siteNav" data-site-nav>
+  <a class="site-nav-logo" href="/" aria-label="Jankal Group home">
+    <img src="/logo.png" alt="Jankal Group Logo" />
+  </a>
+  <div class="site-nav-actions">
+    <a class="site-nav-contact" href="/contact.html">Contact</a>
+    <button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">
+      <span class="site-nav-burger-lines"><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<main class="contact-main">
+  <section class="contact-hero" aria-label="Contact hero">
+    <div class="contact-hero-bg" aria-hidden="true"></div>
+    <div class="contact-hero-inner">
+      <h1 class="contact-hero-brand">Jankal <em>Contact</em></h1>
+      <p class="contact-hero-lead">Speak with our team about homes, sites, and partnerships across Karnataka.</p>
+      <div class="contact-hero-actions">
+        <a class="btn btn-gold" href="mailto:info@jankal.in">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          Email us
+        </a>
+        <a class="btn btn-ghost" href="tel:9740702358">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 9740702358
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section contact-section--blue" id="enquire" aria-label="Enquiry form">
+    <div class="contact-shell contact-split">
+      <div>
+        <p class="contact-kicker reveal">Write to us</p>
+        <h2 class="contact-title reveal">Send an enquiry</h2>
+        <p class="contact-sub reveal">Share a few details and we will open a message to our desk. Attach drawings or documents in your email client if needed.</p>
+      </div>
+      <div>
+        <div class="contact-form-success" id="contactFormSuccess" aria-live="polite">Thank you. Your enquiry draft is ready. If your email client did not open, write to info@jankal.in.</div>
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="contact-form-row">
+            <div class="contact-field">
+              <label for="contactName">Full name</label>
+              <input id="contactName" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+            </div>
+            <div class="contact-field">
+              <label for="contactPhone">Phone</label>
+              <input id="contactPhone" name="phone" type="tel" autocomplete="tel" required placeholder="97407 02358" />
+            </div>
+          </div>
+          <div class="contact-field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </div>
+          <div class="contact-field">
+            <label for="contactInterest">Interest</label>
+            <select id="contactInterest" name="interest" required>
+              <option value="">Select a topic</option>
+              <option value="Residential project">Residential project</option>
+              <option value="Stellar Heights">Stellar Heights</option>
+              <option value="Commercial / infrastructure">Commercial / infrastructure</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Careers">Careers</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+          <div class="contact-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" placeholder="Tell us about your project or question"></textarea>
+          </div>
+          <p class="contact-form-note">Submitting opens an email to info@jankal.in with your details filled in.</p>
+          <div class="contact-form-actions">
+            <button class="btn btn-gold" type="submit">Send enquiry</button>
+            <a class="btn btn-ghost" href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section contact-reach" aria-label="Contact details">
+    <div class="contact-shell">
+      <div class="contact-reach-head reveal">
+        <p class="contact-kicker">Reach us</p>
+        <h2 class="contact-title">Direct lines to the office</h2>
+        <p class="contact-sub">We respond to project enquiries, site visits, and partnership conversations from our Bengaluru head office.</p>
+        <span class="contact-reach-rule" aria-hidden="true"></span>
+      </div>
+      <div class="contact-channels">
+        <a class="contact-channel reveal" href="mailto:info@jankal.in">
+          <span class="contact-channel-idx">01</span>
+          <span class="contact-channel-label">Email</span>
+          <span class="contact-channel-value">info@jankal.in</span>
+          <span class="contact-channel-hint">For project and general enquiries</span>
+          <span class="contact-channel-cta">Write to us</span>
+        </a>
+        <a class="contact-channel reveal" href="tel:9740702358">
+          <span class="contact-channel-idx">02</span>
+          <span class="contact-channel-label">Office</span>
+          <span class="contact-channel-value">9740702358</span>
+          <span class="contact-channel-hint">Call during office hours, or message on WhatsApp</span>
+          <span class="contact-channel-cta">Call now</span>
+        </a>
+        <a class="contact-channel reveal" href="https://www.google.com/maps/search/?api=1&amp;query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer">
+          <span class="contact-channel-idx">03</span>
+          <span class="contact-channel-label">Address</span>
+          <span class="contact-channel-value">Mahalakshmipuram, Bengaluru</span>
+          <span class="contact-channel-hint">272, 12th Cross Rd, near Srinivas Temple, Nagapura 560086</span>
+          <span class="contact-channel-cta">Open maps</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-map" aria-label="Office location map">
+    <iframe src="https://maps.google.com/maps?q=272+12th+Cross+Rd,+near+Srinivas+Temple,+Mahalakshmipuram+Layout,+Nagapura,+Bengaluru,+Karnataka+560086&z=16&output=embed" title="Jankal Group head office on Google Maps" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="contact-map-caption">
+      <strong>Head office</strong>
+      <span>Mahalakshmipuram Layout, Bengaluru</span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div>
+        <a class="site-footer-logo" href="/" aria-label="Jankal Group home">
+          <img src="/logo.png" alt="Jankal Group Logo" />
+        </a>
+      </div>
+      <div class="site-footer-copy">
+        <h2>Building for <span>Eternity</span></h2>
+        <p>Every structure we build is a monument to the power of human imagination and hard work.</p>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <div>
+        <div class="site-footer-locs">
+          <a href="#">Bengaluru</a><a href="#">Hassan</a><a href="#">Tumakuru</a>
+          <a href="#">Dodballapur</a><a href="#">Chickballapur</a><a href="#">Sira</a>
+        </div>
+      </div>
+      <div class="site-footer-nav footer-nav-col">
+        <h3>Explore</h3>
+        <div class="site-footer-locs">
+          <a href="/">Home</a><a href="/about/">About Us</a><a href="/projects/">Projects</a>
+          <a href="/steller.html">Stellar Heights</a><a href="/careers/">Careers</a><a href="/contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="site-footer-contact">
+        <h3><a href="/contact.html">Contact</a></h3>
+        <a href="mailto:info@jankal.in">Email : info@jankal.in</a><br />
+        <a href="tel:9740702358">Office : 9740702358</a>
+        <a class="site-footer-address" href="https://www.google.com/maps/search/?api=1&query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer">
+          Address : 272, 12th Cross Rd, near Srinivas Temple,<br />
+          Mahalakshmipuram Layout, Nagapura,<br />
+          Bengaluru, Karnataka 560086
+        </a>
+      </div>
+      <div class="site-footer-copyright footer-credit">
+        <div class="footer-social" aria-label="Social media">
+          <a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a>
+          <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
+        </div>
+        <p>design by pinakkaa</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:"0px 0px -6% 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script id="contact-form-script">
+(function(){
+  var form = document.getElementById("contactForm");
+  var success = document.getElementById("contactFormSuccess");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    var name = document.getElementById("contactName").value.trim();
+    var phone = document.getElementById("contactPhone").value.trim();
+    var email = document.getElementById("contactEmail").value.trim();
+    var interest = document.getElementById("contactInterest").value;
+    var message = document.getElementById("contactMessage").value.trim();
+    var subject = "Enquiry - " + interest + " - " + name;
+    var body = [
+      "Name: " + name,
+      "Email: " + email,
+      "Phone: " + phone,
+      "Interest: " + interest,
+      "",
+      "Message:",
+      message || "-"
+    ].join("\n");
+    window.location.href = "mailto:info@jankal.in?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    if (success) {
+      form.style.display = "none";
+      success.classList.add("show");
+    }
+  });
+})();
+</script>
+
+<script id="site-nav-script">
+(function(){
+  if (window.__jankalSiteNavBooted) return;
+  window.__jankalSiteNavBooted = true;
+
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+
+  function markActive(menu){
+    var path = location.pathname.replace(/\/$/, "") || "/";
+    menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      a.classList.remove("is-active");
+      var href = a.getAttribute("href") || "";
+      var base = href.split("#")[0].replace(/\/$/, "") || "/";
+      var label = (a.querySelector("span:last-child") || a).textContent.trim();
+      if ((path.indexOf("/stellarheights") === 0 || path.indexOf("/steller") === 0) && (base.indexOf("/stellarheights") === 0 || base.indexOf("/steller") === 0)) a.classList.add("is-active");
+      else if (path.indexOf("/about") === 0 && label === "About") a.classList.add("is-active");
+      else if (path.indexOf("/contact") === 0 && label === "Contact") a.classList.add("is-active");
+      else if (base === path) a.classList.add("is-active");
+    });
+  }
+
+  function ensure(){
+    if (!document.body) return;
+    var nav = document.getElementById("siteNav");
+    if (!nav) {
+      nav = document.createElement("header");
+      nav.className = "site-nav";
+      nav.id = "siteNav";
+      nav.setAttribute("data-site-nav", "1");
+      document.body.appendChild(nav);
+    }
+    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
+      nav.innerHTML =
+        '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
+        '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
+        '<div class="site-nav-actions">' +
+        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
+        '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
+        '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
+        '</div>';
+    }
+
+    var menu = document.getElementById("siteMenu");
+    if (!menu) {
+      menu = document.createElement("div");
+      menu.className = "site-menu";
+      menu.id = "siteMenu";
+      document.body.appendChild(menu);
+    }
+    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
+      menu.className = "site-menu";
+      menu.innerHTML = MENU_INNER;
+      menu.dataset.menuV = "pages-v3";
+      menu.dataset.bound = "";
+    }
+    menu.hidden = false;
+
+    document.documentElement.classList.add("has-site-nav");
+    document.querySelectorAll("main > nav.fixed").forEach(function(el){
+      if (!el.classList.contains("site-nav")) el.style.setProperty("display","none","important");
+    });
+    markActive(menu);
+  }
+
+  function bind(){
+    var menu = document.getElementById("siteMenu");
+    var burger = document.getElementById("siteNavBurger");
+    var closeBtn = document.getElementById("siteMenuClose");
+    if (!menu || !burger || menu.dataset.bound === "1") return;
+    menu.dataset.bound = "1";
+    var closeTimer = null;
+    function openMenu(){
+      if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+      menu.classList.remove("is-closing");
+      menu.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMenu(){
+      if (!menu.classList.contains("open") || menu.classList.contains("is-closing")) return;
+      menu.classList.add("is-closing");
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = setTimeout(function(){
+        menu.classList.remove("open", "is-closing");
+        document.body.style.overflow = "";
+        closeTimer = null;
+      }, 420);
+    }
+    burger.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    menu.addEventListener("click", function(e){
+      if (e.target === menu) closeMenu();
+    });
+    menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      a.addEventListener("click", closeMenu);
+    });
+  }
+
+  function boot(){ ensure(); bind(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setTimeout(boot, 300);
+  setTimeout(boot, 1200);
+})();
+</script>
+
+<script id="jankal-scroll-top">
+(function(){
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  function toHero(){
+    if (location.hash) return;
+    window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+  }
+  toHero();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", toHero);
+  }
+  window.addEventListener("load", toHero);
+  window.addEventListener("pageshow", function(e){
+    if (e.persisted) toHero();
+  });
+})();
+</script>
+</body>
+</html>
