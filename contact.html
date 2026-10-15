@@ -357,13 +357,13 @@ img{max-width:100%;display:block}
   position:absolute;inset:0;
   background:
     linear-gradient(180deg, rgba(10,22,35,.32) 0%, rgba(10,22,35,.58) 48%, rgba(10,22,35,.9) 100%),
-    url("/images/contact-hero-desktop.jpg") center right/cover no-repeat;
+    url("/images/contact-hero-desktop.png") center/cover no-repeat;
 }
 @media (max-width:767px){
   .contact-hero-bg{
     background:
       linear-gradient(180deg, rgba(10,22,35,.28) 0%, rgba(10,22,35,.55) 45%, rgba(10,22,35,.9) 100%),
-      url("/images/contact-hero-mobile.jpg") center top/cover no-repeat;
+      url("/images/contact-hero-mobile.png") center top/cover no-repeat;
   }
 }
 .contact-hero-inner{
@@ -911,6 +911,144 @@ img{max-width:100%;display:block}
   .site-footer-copy h2{font-size:1.65rem!important}
 }
 </style>
+
+<style id="jk-footer-style">
+.jk-footer{
+  --jk-navy:#0b1528;
+  --jk-gold:#AF8344;
+  --jk-gold-soft:#D4A574;
+  --jk-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --jk-sans:"Outfit",system-ui,sans-serif;
+  width:100%;
+  background:var(--jk-navy);
+  color:rgba(255,255,255,.78);
+  padding:clamp(2.75rem,5vw,4rem) 0 1.5rem;
+  font-family:var(--jk-sans);
+  font-size:.84rem;
+}
+.jk-footer *,.jk-footer *::before,.jk-footer *::after{box-sizing:border-box}
+.jk-footer a{color:inherit;text-decoration:none}
+.jk-footer a:hover{color:var(--jk-gold-soft)}
+.jk-footer-wrap{width:100%;max-width:none;margin:0;padding:0 clamp(1.25rem,4vw,3.5rem);box-sizing:border-box}
+.jk-footer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(175,131,68,.35);
+  text-align:center;
+}
+@media (min-width:720px){
+  .jk-footer-grid{grid-template-columns:1fr 1fr;align-items:start}
+  .jk-footer-form{grid-column:1 / -1}
+}
+@media (min-width:1024px){
+  .jk-footer-grid{grid-template-columns:1fr 1.15fr 1.15fr;gap:clamp(1.5rem,3vw,3rem)}
+  .jk-footer-form{grid-column:auto}
+}
+.jk-footer-brand{display:flex;flex-direction:column;align-items:center}
+.jk-footer-logo{width:5.5rem;height:auto;margin-bottom:.75rem;display:block}
+.jk-footer-line{
+  margin:0 0 .9rem;
+  font-family:var(--jk-serif);
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--jk-gold-soft);
+  line-height:1.4;
+}
+.jk-footer-social{display:flex;gap:.65rem;justify-content:center;margin-bottom:1rem}
+.jk-footer-social a{
+  width:2.15rem;height:2.15rem;border-radius:999px;
+  border:1px solid rgba(255,255,255,.45);
+  color:rgba(255,255,255,.85);
+  display:grid;place-items:center;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
+}
+.jk-footer-social a:hover{background:var(--jk-gold);border-color:var(--jk-gold);color:#fff}
+.jk-footer-social svg{width:1rem;height:1rem;fill:currentColor}
+.jk-footer-social a[aria-label="Instagram"] svg{fill:none;stroke:currentColor}
+.jk-footer-menu{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.35rem .9rem;max-width:22rem;
+}
+.jk-footer-menu a{font-size:.78rem;color:rgba(255,255,255,.72);letter-spacing:.02em}
+.jk-footer-menu a:hover{color:var(--jk-gold-soft)}
+.jk-footer-info h4,.jk-footer-form h4{
+  margin:0 0 .55rem;
+  font-family:var(--jk-serif);
+  font-weight:500;
+  font-size:1.1rem;
+  color:var(--jk-gold-soft);
+}
+.jk-footer-info address{
+  font-style:normal;
+  line-height:1.65;
+  color:rgba(255,255,255,.78);
+  margin:0;
+}
+.jk-footer-h4-gap{margin-top:1.15rem}
+.jk-footer-contact{margin-top:.9rem;line-height:1.75}
+.jk-footer-contact a{color:rgba(255,255,255,.82)}
+.jk-footer-contact a[href^="mailto"]{color:#9ec9e8}
+.jk-footer-form{display:flex;flex-direction:column;align-items:center}
+.jk-footer-formbox{
+  width:100%;max-width:32rem;
+  display:grid;gap:.65rem;
+  padding:1.15rem 1.25rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(175,131,68,.45);
+  text-align:left;
+}
+.jk-footer-formbox label{
+  display:grid;gap:.15rem;
+  font-size:.74rem;
+  letter-spacing:.03em;
+  color:rgba(255,255,255,.7);
+}
+.jk-footer-formbox input,
+.jk-footer-formbox textarea{
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  font:inherit;
+  font-size:.9rem;
+  padding:.4rem 0 .45rem;
+  outline:none;
+  resize:vertical;
+}
+.jk-footer-formbox input:focus,
+.jk-footer-formbox textarea:focus{border-bottom-color:var(--jk-gold)}
+.jk-footer-formbox textarea{min-height:2.75rem}
+.jk-footer-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media (max-width:420px){.jk-footer-row{grid-template-columns:1fr}}
+.jk-footer-submit{
+  justify-self:center;
+  margin-top:.25rem;
+  padding:.65rem 1.75rem;
+  border:0;
+  border-radius:.65rem;
+  background:var(--jk-gold);
+  color:#fff;
+  font:500 .8rem/1 var(--jk-sans);
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.jk-footer-submit:hover{background:#9c7339;transform:translateY(-1px)}
+.jk-footer-note{margin:0;font-size:.72rem;text-align:center;color:rgba(255,255,255,.55)}
+.jk-footer-note.is-error{color:#F3B7A2}
+.jk-footer-note.is-success{color:var(--jk-gold-soft)}
+.jk-footer-legal{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:.25rem;padding-top:1.15rem;
+  font-size:.75rem;color:rgba(255,255,255,.5);
+}
+.jk-footer-legal p{margin:0}
+</style>
+
 </head>
 <body>
 <header class="site-nav" id="siteNav" data-site-nav>
@@ -1037,55 +1175,78 @@ img{max-width:100%;display:block}
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-top">
-      <div>
-        <a class="site-footer-logo" href="/" aria-label="Jankal Group home">
-          <img src="/logo.png" alt="Jankal Group Logo" />
+
+<footer class="jk-footer" id="site-footer-contact">
+  <div class="jk-footer-wrap">
+    <div class="jk-footer-grid">
+      <div class="jk-footer-brand">
+        <a href="/" aria-label="Jankal Group home">
+          <img class="jk-footer-logo" src="/logo.png" alt="Jankal Group Logo" width="88" height="88" />
         </a>
-      </div>
-      <div class="site-footer-copy">
-        <h2>Building for <span>Eternity</span></h2>
-        <p>Every structure we build is a monument to the power of human imagination and hard work.</p>
-      </div>
-    </div>
-    <div class="site-footer-bottom">
-      <div>
-        <div class="site-footer-locs">
-          <a href="#">Bengaluru</a><a href="#">Hassan</a><a href="#">Tumakuru</a>
-          <a href="#">Dodballapur</a><a href="#">Chickballapur</a><a href="#">Sira</a>
+        <p class="jk-footer-line">Building for Eternity</p>
+        <div class="jk-footer-social" aria-label="Social media">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
         </div>
+        <nav class="jk-footer-menu" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/careers/">Careers</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/steller.html">Stellar Heights</a>
+        </nav>
       </div>
-      <div class="site-footer-nav footer-nav-col">
-        <h3>Explore</h3>
-        <div class="site-footer-locs">
-          <a href="/">Home</a><a href="/about/">About Us</a><a href="/projects/">Projects</a>
-          <a href="/steller.html">Stellar Heights</a><a href="/careers/">Careers</a><a href="/contact.html">Contact</a>
-        </div>
-      </div>
-      <div class="site-footer-contact">
-        <h3><a href="/contact.html">Contact</a></h3>
-        <a href="mailto:info@jankal.in">Email : info@jankal.in</a><br />
-        <a href="tel:9740702358">Office : 9740702358</a>
-        <a class="site-footer-address" href="https://www.google.com/maps/search/?api=1&query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer">
-          Address : 272, 12th Cross Rd, near Srinivas Temple,<br />
+      <div class="jk-footer-info">
+        <h4>Site Address</h4>
+        <address>
+          Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
+          beside Indus International School,<br />
+          Sarjapur Hobli, Anekal Taluk,<br />
+          Bengaluru Urban, Karnataka 562125
+        </address>
+        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <address>
+          272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
           Bengaluru, Karnataka 560086
-        </a>
-      </div>
-      <div class="site-footer-copyright footer-credit">
-        <div class="footer-social" aria-label="Social media">
-          <a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
-          <a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a>
-          <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
+        </address>
+        <div class="jk-footer-contact">
+          <a href="mailto:info@jankal.in">info@jankal.in</a><br />
+          <a href="tel:+919594959014">+91 95949 59014</a><br />
+          <a href="https://www.jankalstellarheights.in" target="_blank" rel="noopener noreferrer">www.jankalstellarheights.in</a>
         </div>
-        <p>design by pinakkaa</p>
       </div>
+      <div class="jk-footer-form">
+        <h4>Contact Us</h4>
+        <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
+          <div class="jk-footer-row">
+            <label>Your name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" autocomplete="tel" required />
+            </label>
+          </div>
+          <label>Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>Anything we should know?
+            <textarea name="message" rows="3"></textarea>
+          </label>
+          <button class="jk-footer-submit" type="submit">Submit</button>
+          <p class="jk-footer-note">We&apos;ll call you back within one working day.</p>
+        </form>
+      </div>
+    </div>
+    <div class="jk-footer-legal">
+      <p>&copy; 2026 Jankal Stellar Heights. All rights reserved.</p>
+      <p>Digital partner PINAKKAA</p>
     </div>
   </div>
 </footer>
+
 
 <a class="wa" href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1264,5 +1425,33 @@ img{max-width:100%;display:block}
   });
 })();
 </script>
+
+<script id="jk-footer-form-script">
+(function(){
+  if (window.__jkFooterForm) return;
+  window.__jkFooterForm = true;
+  document.querySelectorAll("[data-jk-footer-form]").forEach(function(form){
+    var note = form.querySelector(".jk-footer-note");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = (form.name && form.name.value || "").trim();
+      var phone = (form.phone && form.phone.value || "").trim();
+      if (!name || !phone) {
+        if (note) {
+          note.textContent = "Please add your name and a phone number so we can call you back.";
+          note.className = "jk-footer-note is-error";
+        }
+        return;
+      }
+      if (note) {
+        note.textContent = "Thank you, " + name.split(" ")[0] + ". We'll call " + phone + " within one working day.";
+        note.className = "jk-footer-note is-success";
+      }
+      form.reset();
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

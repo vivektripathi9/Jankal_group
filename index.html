@@ -1250,6 +1250,144 @@ footer.w-full > div{
   .home-hero__mobile{display:none}
 }
 </style>
+
+<style id="jk-footer-style">
+.jk-footer{
+  --jk-navy:#0b1528;
+  --jk-gold:#AF8344;
+  --jk-gold-soft:#D4A574;
+  --jk-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --jk-sans:"Outfit",system-ui,sans-serif;
+  width:100%;
+  background:var(--jk-navy);
+  color:rgba(255,255,255,.78);
+  padding:clamp(2.75rem,5vw,4rem) 0 1.5rem;
+  font-family:var(--jk-sans);
+  font-size:.84rem;
+}
+.jk-footer *,.jk-footer *::before,.jk-footer *::after{box-sizing:border-box}
+.jk-footer a{color:inherit;text-decoration:none}
+.jk-footer a:hover{color:var(--jk-gold-soft)}
+.jk-footer-wrap{width:100%;max-width:none;margin:0;padding:0 clamp(1.25rem,4vw,3.5rem);box-sizing:border-box}
+.jk-footer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(175,131,68,.35);
+  text-align:center;
+}
+@media (min-width:720px){
+  .jk-footer-grid{grid-template-columns:1fr 1fr;align-items:start}
+  .jk-footer-form{grid-column:1 / -1}
+}
+@media (min-width:1024px){
+  .jk-footer-grid{grid-template-columns:1fr 1.15fr 1.15fr;gap:clamp(1.5rem,3vw,3rem)}
+  .jk-footer-form{grid-column:auto}
+}
+.jk-footer-brand{display:flex;flex-direction:column;align-items:center}
+.jk-footer-logo{width:5.5rem;height:auto;margin-bottom:.75rem;display:block}
+.jk-footer-line{
+  margin:0 0 .9rem;
+  font-family:var(--jk-serif);
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--jk-gold-soft);
+  line-height:1.4;
+}
+.jk-footer-social{display:flex;gap:.65rem;justify-content:center;margin-bottom:1rem}
+.jk-footer-social a{
+  width:2.15rem;height:2.15rem;border-radius:999px;
+  border:1px solid rgba(255,255,255,.45);
+  color:rgba(255,255,255,.85);
+  display:grid;place-items:center;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
+}
+.jk-footer-social a:hover{background:var(--jk-gold);border-color:var(--jk-gold);color:#fff}
+.jk-footer-social svg{width:1rem;height:1rem;fill:currentColor}
+.jk-footer-social a[aria-label="Instagram"] svg{fill:none;stroke:currentColor}
+.jk-footer-menu{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.35rem .9rem;max-width:22rem;
+}
+.jk-footer-menu a{font-size:.78rem;color:rgba(255,255,255,.72);letter-spacing:.02em}
+.jk-footer-menu a:hover{color:var(--jk-gold-soft)}
+.jk-footer-info h4,.jk-footer-form h4{
+  margin:0 0 .55rem;
+  font-family:var(--jk-serif);
+  font-weight:500;
+  font-size:1.1rem;
+  color:var(--jk-gold-soft);
+}
+.jk-footer-info address{
+  font-style:normal;
+  line-height:1.65;
+  color:rgba(255,255,255,.78);
+  margin:0;
+}
+.jk-footer-h4-gap{margin-top:1.15rem}
+.jk-footer-contact{margin-top:.9rem;line-height:1.75}
+.jk-footer-contact a{color:rgba(255,255,255,.82)}
+.jk-footer-contact a[href^="mailto"]{color:#9ec9e8}
+.jk-footer-form{display:flex;flex-direction:column;align-items:center}
+.jk-footer-formbox{
+  width:100%;max-width:32rem;
+  display:grid;gap:.65rem;
+  padding:1.15rem 1.25rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(175,131,68,.45);
+  text-align:left;
+}
+.jk-footer-formbox label{
+  display:grid;gap:.15rem;
+  font-size:.74rem;
+  letter-spacing:.03em;
+  color:rgba(255,255,255,.7);
+}
+.jk-footer-formbox input,
+.jk-footer-formbox textarea{
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  font:inherit;
+  font-size:.9rem;
+  padding:.4rem 0 .45rem;
+  outline:none;
+  resize:vertical;
+}
+.jk-footer-formbox input:focus,
+.jk-footer-formbox textarea:focus{border-bottom-color:var(--jk-gold)}
+.jk-footer-formbox textarea{min-height:2.75rem}
+.jk-footer-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media (max-width:420px){.jk-footer-row{grid-template-columns:1fr}}
+.jk-footer-submit{
+  justify-self:center;
+  margin-top:.25rem;
+  padding:.65rem 1.75rem;
+  border:0;
+  border-radius:.65rem;
+  background:var(--jk-gold);
+  color:#fff;
+  font:500 .8rem/1 var(--jk-sans);
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.jk-footer-submit:hover{background:#9c7339;transform:translateY(-1px)}
+.jk-footer-note{margin:0;font-size:.72rem;text-align:center;color:rgba(255,255,255,.55)}
+.jk-footer-note.is-error{color:#F3B7A2}
+.jk-footer-note.is-success{color:var(--jk-gold-soft)}
+.jk-footer-legal{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:.25rem;padding-top:1.15rem;
+  font-size:.75rem;color:rgba(255,255,255,.5);
+}
+.jk-footer-legal p{margin:0}
+</style>
+
 </head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="home-hero" aria-label="Home banner">
   <img class="home-hero__desktop" src="/assets/home-hero-desktop.jpg?v=2" alt="Stellar Heights by Jankal Group at twilight" width="1920" height="1080" decoding="async" fetchpriority="high" />
   <div class="home-hero__shade" aria-hidden="true"></div>
@@ -1292,24 +1430,86 @@ footer.w-full > div{
     <div class="home-vm-content">
       <div class="home-vm-block">
         <div class="home-vm-label"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span>Vision</span></div>
-        <h2 class="home-vm-title">Building for Eternity</h2>
         <p class="home-vm-text">To craft enduring landmarks that honour craftsmanship, elevate everyday living, and carry the Jankal name with integrity across generations. Spaces built not only for today, but for the lives that will unfold within them tomorrow.</p>
       </div>
       <div class="home-vm-block">
         <div class="home-vm-label"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span>Mission</span></div>
         <p class="home-vm-text">We build spaces that connect people and strengthen community. We design and build thoughtful, inclusive spaces that bring people together and strengthen community connections.</p>
       </div>
-<div class="home-vm-actions">      <a class="home-vm-cta" href="/about/">
-        Learn More
-        <span class="home-vm-cta-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </span>
-      </a>
-      <a class="home-contact-cta" href="/contact.html">Contact</a>
-      </div>
     </div>
   </div>
-</section><div class="home-sectors relative bg-[#F5F4F0]"><section class="sticky top-0 z-10 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">1</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Residential</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Our residential projects are meticulously designed to seamlessly integrate comfort, community, and creativity, forging vibrant neighbourhoods that instil a profound sense of belonging. Together, we are not simply constructing houses; we are fashioning a lifestyle that exalts the beauty of living well.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">At Jankal Group, we firmly believe that home is more than just a place, it&#x27;s a sanctuary where life unfolds.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Residential project aerial view" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/residential.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-20 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">2</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Commercial</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Our commercial projects are designed to foster innovation, collaboration, and growth, creating environments that inspire productivity and connection. With a focus on sustainability and cutting-edge design, we aim to deliver exceptional spaces that  meet the needs of today.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">We understand that commercial spaces are the backbone of thriving businesses and communities.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Commercial building" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/commercial.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-30 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">3</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Government Works</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Government projects like railways, bridges, and the Jal Jeevan Mission play a crucial role in shaping the future of our country. These initiatives strengthen connectivity, provide vital resources, and uplift entire regions, ensuring sustainable growth and better living standards for communities across the nation.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">The Jankal Group is actively involved in key government projects, including railways, bridges, and the Jal Jeevan Mission, contributing to national infrastructure and development.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Government building" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/government.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-40 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-t-2xl bg-[#1a2a3a] lg:rounded-t-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">4</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Manufacturing</h2></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">We committed to producing high-quality construction materials and solutions.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Manufacturing facility" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/manufacturing.avif"/></div></div></div></div></div></div></section></div><footer class="w-full"><div class="px-6 py-8 opacity-0 sm:px-8 lg:px-10 lg:py-10"><div class="mx-auto max-w-7xl"><div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16"><div class="flex items-start"><a class="relative block footer-logo-link" href="/"><img alt="Jankal Group Logo" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a></div><div class="flex flex-col justify-center footer-tagline-col"><h2 class="mb-4 text-3xl font-normal leading-[135%] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">Building for <span class="italic text-[#D4A574]">Eternity</span></h2><p class="text-base leading-relaxed text-[#8a9aaa] sm:text-lg">Every structure we build is a monument to the power of human imagination and hard work.</p></div></div><div class="footer-bottom-grid mt-16"><div><div class="flex flex-col gap-2"><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Bengaluru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Hassan</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Tumakuru</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Dodballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Chickballapur</a><a href="#" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Sira</a></div></div><div class="footer-nav-col"><h3 class="mb-4 text-sm font-medium text-white">Explore</h3><div class="flex flex-col gap-2"><a href="/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Home</a><a href="/about/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">About Us</a><a href="/projects/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Projects</a><a href="/steller.html" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Stellar Heights</a><a href="/careers/" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Careers</a><a href="/contact.html" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Contact</a></div></div><div class="footer-contact-col"><h3 class="mb-4 text-sm font-medium text-white"><a href="/contact.html" class="text-white transition-colors duration-300 hover:text-[#D4AF37]">Contact</a></h3><a href="mailto:info@jankal.in" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Email : info@jankal.in</a><br/><a href="tel:9740702358" class="text-sm text-[#8a9aaa] transition-colors duration-300 hover:text-white">Office : 9740702358</a><a href="https://www.google.com/maps/search/?api=1&amp;query=JANKAL+group+Head+office+Bengaluru" target="_blank" rel="noopener noreferrer" class="mt-4 block text-sm leading-relaxed text-[#8a9aaa] transition-colors duration-300 hover:text-white">Address : 272, 12th Cross Rd, near Srinivas Temple, <br/>Mahalakshmipuram Layout, Nagapura, <br/>Bengaluru, Karnataka 560086</a><br/><a href="/contact.html" class="text-sm text-[#D4AF37] transition-colors duration-300 hover:text-white">View contact page</a></div><div class="footer-credit flex flex-col items-center justify-center text-center"><div class="footer-social" aria-label="Social media"><a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a><a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a><a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a></div></div></div></div></footer></main><!--$--><!--/$--><a href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#128C7E] active:scale-95" aria-label="Contact us on WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.411 0 .01 5.403.007 12.04c0 2.12.54 4.19 1.566 6.02L0 24l6.149-1.613a11.77 11.77 0 005.9 1.594h.005c6.642 0 12.042-5.405 12.045-12.042.003-3.218-1.248-6.242-3.518-8.514z"></path></svg></a><!-- next-bootstrap disabled to preserve home redesign -->
+</section><div class="home-sectors relative bg-[#F5F4F0]"><section class="sticky top-0 z-10 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">1</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Residential</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Our residential projects are meticulously designed to seamlessly integrate comfort, community, and creativity, forging vibrant neighbourhoods that instil a profound sense of belonging. Together, we are not simply constructing houses; we are fashioning a lifestyle that exalts the beauty of living well.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">At Jankal Group, we firmly believe that home is more than just a place, it&#x27;s a sanctuary where life unfolds.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Residential project aerial view" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/residential.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-20 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">2</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Commercial</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Our commercial projects are designed to foster innovation, collaboration, and growth, creating environments that inspire productivity and connection. With a focus on sustainability and cutting-edge design, we aim to deliver exceptional spaces that  meet the needs of today.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">We understand that commercial spaces are the backbone of thriving businesses and communities.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Commercial building" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/commercial.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-30 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-2xl bg-[#1a2a3a] lg:rounded-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">3</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Government Works</h2></div></div><div class="mt-8 border-t border-[#3a4a5a] pt-6 lg:mt-12"><button class="flex w-full items-center justify-between text-left transition-all duration-300"><span class="text-base font-normal text-white sm:text-lg">Learn more</span><span class="text-2xl font-light text-white transition-transform duration-300 ">+</span></button><div class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"><p class="text-base leading-relaxed text-[#a0b0c0] sm:text-lg lg:leading-relaxed">Government projects like railways, bridges, and the Jal Jeevan Mission play a crucial role in shaping the future of our country. These initiatives strengthen connectivity, provide vital resources, and uplift entire regions, ensuring sustainable growth and better living standards for communities across the nation.</p></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">The Jankal Group is actively involved in key government projects, including railways, bridges, and the Jal Jeevan Mission, contributing to national infrastructure and development.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Government building" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/government.avif"/></div></div></div></div></div></div></section><section class="sticky top-0 z-40 w-full bg-transparent px-6 py-4 sm:px-12 lg:px-12 lg:py-6"><div class="relative mx-auto w-full overflow-hidden rounded-t-2xl bg-[#1a2a3a] lg:rounded-t-3xl shadow-2xl"><div class="px-8 py-12 opacity-0 sm:px-12 lg:px-16 lg:py-16"><div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8"><div class="lg:col-span-5"><div class="flex items-start gap-6 lg:gap-8"><span class="text-8xl font-light text-[#4a5a6a] sm:text-9xl lg:text-[180px] lg:leading-none">4</span><div class="flex flex-col"><h2 class="mt-4 text-xl font-normal text-white sm:text-2xl lg:mt-8 lg:text-3xl">Manufacturing</h2></div></div></div><div class="flex flex-col lg:col-span-7"><div class="flex flex-col items-end"><div class="w-full max-w-[450px]"><p class="mb-6 text-lg font-normal leading-relaxed text-[#c5d0dc] sm:text-xl lg:mb-6 lg:text-xl lg:leading-relaxed">We committed to producing high-quality construction materials and solutions.</p></div><div class="relative aspect-4/3 w-full max-w-[450px] overflow-hidden rounded-xl"><img alt="Manufacturing facility" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/manufacturing.avif"/></div></div></div></div></div></div></section></div>
+<footer class="jk-footer" id="site-footer-contact">
+  <div class="jk-footer-wrap">
+    <div class="jk-footer-grid">
+      <div class="jk-footer-brand">
+        <a href="/" aria-label="Jankal Group home">
+          <img class="jk-footer-logo" src="/logo.png" alt="Jankal Group Logo" width="88" height="88" />
+        </a>
+        <p class="jk-footer-line">Building for Eternity</p>
+        <div class="jk-footer-social" aria-label="Social media">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
+        </div>
+        <nav class="jk-footer-menu" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/careers/">Careers</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/steller.html">Stellar Heights</a>
+        </nav>
+      </div>
+      <div class="jk-footer-info">
+        <h4>Site Address</h4>
+        <address>
+          Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
+          beside Indus International School,<br />
+          Sarjapur Hobli, Anekal Taluk,<br />
+          Bengaluru Urban, Karnataka 562125
+        </address>
+        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <address>
+          272, 12th Cross Rd, near Srinivas Temple,<br />
+          Mahalakshmipuram Layout, Nagapura,<br />
+          Bengaluru, Karnataka 560086
+        </address>
+        <div class="jk-footer-contact">
+          <a href="mailto:info@jankal.in">info@jankal.in</a><br />
+          <a href="tel:+919594959014">+91 95949 59014</a><br />
+          <a href="https://www.jankalstellarheights.in" target="_blank" rel="noopener noreferrer">www.jankalstellarheights.in</a>
+        </div>
+      </div>
+      <div class="jk-footer-form">
+        <h4>Contact Us</h4>
+        <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
+          <div class="jk-footer-row">
+            <label>Your name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" autocomplete="tel" required />
+            </label>
+          </div>
+          <label>Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>Anything we should know?
+            <textarea name="message" rows="3"></textarea>
+          </label>
+          <button class="jk-footer-submit" type="submit">Submit</button>
+          <p class="jk-footer-note">We&apos;ll call you back within one working day.</p>
+        </form>
+      </div>
+    </div>
+    <div class="jk-footer-legal">
+      <p>&copy; 2026 Jankal Stellar Heights. All rights reserved.</p>
+      <p>Digital partner PINAKKAA</p>
+    </div>
+  </div>
+</footer>
+</main><!--$--><!--/$--><a href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#128C7E] active:scale-95" aria-label="Contact us on WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.411 0 .01 5.403.007 12.04c0 2.12.54 4.19 1.566 6.02L0 24l6.149-1.613a11.77 11.77 0 005.9 1.594h.005c6.642 0 12.042-5.405 12.045-12.042.003-3.218-1.248-6.242-3.518-8.514z"></path></svg></a><!-- next-bootstrap disabled to preserve home redesign -->
 <script id="home-stats-countup">
 (function(){
   if (window.__jankalHomeStats) return;
@@ -1553,4 +1753,32 @@ footer.w-full > div{
   });
 })();
 </script>
+
+<script id="jk-footer-form-script">
+(function(){
+  if (window.__jkFooterForm) return;
+  window.__jkFooterForm = true;
+  document.querySelectorAll("[data-jk-footer-form]").forEach(function(form){
+    var note = form.querySelector(".jk-footer-note");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = (form.name && form.name.value || "").trim();
+      var phone = (form.phone && form.phone.value || "").trim();
+      if (!name || !phone) {
+        if (note) {
+          note.textContent = "Please add your name and a phone number so we can call you back.";
+          note.className = "jk-footer-note is-error";
+        }
+        return;
+      }
+      if (note) {
+        note.textContent = "Thank you, " + name.split(" ")[0] + ". We'll call " + phone + " within one working day.";
+        note.className = "jk-footer-note is-success";
+      }
+      form.reset();
+    });
+  });
+})();
+</script>
+
 </body></html>

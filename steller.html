@@ -329,311 +329,309 @@ li { list-style: none; }
 /* ---------- amenity spotlight explorer ---------- */
 .amenities--gallery {
   padding: clamp(72px, 10vw, 120px) 0;
-  background: var(--paper);
+  background: #fff;
   overflow: hidden;
 }
 .amenities--gallery .section-head {
   text-align: center;
-  margin: 0 auto clamp(28px, 4vw, 44px);
-  max-width: 720px;
-}
-.amenities--gallery .section-head::before { display: none; }
-.amenities--gallery .section-eyebrow {
-  display: block;
-  font-family: var(--serif);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 18px;
-}
-.amenities--gallery .section-head .h-serif {
-  white-space: nowrap;
-  max-width: none;
-  margin: 0 auto;
-  line-height: 1.15;
-}
-@media (max-width: 520px) {
-  .amenities--gallery .section-head .h-serif {
-    font-size: clamp(1.45rem, 7.2vw, 2rem);
-  }
-}
-.amenities--gallery .section-head p {
-  max-width: 48ch;
-  margin: 16px auto 0;
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.7;
-}
-.amenity-x {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.amenity-x__stage {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #1a2438;
-  width: 100%;
-  height: clamp(200px, 28vw, 320px);
-  box-shadow:
-    0 4px 8px rgba(27, 34, 51, 0.04),
-    0 24px 48px rgba(27, 34, 51, 0.1);
-}
-.amenity-x__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.04);
-  transition: opacity .55s ease, transform .8s ease;
-}
-.amenity-x__img.is-active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 1;
-}
-.amenity-x__stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(180deg, transparent 42%, rgba(15, 26, 48, 0.78) 100%);
-  pointer-events: none;
-}
-.amenity-x__copy {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  padding: clamp(20px, 4vw, 40px);
-  color: #fff;
-  max-width: 560px;
-}
-.amenity-x__copy strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.8vw, 2.15rem);
-  font-weight: 500;
-  line-height: 1.15;
-  margin-bottom: 8px;
-}
-.amenity-x__copy span {
-  display: block;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 42ch;
-}
-.amenity-x__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: clamp(18px, 2.5vw, 28px);
-}
-.amenity-x__count {
-  font-family: var(--serif);
-  font-size: 1rem;
-  color: var(--navy);
-  letter-spacing: 0.04em;
-}
-.amenity-x__count b { color: var(--gold); font-weight: 500; }
-.amenity-x__nav { display: flex; gap: 10px; }
-.amenity-x__nav .round-btn {
-  background: var(--white);
-  border-color: rgba(175, 131, 68, 0.45);
-}
-.amenity-x__thumbs {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 4px;
-  scroll-snap-type: x mandatory;
-}
-.amenity-x__thumbs::-webkit-scrollbar { display: none; }
-.amenity-x__thumb {
-  flex: 0 0 clamp(72px, 9vw, 96px);
-  aspect-ratio: 1;
-  margin: 0;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #d9ddd6;
-  scroll-snap-align: start;
-  opacity: 0.55;
-  transition: opacity .25s ease, border-color .25s ease, transform .25s ease;
-}
-.amenity-x__thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.amenity-x__thumb:hover { opacity: 0.85; }
-.amenity-x__thumb.is-active {
-  opacity: 1;
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-@media (max-width: 700px) {
-  .amenity-x__stage {
-    border-radius: 16px;
-    height: 220px;
-  }
-  .amenity-x__copy { padding: 14px 14px; max-width: none; }
-  .amenity-x__copy strong { font-size: 1.25rem; }
-  .amenity-x__copy span { font-size: 0.82rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .amenity-x__thumb { flex-basis: 68px; border-radius: 12px; }
-}
-
-/* ---------- site / master plan: centered hero image ---------- */
-.plans {
-  padding: clamp(72px, 10vw, 120px) 0;
-  background: var(--paper);
-}
-.plans .section-head {
-  text-align: center;
   margin: 0 auto clamp(36px, 5vw, 56px);
   max-width: 720px;
 }
-.plans .section-head::before { display: none; }
-.plans .section-head .section-eyebrow {
+.amenities--gallery .section-head::before {
+  content: "";
   display: block;
-  font-family: var(--serif);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 18px;
+  width: 48px;
+  height: 1.5px;
+  background: #C5A059;
+  margin: 0 auto 22px;
 }
-.plans .section-head .h-serif {
+html.js .amenities--gallery .section-head.reveal::before {
+  transform-origin: center;
+}
+.amenities--gallery .section-head .section-eyebrow { display: none !important; }
+.amenities--gallery .section-head .h-serif {
   white-space: normal;
-  max-width: 18ch;
+  max-width: none;
   margin: 0 auto;
-  line-height: 1.15;
+  line-height: 1.12;
+  color: #0f1a30;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
 }
-.plans .section-head p {
-  max-width: 52ch;
-  margin: 18px auto 0;
-  color: var(--muted);
-  font-size: 1.02rem;
+.amenities--gallery .section-head p {
+  max-width: 46ch;
+  margin: 16px auto 0;
+  color: #7a7f89;
+  font-size: 1rem;
   line-height: 1.7;
 }
-.master {
-  display: block;
-  max-width: 1100px;
+.amenity-carousel {
+  --amenity-gap: 1.5rem;
+  --amenity-show: 1;
+  position: relative;
+  width: min(1180px, calc(100% - 2.5rem));
   margin: 0 auto;
+  padding: 0 2.25rem;
+}
+@media (min-width: 700px) { .amenity-carousel { --amenity-show: 2; } }
+@media (min-width: 1024px) {
+  .amenity-carousel {
+    --amenity-show: 3;
+    --amenity-gap: 1.75rem;
+    padding: 0 2.75rem;
+  }
+}
+.amenity-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.amenity-carousel__track {
+  display: flex;
+  gap: var(--amenity-gap);
+  transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+  touch-action: pan-y;
+  cursor: grab;
+}
+.amenity-carousel__track:active { cursor: grabbing; }
+.amenity-carousel__card {
+  flex: 0 0 calc((100% - (var(--amenity-show) - 1) * var(--amenity-gap)) / var(--amenity-show));
+  min-width: 0;
+}
+.amenity-carousel__media {
+  margin: 0 0 1.1rem;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e8e4dc;
+}
+.amenity-carousel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.amenity-carousel__rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: #C5A059;
+  margin: 0 0 .85rem;
+}
+.amenity-carousel__card h3 {
+  margin: 0 0 .55rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.2;
+  color: #0f1a30;
+}
+.amenity-carousel__card p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.65;
+  color: #6b7280;
+  max-width: 36ch;
+}
+.amenity-carousel__nav {
+  position: absolute;
+  top: clamp(4.5rem, 12vw, 7.5rem);
+  z-index: 3;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 26, 48, 0.18);
+  background: #fff;
+  color: #0f1a30;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 26, 48, 0.1);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  padding: 0;
+}
+.amenity-carousel__nav:hover:not(:disabled) {
+  transform: scale(1.05);
+  border-color: #C5A059;
+}
+.amenity-carousel__nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+.amenity-carousel__nav svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.amenity-carousel__nav--prev { left: 0; }
+.amenity-carousel__nav--next { right: 0; }
+@media (max-width: 699px) {
+  .amenity-carousel { padding: 0 2rem; }
+  .amenity-carousel__media { border-radius: 14px; }
+  .amenity-carousel__nav {
+    width: 2.4rem;
+    height: 2.4rem;
+    top: 5.5rem;
+  }
+}
+
+/* ---------- site / master plan: image + legend (mockup match) ---------- */
+.plans {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: #fff;
+}
+.plans > .wrap {
+  width: min(1200px, calc(100% - 3rem));
+}
+.plans .section-head {
+  text-align: center;
+  margin: 0 auto clamp(40px, 5vw, 64px);
+  max-width: min(1100px, calc(100% - 2rem));
+}
+.plans .section-head::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1.5px;
+  background: #C5A059;
+  margin: 0 auto 22px;
+}
+.plans .section-head .section-eyebrow { display: none !important; }
+.plans .section-head .h-serif {
+  white-space: nowrap;
+  max-width: none;
+  margin: 0 auto;
+  line-height: 1.08;
+  color: #0f1a30;
+  font-size: clamp(1.35rem, 3.8vw, 3.6rem);
+  font-weight: 500;
+}
+.plans .section-head p {
+  max-width: 48ch;
+  margin: 18px auto 0;
+  color: #7a7f89;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.master {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+  align-items: stretch;
+  max-width: none;
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .master {
+    grid-template-columns: minmax(0, 1.85fr) minmax(300px, .95fr);
+    gap: 1.5rem;
+  }
 }
 .master__figure {
   margin: 0;
   position: relative;
+  min-width: 0;
+  height: 100%;
 }
 .master__frame {
   position: relative;
-  border-radius: 22px;
+  border-radius: 18px;
   overflow: hidden;
-  background: #e8ebe6;
-  box-shadow:
-    0 4px 8px rgba(27, 34, 51, 0.04),
-    0 24px 48px rgba(27, 34, 51, 0.1);
+  background: #eef1ec;
+  height: 100%;
+  min-height: 420px;
+  box-shadow: 0 18px 40px rgba(15, 26, 48, 0.12);
 }
 .master__figure img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
-.master__pins {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+/* Image already includes numbered markers - hide overlay pins/tip */
+.master__pins,
+.master__tip {
+  display: none !important;
 }
-.master__pin {
-  pointer-events: auto;
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  translate: -50% -50%;
-  width: clamp(28px, 2.6vw, 34px);
-  height: clamp(28px, 2.6vw, 34px);
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--gold);
+.master__legend {
+  background-color: #0a152c;
+  background-image: var(--chain);
+  background-size: 88px 148px;
   color: #fff;
-  font: 700 0.72rem/1 var(--sans);
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(27, 34, 51, 0.28);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-  z-index: 2;
+  border-radius: 18px;
+  padding: 1.35rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 18px 40px rgba(15, 26, 48, 0.14);
+}
+.master__legend-title {
+  margin: 0 0 .7rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: #C5A059;
+  letter-spacing: 0.01em;
+}
+.master__legend-title::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: #C5A059;
+  margin-top: .5rem;
+}
+.master__legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .48rem;
+}
+.master__legend-list li {
+  margin: 0;
   padding: 0;
 }
-.master__pin:hover,
-.master__pin:focus-visible {
-  transform: scale(1.12);
-  background: #9c7339;
-  outline: none;
-}
-.master__pin.is-active {
-  background: var(--navy);
-  transform: scale(1.18);
-  box-shadow: 0 0 0 4px rgba(175, 131, 68, 0.35), 0 6px 18px rgba(27, 34, 51, 0.35);
-  z-index: 3;
-}
-.master__tip {
-  display: none;
-  position: absolute;
-  z-index: 4;
-  min-width: 180px;
-  max-width: min(260px, 70vw);
-  padding: 12px 14px 12px 12px;
-  border-radius: 14px;
-  background: rgba(15, 26, 48, 0.94);
+.master__legend-list .master__legend-item {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  width: 100%;
   color: #fff;
-  box-shadow: 0 12px 32px rgba(15, 26, 48, 0.28);
-  pointer-events: auto;
+  font-family: var(--sans);
+  font-size: .86rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: left;
 }
-.master__tip.is-open { display: flex; align-items: flex-start; gap: 10px; }
-.master__tip-num {
-  flex: 0 0 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: #fff;
-  font: 700 0.72rem/28px var(--sans);
-  text-align: center;
-}
-.master__tip-label {
-  flex: 1;
-  font-size: 0.9rem;
-  line-height: 1.35;
-  padding-top: 4px;
-  font-weight: 500;
-}
-.master__tip-close {
-  flex: 0 0 auto;
-  border: 0;
+.master__legend-num {
+  flex: 0 0 1.35rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  border: 1.5px solid #C5A059;
+  color: #C5A059;
   background: transparent;
-  color: rgba(255,255,255,.7);
-  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  font-size: .64rem;
+  font-weight: 600;
   line-height: 1;
-  cursor: pointer;
-  padding: 2px 4px;
 }
-.master__tip-close:hover { color: #fff; }
-@media (max-width: 700px) {
-  .master__frame { border-radius: 16px; }
-  .master__pin { width: 26px; height: 26px; font-size: 0.65rem; }
+@media (max-width: 899px) {
+  .master__frame {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+  .master__frame,
+  .master__legend { border-radius: 14px; }
 }
 
 /* ---------- floor plans ---------- */
@@ -686,7 +684,7 @@ li { list-style: none; }
 @media (max-width: 960px) { .future li:nth-child(3) { border-left: 0; } .future li:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); } }
 
 /* ---------- life at stellar heights: editorial rows ---------- */
-.life { padding: clamp(64px, 9vw, 120px) 0 0; background: var(--white); }
+.life { padding: clamp(16px, 2vw, 28px) 0 0; background: var(--white); }
 .life__row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center; margin-bottom: clamp(48px, 6vw, 88px); }
 .life__row--flip .life__media, .life__row--flip .life__duo { order: 2; }
 .life__media { margin: 0; position: relative; border-radius: 20px; overflow: hidden; }
@@ -1071,31 +1069,41 @@ html.js .pagehero__sub { animation-delay: .32s; }
 @media (max-width: 960px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__form { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } .form__row { grid-template-columns: 1fr; } .footer__quick { gap: 10px 20px; } }
 
-/* ---------- footer: centred, compact ---------- */
-.footer { padding: clamp(44px, 5vw, 64px) 0 24px; font-size: 0.84rem; }
-.footer__grid { grid-template-columns: 1fr 1.2fr 1.2fr; gap: clamp(24px, 3vw, 48px); padding-bottom: 32px; align-items: center; text-align: center; }
+/* ---------- footer: centred, compact (mockup) ---------- */
+.footer {
+  padding: clamp(44px, 5vw, 64px) 0 24px;
+  font-size: 0.84rem;
+  background: var(--navy-deep);
+  background-image: none;
+}
+.footer__grid { grid-template-columns: 1fr 1.2fr 1.2fr; gap: clamp(24px, 3vw, 48px); padding-bottom: 32px; align-items: start; text-align: center; border-bottom: 1px solid rgba(175,131,68,.35); }
 .footer__brand { display: flex; flex-direction: column; align-items: center; }
 .footer__logo { width: 88px; margin-bottom: 12px; }
 .footer__line { font-size: 1.05rem; margin-bottom: 14px; }
 .footer__social { justify-content: center; }
-.footer__social a { width: 34px; height: 34px; }
-.footer__social svg { width: 16px; height: 16px; }
-.footer h4 { font-size: 1.05rem; margin-bottom: 8px; }
-.footer address { line-height: 1.65; }
+.footer__social a {
+  width: 34px; height: 34px;
+  border-color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.85);
+}
+.footer__social a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+.footer__social svg { width: 16px; height: 16px; fill: currentColor; }
+.footer__social a[aria-label="Instagram"] svg { fill: none; stroke: currentColor; }
+.footer h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--gold-soft); }
+.footer address { line-height: 1.65; color: rgba(255,255,255,.78); }
 .footer__h4-gap { margin-top: 18px; }
-.footer__contact { margin-top: 10px; line-height: 1.7; }
+.footer__contact { margin-top: 14px; line-height: 1.7; }
+.footer__contact a { color: rgba(255,255,255,.82); }
+.footer__contact a[href^="mailto"] { color: #9ec9e8; }
 .footer__form { display: flex; flex-direction: column; align-items: center; }
 .form--dark { width: 100%; max-width: 400px; padding: 18px 20px; gap: 10px; border-radius: 16px; text-align: left; }
 .form--dark label { font-size: 0.74rem; gap: 2px; }
 .form--dark input, .form--dark textarea { font-size: 0.9rem; padding: 6px 0 7px; }
 .form--dark textarea { min-height: 44px; }
-.form--dark .btn { padding: 10px 22px; font-size: 0.8rem; justify-self: center; margin-top: 4px; }
+.form--dark .btn { padding: 10px 28px; font-size: 0.8rem; justify-self: center; margin-top: 4px; border-radius: 10px; }
 .form--dark .form__note { font-size: 0.72rem; text-align: center; }
 .form__row { gap: 14px; }
-.footer__quick { justify-content: center; gap: 8px 28px; padding: 18px 0; }
-.footer__quick span { display: none; }
-.footer__quick a { font-size: 0.84rem; }
-.footer__legal { flex-direction: column; align-items: center; text-align: center; gap: 4px; padding-top: 18px; }
+.footer__legal { flex-direction: column; align-items: center; text-align: center; gap: 4px; padding-top: 18px; border-top: 0; }
 @media (max-width: 960px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__form { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } }
 
@@ -2008,6 +2016,144 @@ header.nav{display:none!important}
 </style>
 
 
+
+<style id="jk-footer-style">
+.jk-footer{
+  --jk-navy:#0b1528;
+  --jk-gold:#AF8344;
+  --jk-gold-soft:#D4A574;
+  --jk-serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --jk-sans:"Outfit",system-ui,sans-serif;
+  width:100%;
+  background:var(--jk-navy);
+  color:rgba(255,255,255,.78);
+  padding:clamp(2.75rem,5vw,4rem) 0 1.5rem;
+  font-family:var(--jk-sans);
+  font-size:.84rem;
+}
+.jk-footer *,.jk-footer *::before,.jk-footer *::after{box-sizing:border-box}
+.jk-footer a{color:inherit;text-decoration:none}
+.jk-footer a:hover{color:var(--jk-gold-soft)}
+.jk-footer-wrap{width:100%;max-width:none;margin:0;padding:0 clamp(1.25rem,4vw,3.5rem);box-sizing:border-box}
+.jk-footer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(175,131,68,.35);
+  text-align:center;
+}
+@media (min-width:720px){
+  .jk-footer-grid{grid-template-columns:1fr 1fr;align-items:start}
+  .jk-footer-form{grid-column:1 / -1}
+}
+@media (min-width:1024px){
+  .jk-footer-grid{grid-template-columns:1fr 1.15fr 1.15fr;gap:clamp(1.5rem,3vw,3rem)}
+  .jk-footer-form{grid-column:auto}
+}
+.jk-footer-brand{display:flex;flex-direction:column;align-items:center}
+.jk-footer-logo{width:5.5rem;height:auto;margin-bottom:.75rem;display:block}
+.jk-footer-line{
+  margin:0 0 .9rem;
+  font-family:var(--jk-serif);
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--jk-gold-soft);
+  line-height:1.4;
+}
+.jk-footer-social{display:flex;gap:.65rem;justify-content:center;margin-bottom:1rem}
+.jk-footer-social a{
+  width:2.15rem;height:2.15rem;border-radius:999px;
+  border:1px solid rgba(255,255,255,.45);
+  color:rgba(255,255,255,.85);
+  display:grid;place-items:center;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
+}
+.jk-footer-social a:hover{background:var(--jk-gold);border-color:var(--jk-gold);color:#fff}
+.jk-footer-social svg{width:1rem;height:1rem;fill:currentColor}
+.jk-footer-social a[aria-label="Instagram"] svg{fill:none;stroke:currentColor}
+.jk-footer-menu{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.35rem .9rem;max-width:22rem;
+}
+.jk-footer-menu a{font-size:.78rem;color:rgba(255,255,255,.72);letter-spacing:.02em}
+.jk-footer-menu a:hover{color:var(--jk-gold-soft)}
+.jk-footer-info h4,.jk-footer-form h4{
+  margin:0 0 .55rem;
+  font-family:var(--jk-serif);
+  font-weight:500;
+  font-size:1.1rem;
+  color:var(--jk-gold-soft);
+}
+.jk-footer-info address{
+  font-style:normal;
+  line-height:1.65;
+  color:rgba(255,255,255,.78);
+  margin:0;
+}
+.jk-footer-h4-gap{margin-top:1.15rem}
+.jk-footer-contact{margin-top:.9rem;line-height:1.75}
+.jk-footer-contact a{color:rgba(255,255,255,.82)}
+.jk-footer-contact a[href^="mailto"]{color:#9ec9e8}
+.jk-footer-form{display:flex;flex-direction:column;align-items:center}
+.jk-footer-formbox{
+  width:100%;max-width:32rem;
+  display:grid;gap:.65rem;
+  padding:1.15rem 1.25rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(175,131,68,.45);
+  text-align:left;
+}
+.jk-footer-formbox label{
+  display:grid;gap:.15rem;
+  font-size:.74rem;
+  letter-spacing:.03em;
+  color:rgba(255,255,255,.7);
+}
+.jk-footer-formbox input,
+.jk-footer-formbox textarea{
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  font:inherit;
+  font-size:.9rem;
+  padding:.4rem 0 .45rem;
+  outline:none;
+  resize:vertical;
+}
+.jk-footer-formbox input:focus,
+.jk-footer-formbox textarea:focus{border-bottom-color:var(--jk-gold)}
+.jk-footer-formbox textarea{min-height:2.75rem}
+.jk-footer-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media (max-width:420px){.jk-footer-row{grid-template-columns:1fr}}
+.jk-footer-submit{
+  justify-self:center;
+  margin-top:.25rem;
+  padding:.65rem 1.75rem;
+  border:0;
+  border-radius:.65rem;
+  background:var(--jk-gold);
+  color:#fff;
+  font:500 .8rem/1 var(--jk-sans);
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.jk-footer-submit:hover{background:#9c7339;transform:translateY(-1px)}
+.jk-footer-note{margin:0;font-size:.72rem;text-align:center;color:rgba(255,255,255,.55)}
+.jk-footer-note.is-error{color:#F3B7A2}
+.jk-footer-note.is-success{color:var(--jk-gold-soft)}
+.jk-footer-legal{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:.25rem;padding-top:1.15rem;
+  font-size:.75rem;color:rgba(255,255,255,.5);
+}
+.jk-footer-legal p{margin:0}
+</style>
+
 </head>
 <body>
 
@@ -2268,7 +2414,7 @@ header.nav{display:none!important}
   <div class="wrap">
     <div class="section-head">
       <span class="section-eyebrow">Site Plan</span>
-      <h2 class="h-serif">The Master Plan for Complete Living</h2>
+      <h2 class="h-serif">The Master Plan For Complete Living</h2>
       <p>Fifteen homes on each floor, set around a single loop with the courts, play areas and amphitheatre at the edges of the site.</p>
     </div>
 
@@ -2291,14 +2437,33 @@ header.nav{display:none!important}
             <button type="button" class="master__pin" style="--x:14%; --y:58%" data-id="12" aria-label="12: Organic waste converter">12</button>
             <button type="button" class="master__pin" style="--x:18%; --y:48%" data-id="13" aria-label="13: Children waiting area">13</button>
             <button type="button" class="master__pin" style="--x:55%; --y:80%" data-id="14" aria-label="14: Moonlight dinner deck">14</button>
-      </div>
+          </div>
           <div class="master__tip" id="siteTip" role="status" aria-live="polite">
             <span class="master__tip-num" id="siteTipNum">1</span>
             <span class="master__tip-label" id="siteTipLabel">Entry / Exit</span>
             <button type="button" class="master__tip-close" id="siteTipClose" aria-label="Close">×</button>
-    </div>
+          </div>
         </div>
       </figure>
+      <aside class="master__legend" aria-label="Site plan legend">
+        <h3 class="master__legend-title">Legend</h3>
+        <ol class="master__legend-list">
+          <li><div class="master__legend-item"><span class="master__legend-num">1</span><span>Entry / Exit</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">2</span><span>Pavilion</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">3</span><span>Racket sports area - 2 nos.</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">4</span><span>Cricket pitch</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">5</span><span>DG room</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">6</span><span>Amphitheatre</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">7</span><span>Outdoor community kitchen</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">8</span><span>Children's play area</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">9</span><span>Toddler sand pit</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">10</span><span>Senior citizen seating</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">11</span><span>Transformer</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">12</span><span>Organic waste converter</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">13</span><span>Children waiting area</span></div></li>
+          <li><div class="master__legend-item"><span class="master__legend-num">14</span><span>Moonlight dinner deck</span></div></li>
+        </ol>
+      </aside>
     </div>
   </div>
 </section>
@@ -2357,50 +2522,82 @@ header.nav{display:none!important}
 <section class="amenities amenities--gallery" id="amenity-gallery">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-eyebrow">Amenities</span>
-    <h2 class="h-serif">Explore Every Amenity</h2>
-      <p>Each space sits on the landscaped campus, ready for everyday use. Step through the gallery to see how they fit into life here.</p>
+      <h2 class="h-serif">Explore Every Amenity</h2>
+      <p>Scroll through the spaces you will use most - each is part of the landscaped campus, not tucked away in a basement. Tap the arrows or swipe to see more.</p>
+    </div>
   </div>
 
-    <div class="amenity-x" id="amenityExplorer" data-index="0">
-      <div class="amenity-x__stage" id="amenityStage">
-        <img class="amenity-x__img is-active" src="assets/gym.jpg" alt="" data-i="0">
-        <img class="amenity-x__img" src="assets/pickleball-court.jpg" alt="" data-i="1">
-        <img class="amenity-x__img" src="assets/kids-play.jpg" alt="" data-i="2">
-        <img class="amenity-x__img" src="assets/pool.jpg" alt="" data-i="3">
-        <img class="amenity-x__img" src="assets/bbq.jpg" alt="" data-i="4">
-        <img class="amenity-x__img" src="assets/sand-pit.jpg" alt="" data-i="5">
-        <img class="amenity-x__img" src="assets/yoga-deck.jpg" alt="" data-i="6">
-        <img class="amenity-x__img" src="assets/gazebo.jpg" alt="" data-i="7">
-        <img class="amenity-x__img" src="assets/senior-seating.jpg" alt="" data-i="8">
-        <img class="amenity-x__img" src="assets/amphitheatre.jpg" alt="" data-i="9">
-        <div class="amenity-x__copy">
-          <strong id="amenityTitle">Fully-Equipped Gym</strong>
-          <span id="amenityDesc">Cardio and strength equipment for daily workouts. Train before work or unwind in the evening without leaving home.</span>
-        </div>
+  <div class="amenity-carousel" id="amenityExplorer" data-index="0" aria-roledescription="carousel" aria-label="Amenity gallery">
+    <button type="button" class="amenity-carousel__nav amenity-carousel__nav--prev" id="amenityPrev" aria-label="Previous amenities">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="amenity-carousel__viewport">
+      <div class="amenity-carousel__track" id="amenityTrack">
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/gym.jpg" alt="Fully-equipped gym"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Fully-Equipped Gym</h3>
+          <p>Cardio and strength equipment for daily workouts - train before work or unwind in the evening without a gym membership elsewhere.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/pickleball-court.jpg" alt="Pickleball and tennis courts"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Pickleball / Tennis Courts</h3>
+          <p>Two dedicated racket-sport courts for badminton, tennis, and pickleball - casual games with neighbours or regular league-style play.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/kids-play.jpg" alt="Children's play area"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Children's Play Area</h3>
+          <p>A safe, open play zone with equipment suited to school-age children - visible from much of the campus so parents can relax nearby.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/pool.jpg" alt="Lap and kids pool"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Lap and Kids Pool</h3>
+          <p>A lap pool for exercise and a separate shallow area for children - swimming lessons, weekend fun, and fitness in one address.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/bbq.jpg" alt="Outdoor community kitchen"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Outdoor Community Kitchen</h3>
+          <p>An open-air kitchen beside the amphitheatre - cook, grill, and gather with neighbours over food and conversation.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/sand-pit.jpg" alt="Toddler sand pit"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Toddler Sand Pit</h3>
+          <p>A soft, enclosed play surface for the youngest residents - separate from the main play area so little ones can explore safely.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/yoga-deck.jpg" alt="Open-air yoga deck"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Open-Air Yoga Deck</h3>
+          <p>Practice yoga, stretch, or meditate in fresh air - a quiet counterpoint to the gym and pool when you want slower movement.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/gazebo.jpg" alt="Gazebo"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Gazebo</h3>
+          <p>A shaded outdoor pavilion for reading, conversation, or watching the grounds - a pause point anywhere on the campus loop.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/senior-seating.jpg" alt="Senior citizen seating"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Senior Citizen Seating</h3>
+          <p>Comfortable, shaded seating along landscaped paths - designed so older family members can enjoy the outdoors at their own pace.</p>
+        </article>
+        <article class="amenity-carousel__card">
+          <figure class="amenity-carousel__media"><img src="assets/amphitheatre.jpg" alt="Amphitheatre"></figure>
+          <span class="amenity-carousel__rule" aria-hidden="true"></span>
+          <h3>Amphitheatre</h3>
+          <p>A cosy outdoor amphitheatre for intimate gatherings and karaoke nights, with an adjoining community kitchen nearby.</p>
+        </article>
       </div>
-
-      <div class="amenity-x__bar">
-        <div class="amenity-x__count"><b id="amenityCurrent">01</b> / <span id="amenityTotal">10</span></div>
-        <div class="amenity-x__nav">
-          <button type="button" class="round-btn" id="amenityPrev" aria-label="Previous amenity">&#8592;</button>
-          <button type="button" class="round-btn" id="amenityNext" aria-label="Next amenity">&#8594;</button>
-        </div>
-      </div>
-
-      <div class="amenity-x__thumbs" id="amenityThumbs" role="tablist" aria-label="Amenity thumbnails">
-        <button type="button" class="amenity-x__thumb is-active" role="tab" aria-label="Fully-Equipped Gym" data-i="0"><img src="assets/gym.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Pickleball / Tennis Courts" data-i="1"><img src="assets/pickleball-court.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Children's Play Area" data-i="2"><img src="assets/kids-play.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Lap and Kids Pool" data-i="3"><img src="assets/pool.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Outdoor Community Kitchen" data-i="4"><img src="assets/bbq.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Toddler Sand Pit" data-i="5"><img src="assets/sand-pit.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Open-Air Yoga Deck" data-i="6"><img src="assets/yoga-deck.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Gazebo" data-i="7"><img src="assets/gazebo.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Senior Citizen Seating" data-i="8"><img src="assets/senior-seating.jpg" alt=""></button>
-        <button type="button" class="amenity-x__thumb" role="tab" aria-label="Amphitheatre" data-i="9"><img src="assets/amphitheatre.jpg" alt=""></button>
-      </div>
-  </div>
+    </div>
+    <button type="button" class="amenity-carousel__nav amenity-carousel__nav--next" id="amenityNext" aria-label="Next amenities">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
 </section>
 
@@ -2464,68 +2661,78 @@ header.nav{display:none!important}
 </main>
 
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-top">
-      <div>
-        <a class="site-footer-logo" href="/" aria-label="Jankal Group home">
-          <img src="/logo.png" alt="Jankal Group Logo" />
+
+<footer class="jk-footer" id="site-footer-contact">
+  <div class="jk-footer-wrap">
+    <div class="jk-footer-grid">
+      <div class="jk-footer-brand">
+        <a href="/" aria-label="Jankal Group home">
+          <img class="jk-footer-logo" src="/logo.png" alt="Jankal Group Logo" width="88" height="88" />
         </a>
-      </div>
-      <div class="site-footer-copy">
-        <h2>Building for <span>Eternity</span></h2>
-        <p>Every structure we build is a monument to the power of human imagination and hard work.</p>
-    </div>
-    </div>
-    <div class="site-footer-bottom">
-    <div>
-        <div class="site-footer-locs">
-          <a href="#">Bengaluru</a>
-          <a href="#">Hassan</a>
-          <a href="#">Tumakuru</a>
-          <a href="#">Dodballapur</a>
-          <a href="#">Chickballapur</a>
-          <a href="#">Sira</a>
-    </div>
+        <p class="jk-footer-line">Building for Eternity</p>
+        <div class="jk-footer-social" aria-label="Social media">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
         </div>
-      <div class="site-footer-nav footer-nav-col">
-        <h3>Explore</h3>
-        <div class="site-footer-locs">
+        <nav class="jk-footer-menu" aria-label="Footer navigation">
           <a href="/">Home</a>
-          <a href="/about/">About Us</a>
+          <a href="/about/">About</a>
           <a href="/projects/">Projects</a>
-          <a href="/steller.html">Stellar Heights</a>
           <a href="/careers/">Careers</a>
           <a href="/contact.html">Contact</a>
-    </div>
-  </div>
-      <div class="site-footer-contact">
-        <h3><a href="/contact.html">Contact</a></h3>
-        <a href="mailto:info@jankal.in">Email : info@jankal.in</a><br />
-        <a href="tel:9740702358">Office : 9740702358</a>
-        <a
-          class="site-footer-address"
-          href="https://www.google.com/maps/search/?api=1&query=JANKAL+group+Head+office+Bengaluru"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Address : 272, 12th Cross Rd, near Srinivas Temple,<br />
+          <a href="/steller.html">Stellar Heights</a>
+        </nav>
+      </div>
+      <div class="jk-footer-info">
+        <h4>Site Address</h4>
+        <address>
+          Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
+          beside Indus International School,<br />
+          Sarjapur Hobli, Anekal Taluk,<br />
+          Bengaluru Urban, Karnataka 562125
+        </address>
+        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <address>
+          272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
           Bengaluru, Karnataka 560086
-        </a><br /><a href="/contact.html">View contact page</a>
-      </div>
-      <div class="site-footer-copyright footer-credit">
-        <div class="footer-social" aria-label="Social media">
-          <a class="footer-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
-          <a class="footer-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.5l-4.5-5.9L6 22H2.9l7.3-8.3L1.5 2h6.7l4 5.4L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></svg></a>
-          <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
+        </address>
+        <div class="jk-footer-contact">
+          <a href="mailto:info@jankal.in">info@jankal.in</a><br />
+          <a href="tel:+919594959014">+91 95949 59014</a><br />
+          <a href="https://www.jankalstellarheights.in" target="_blank" rel="noopener noreferrer">www.jankalstellarheights.in</a>
         </div>
-        <p>design by pinakkaa</p>
       </div>
+      <div class="jk-footer-form">
+        <h4>Contact Us</h4>
+        <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
+          <div class="jk-footer-row">
+            <label>Your name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" autocomplete="tel" required />
+            </label>
+          </div>
+          <label>Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>Anything we should know?
+            <textarea name="message" rows="3"></textarea>
+          </label>
+          <button class="jk-footer-submit" type="submit">Submit</button>
+          <p class="jk-footer-note">We&apos;ll call you back within one working day.</p>
+        </form>
+      </div>
+    </div>
+    <div class="jk-footer-legal">
+      <p>&copy; 2026 Jankal Stellar Heights. All rights reserved.</p>
+      <p>Digital partner PINAKKAA</p>
     </div>
   </div>
 </footer>
+
 
 <a class="wa" href="https://wa.me/919740702358" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -2562,63 +2769,78 @@ header.nav{display:none!important}
   });
   }
 
-  /* Amenity spotlight explorer */
+  /* Amenity card carousel */
   (function () {
     var root = document.getElementById('amenityExplorer');
-    if (!root) return;
-    var items = [
-      { title: 'Fully-Equipped Gym', desc: 'Cardio and strength equipment for daily workouts. Train before work or unwind in the evening without leaving home.', alt: 'Fully-equipped gym' },
-      { title: 'Pickleball / Tennis Courts', desc: 'Two dedicated racket-sport courts for badminton, tennis, and pickleball. Casual games with neighbours or regular play.', alt: 'Pickleball and tennis courts' },
-      { title: "Children's Play Area", desc: 'A safe, open play zone with equipment suited to school-age children, visible from much of the campus so parents can relax nearby.', alt: "Children's play area" },
-      { title: 'Lap & Kids Pool', desc: 'A lap pool for exercise and a separate shallow area for children. Swimming lessons, weekend fun, and fitness in one address.', alt: 'Lap and kids pool' },
-      { title: 'Outdoor Community Kitchen', desc: 'An open-air kitchen beside the amphitheatre. Cook, grill, and gather with neighbours over food and conversation.', alt: 'Outdoor community kitchen' },
-      { title: 'Toddler Sand Pit', desc: 'A soft, enclosed play surface for the youngest residents, separate from the main play area so little ones can explore safely.', alt: 'Toddler sand pit' },
-      { title: 'Open-Air Yoga Deck', desc: 'Practice yoga, stretch, or meditate in fresh air. A quiet counterpoint to the gym and pool when you want slower movement.', alt: 'Open-air yoga deck' },
-      { title: 'Gazebo', desc: 'A shaded outdoor pavilion for reading, conversation, or watching the grounds. A pause point anywhere on the campus loop.', alt: 'Gazebo' },
-      { title: 'Senior Citizen Seating', desc: 'Comfortable, shaded seating along landscaped paths, designed so older family members can enjoy the outdoors at their own pace.', alt: 'Senior citizen seating' },
-      { title: 'Amphitheatre', desc: 'A cosy outdoor amphitheatre for intimate gatherings and karaoke nights, with an adjoining community kitchen nearby.', alt: 'Amphitheatre' }
-    ];
-    var imgs = root.querySelectorAll('.amenity-x__img');
-    var thumbs = root.querySelectorAll('.amenity-x__thumb');
-    var titleEl = document.getElementById('amenityTitle');
-    var descEl = document.getElementById('amenityDesc');
-    var curEl = document.getElementById('amenityCurrent');
-    var totalEl = document.getElementById('amenityTotal');
+    var track = document.getElementById('amenityTrack');
+    if (!root || !track) return;
+    var cards = track.querySelectorAll('.amenity-carousel__card');
     var prevBtn = document.getElementById('amenityPrev');
     var nextBtn = document.getElementById('amenityNext');
     var i = 0;
-    var n = items.length;
-    if (totalEl) totalEl.textContent = (n < 10 ? '0' : '') + n;
+    var n = cards.length;
+    var startX = 0;
+    var deltaX = 0;
+    var swiping = false;
 
-    function pad(num) { return (num < 10 ? '0' : '') + num; }
+    function showCount() {
+      var styles = getComputedStyle(root);
+      var v = parseInt(styles.getPropertyValue('--amenity-show'), 10);
+      return (v > 0 ? v : 1);
+    }
+
+    function maxIndex() {
+      return Math.max(0, n - showCount());
+    }
 
     function go(next) {
-      i = (next + n) % n;
-      imgs.forEach(function (img, idx) {
-        img.classList.toggle('is-active', idx === i);
-        if (idx === i) img.alt = items[i].alt;
-      });
-      thumbs.forEach(function (t, idx) {
-        t.classList.toggle('is-active', idx === i);
-        t.setAttribute('aria-selected', idx === i ? 'true' : 'false');
-      });
-      if (titleEl) titleEl.textContent = items[i].title;
-      if (descEl) descEl.textContent = items[i].desc;
-      if (curEl) curEl.textContent = pad(i + 1);
-      var activeThumb = thumbs[i];
-      if (activeThumb && activeThumb.scrollIntoView) {
-        activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      }
+      var max = maxIndex();
+      i = Math.max(0, Math.min(next, max));
+      var card = cards[0];
+      if (!card) return;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var step = card.getBoundingClientRect().width + gap;
+      track.style.transform = 'translate3d(' + (-i * step) + 'px,0,0)';
       root.setAttribute('data-index', String(i));
+      if (prevBtn) prevBtn.disabled = i <= 0;
+      if (nextBtn) nextBtn.disabled = i >= max;
     }
 
     if (prevBtn) prevBtn.addEventListener('click', function () { go(i - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { go(i + 1); });
-    thumbs.forEach(function (t) {
-      t.addEventListener('click', function () {
-        go(parseInt(t.getAttribute('data-i'), 10) || 0);
-      });
+
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      swiping = true;
+      startX = e.clientX;
+      deltaX = 0;
+      track.setPointerCapture(e.pointerId);
+      track.style.transition = 'none';
     });
+    track.addEventListener('pointermove', function (e) {
+      if (!swiping) return;
+      deltaX = e.clientX - startX;
+      var card = cards[0];
+      if (!card) return;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var step = card.getBoundingClientRect().width + gap;
+      track.style.transform = 'translate3d(' + (-i * step + deltaX) + 'px,0,0)';
+    });
+    function endSwipe(e) {
+      if (!swiping) return;
+      swiping = false;
+      track.style.transition = '';
+      if (Math.abs(deltaX) > 48) {
+        go(deltaX < 0 ? i + 1 : i - 1);
+      } else {
+        go(i);
+      }
+      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
+    }
+    track.addEventListener('pointerup', endSwipe);
+    track.addEventListener('pointercancel', endSwipe);
+
+    window.addEventListener('resize', function () { go(i); });
     go(0);
   })();
 
@@ -2697,7 +2919,7 @@ header.nav{display:none!important}
     '.plans .wrap',
     '.location .wrap',
     '.amenities--lead .wrap',
-    '.amenities--gallery .amenity-x',
+    '.amenities--gallery .amenity-carousel',
     '.additions .wrap',
     '.life .wrap',
     '.about .wrap',
@@ -2716,7 +2938,7 @@ header.nav{display:none!important}
   document.querySelectorAll('.intro__text, .homefeat__list, .life__text, .about__text, .vm__text').forEach(function (el) {
     markReveal(el, 'reveal--left');
   });
-  document.querySelectorAll('.intro__figure, .homefeat__figure, .about__figure, .vm__media, .master__figure').forEach(function (el) {
+  document.querySelectorAll('.intro__figure, .homefeat__figure, .about__figure, .vm__media').forEach(function (el) {
     markReveal(el, 'reveal--right');
   });
   document.querySelectorAll('.life__pair, .life__row, .life__stage, .location__map').forEach(function (el) {
@@ -2738,8 +2960,7 @@ header.nav{display:none!important}
     '.future ul',
     '.stats__list',
     '.blog__grid',
-    '.life__pair',
-    '.amenity-x__thumbs'
+    '.life__pair'
   ].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el) {
       el.classList.add('reveal', 'reveal-stagger');
@@ -2763,7 +2984,7 @@ header.nav{display:none!important}
     targets.forEach(function (t) { t.classList.add('is-in'); });
   }
 
-  /* Site plan interactive pins */
+  /* Site plan interactive pins + legend */
   (function () {
     var frame = document.querySelector('#sitePlanMap .master__frame');
     var tip = document.getElementById('siteTip');
@@ -2771,6 +2992,8 @@ header.nav{display:none!important}
     var tipLabel = document.getElementById('siteTipLabel');
     var tipClose = document.getElementById('siteTipClose');
     var pins = document.querySelectorAll('#sitePins .master__pin');
+    var legendBtns = document.querySelectorAll('#siteLegend button[data-id]');
+    var legend = document.getElementById('siteLegend');
     if (!frame || !tip || !pins.length) return;
 
     var LABELS = {
@@ -2808,10 +3031,17 @@ header.nav{display:none!important}
       tip.style.top = top + 'px';
     }
 
+    function syncLegend(id) {
+      legendBtns.forEach(function (b) {
+        b.classList.toggle('is-active', !!id && b.getAttribute('data-id') === id);
+      });
+    }
+
     function clearActive() {
       activeId = null;
       pins.forEach(function (p) { p.classList.remove('is-active'); });
       tip.classList.remove('is-open');
+      syncLegend(null);
     }
 
     function activate(id) {
@@ -2823,6 +3053,7 @@ header.nav{display:none!important}
       pins.forEach(function (p) {
         p.classList.toggle('is-active', p.getAttribute('data-id') === id);
       });
+      syncLegend(id);
       tipNum.textContent = id;
       tipLabel.textContent = LABELS[id] || '';
       var pin = document.querySelector('#sitePins .master__pin[data-id="' + id + '"]');
@@ -2835,12 +3066,20 @@ header.nav{display:none!important}
         activate(pin.getAttribute('data-id'));
       });
     });
+    legendBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        activate(btn.getAttribute('data-id'));
+      });
+    });
     if (tipClose) tipClose.addEventListener('click', function (e) {
       e.stopPropagation();
       clearActive();
     });
     document.addEventListener('click', function (e) {
-      if (!frame.contains(e.target)) clearActive();
+      if (frame.contains(e.target)) return;
+      if (legend && legend.contains(e.target)) return;
+      clearActive();
     });
     window.addEventListener('resize', function () {
       if (!activeId) return;
@@ -2975,5 +3214,33 @@ header.nav{display:none!important}
   });
 })();
 </script>
+
+<script id="jk-footer-form-script">
+(function(){
+  if (window.__jkFooterForm) return;
+  window.__jkFooterForm = true;
+  document.querySelectorAll("[data-jk-footer-form]").forEach(function(form){
+    var note = form.querySelector(".jk-footer-note");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = (form.name && form.name.value || "").trim();
+      var phone = (form.phone && form.phone.value || "").trim();
+      if (!name || !phone) {
+        if (note) {
+          note.textContent = "Please add your name and a phone number so we can call you back.";
+          note.className = "jk-footer-note is-error";
+        }
+        return;
+      }
+      if (note) {
+        note.textContent = "Thank you, " + name.split(" ")[0] + ". We'll call " + phone + " within one working day.";
+        note.className = "jk-footer-note is-success";
+      }
+      form.reset();
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
