@@ -1,5 +1,12 @@
 ErrorDocument 404 /404.html
 
+# Ensure image types serve correctly on Hostinger / Apache
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/jpeg .jpeg .jpg
+  AddType image/png .png
+</IfModule>
+
 # Stop stale HTML (old page until hard refresh)
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|htm)$">

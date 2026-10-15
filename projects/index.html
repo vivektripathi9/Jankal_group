@@ -44,22 +44,63 @@ p,span,a,li,button{
   font-family:var(--projects-sans);
 }
 .projects-hero{
-  padding-top:8rem;
-  padding-bottom:3.5rem;
+  position:relative;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:100vh;
+  min-height:100dvh;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background:#0a111f;
+  display:flex;
+  align-items:flex-end;
 }
-@media (min-width:640px){
-  .projects-hero{padding-top:10rem;padding-bottom:4rem}
+.projects-hero-media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
 }
-@media (min-width:1024px){
-  .projects-hero{padding-top:11rem;padding-bottom:4.5rem}
+.projects-hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:68% center;
+  display:block;
+}
+.projects-hero-shade{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(8,14,26,.78) 0%, rgba(8,14,26,.45) 42%, rgba(8,14,26,.12) 68%, transparent 100%),
+    linear-gradient(180deg, rgba(8,14,26,.42) 0%, transparent 34%, transparent 55%, rgba(8,14,26,.55) 100%);
 }
 .projects-hero-inner{
-  width:min(56rem,100%);
-  margin-inline:auto;
-  text-align:center;
+  position:relative;
+  z-index:1;
+  width:min(40rem, calc(100% - 3rem));
+  margin:0 auto 0 clamp(1.25rem,5vw,4.5rem);
+  padding:0 0 clamp(3.25rem,8vh,5.5rem);
+  text-align:left;
+}
+@media (max-width:720px){
+  .projects-hero-media img{object-position:72% center}
+  .projects-hero-inner{
+    width:min(36rem, calc(100% - 2.5rem));
+    margin-left:1.25rem;
+    margin-right:1.25rem;
+    padding-bottom:2.75rem;
+  }
+  .projects-hero-shade{
+    background:
+      linear-gradient(180deg, rgba(8,14,26,.5) 0%, rgba(8,14,26,.28) 40%, rgba(8,14,26,.72) 100%);
+  }
 }
 .projects-hero-title{
-  margin:0 0 1.1rem;
+  margin:0 0 1rem;
   font-family:var(--projects-display)!important;
   font-weight:300!important;
   font-size:clamp(2.75rem,6vw,4.25rem)!important;
@@ -68,14 +109,14 @@ p,span,a,li,button{
   color:#fff!important;
 }
 .projects-hero-copy{
-  margin:0 auto;
-  max-width:36rem;
+  margin:0;
+  max-width:34rem;
   font-family:var(--projects-sans)!important;
   font-weight:300!important;
   font-size:clamp(1rem,1.35vw,1.15rem)!important;
   line-height:1.75!important;
   letter-spacing:0.01em;
-  color:rgba(255,255,255,.72)!important;
+  color:rgba(255,255,255,.86)!important;
 }
 /* Project section titles / labels  -  same luxury stack */
 main h2{
@@ -212,10 +253,16 @@ main .text-sm{
 .project-shot img{
   width:100%;
   height:100%;
+  max-width:none;
   object-fit:cover;
   object-position:center;
   display:block;
   transition:transform 1s cubic-bezier(.22,1,.36,1);
+  background:#0e1620;
+}
+.project-shot img[src=""],
+.project-shot img:not([src]){
+  opacity:0;
 }
 .project-shot:hover img{transform:scale(1.05)}
 .project-shot-copy{
@@ -1208,7 +1255,16 @@ footer.w-full > div{
 }
 .projects-contact-btn:hover{transform:scale(1.03);background:#c4a030}
 </style>
-</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero px-6 sm:px-12 lg:px-16" aria-labelledby="projects-hero-title"><div class="projects-hero-inner animate-fade-up"><h1 id="projects-hero-title" class="projects-hero-title">Our Projects</h1><p class="projects-hero-copy">Take a look at Jankal&#x27;s signature projects, crafted to elevate everyday living with spaces that blend quality, style, and timeless appeal.</p><a class="projects-contact-btn" href="/contact.html">Contact</a></div></section><section class="project-feature animate-fade-up" id="columbia-bellaza" aria-labelledby="columbia-title">
+</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero" aria-labelledby="projects-hero-title">
+  <div class="projects-hero-media">
+    <img src="/assets/projects-hero-banner.png" alt="Twilight lights at modern Jankal residences" width="1920" height="1080" decoding="async" fetchpriority="high" />
+  </div>
+  <div class="projects-hero-shade" aria-hidden="true"></div>
+  <div class="projects-hero-inner animate-fade-up">
+    <h1 id="projects-hero-title" class="projects-hero-title">Our Projects</h1>
+    <p class="projects-hero-copy">Take a look at Jankal&#x27;s signature projects, crafted to elevate everyday living with spaces that blend quality, style, and timeless appeal.</p>
+  </div>
+</section><section class="project-feature animate-fade-up" id="columbia-bellaza" aria-labelledby="columbia-title">
   <div class="project-feature-inner">
     <header class="project-feature-head">
       <div class="project-feature-meta">
@@ -1220,8 +1276,8 @@ footer.w-full > div{
     </header>
     <div class="project-marquee" aria-label="Columbia Bellaza gallery">
       <div class="project-marquee-track">
-        <div class="project-shot"><img src="/Projects/1.webp" alt="Living spaces" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Living spaces</strong><span>Warm interiors for everyday living</span></div></div><div class="project-shot"><img src="/Projects/2.webp" alt="Gourmet kitchen" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Gourmet kitchen</strong><span>Crafted for modern family life</span></div></div><div class="project-shot"><img src="/Projects/3.webp" alt="Exterior view" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Exterior view</strong><span>Thoughtful residential architecture</span></div></div><div class="project-shot"><img src="/Projects/5.webp" alt="Grand entrance" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Grand entrance</strong><span>Welcoming arrival experience</span></div></div><div class="project-shot"><img src="/Projects/6.webp" alt="Dining room" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Dining room</strong><span>Spaces made for gathering</span></div></div><div class="project-shot"><img src="/Projects/4.jpeg" alt="Secure parking" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Secure parking</strong><span>Convenient everyday access</span></div></div><div class="project-shot"><img src="/Projects/7.jpeg" alt="Columbia Bellaza" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Columbia Bellaza</strong><span>JP Nagar Phase 8, Bengaluru</span></div></div>
-        <div class="project-shot"><img src="/Projects/1.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Living spaces</strong><span>Warm interiors for everyday living</span></div></div><div class="project-shot"><img src="/Projects/2.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Gourmet kitchen</strong><span>Crafted for modern family life</span></div></div><div class="project-shot"><img src="/Projects/3.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Exterior view</strong><span>Thoughtful residential architecture</span></div></div><div class="project-shot"><img src="/Projects/5.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Grand entrance</strong><span>Welcoming arrival experience</span></div></div><div class="project-shot"><img src="/Projects/6.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Dining room</strong><span>Spaces made for gathering</span></div></div><div class="project-shot"><img src="/Projects/4.jpeg" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Secure parking</strong><span>Convenient everyday access</span></div></div><div class="project-shot"><img src="/Projects/7.jpeg" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Columbia Bellaza</strong><span>JP Nagar Phase 8, Bengaluru</span></div></div>
+        <div class="project-shot"><img src="/projects/1.webp" alt="Living spaces" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Living spaces</strong><span>Warm interiors for everyday living</span></div></div><div class="project-shot"><img src="/projects/2.webp" alt="Gourmet kitchen" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Gourmet kitchen</strong><span>Crafted for modern family life</span></div></div><div class="project-shot"><img src="/projects/3.webp" alt="Exterior view" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Exterior view</strong><span>Thoughtful residential architecture</span></div></div><div class="project-shot"><img src="/projects/5.webp" alt="Grand entrance" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Grand entrance</strong><span>Welcoming arrival experience</span></div></div><div class="project-shot"><img src="/projects/6.webp" alt="Dining room" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Dining room</strong><span>Spaces made for gathering</span></div></div><div class="project-shot"><img src="/projects/4.jpeg" alt="Secure parking" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Secure parking</strong><span>Convenient everyday access</span></div></div><div class="project-shot"><img src="/projects/7.jpeg" alt="Columbia Bellaza" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Columbia Bellaza</strong><span>JP Nagar Phase 8, Bengaluru</span></div></div>
+        <div class="project-shot"><img src="/projects/1.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Living spaces</strong><span>Warm interiors for everyday living</span></div></div><div class="project-shot"><img src="/projects/2.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Gourmet kitchen</strong><span>Crafted for modern family life</span></div></div><div class="project-shot"><img src="/projects/3.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Exterior view</strong><span>Thoughtful residential architecture</span></div></div><div class="project-shot"><img src="/projects/5.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Grand entrance</strong><span>Welcoming arrival experience</span></div></div><div class="project-shot"><img src="/projects/6.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Dining room</strong><span>Spaces made for gathering</span></div></div><div class="project-shot"><img src="/projects/4.jpeg" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Secure parking</strong><span>Convenient everyday access</span></div></div><div class="project-shot"><img src="/projects/7.jpeg" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Columbia Bellaza</strong><span>JP Nagar Phase 8, Bengaluru</span></div></div>
       </div>
     </div>
   </div>
@@ -1237,8 +1293,8 @@ footer.w-full > div{
     </header>
     <div class="project-marquee" aria-label="Orchids gallery">
       <div class="project-marquee-track project-marquee-track--alt">
-        <div class="project-shot"><img src="/Projects/11.webp" alt="Building exterior" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Building exterior</strong><span>Premium residences in Yeshwantpur</span></div></div><div class="project-shot"><img src="/Projects/22.webp" alt="Orchids entrance" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Orchids entrance</strong><span>A welcoming first impression</span></div></div><div class="project-shot"><img src="/Projects/33.webp" alt="Project view" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Project view</strong><span>Designed for elevated living</span></div></div><div class="project-shot"><img src="/Projects/44.webp" alt="Facade detail" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Facade detail</strong><span>Quality craftsmanship throughout</span></div></div>
-        <div class="project-shot"><img src="/Projects/11.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Building exterior</strong><span>Premium residences in Yeshwantpur</span></div></div><div class="project-shot"><img src="/Projects/22.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Orchids entrance</strong><span>A welcoming first impression</span></div></div><div class="project-shot"><img src="/Projects/33.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Project view</strong><span>Designed for elevated living</span></div></div><div class="project-shot"><img src="/Projects/44.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Facade detail</strong><span>Quality craftsmanship throughout</span></div></div>
+        <div class="project-shot"><img src="/projects/11.webp" alt="Building exterior" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Building exterior</strong><span>Premium residences in Yeshwantpur</span></div></div><div class="project-shot"><img src="/projects/22.webp" alt="Orchids entrance" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Orchids entrance</strong><span>A welcoming first impression</span></div></div><div class="project-shot"><img src="/projects/33.webp" alt="Project view" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Project view</strong><span>Designed for elevated living</span></div></div><div class="project-shot"><img src="/projects/44.webp" alt="Facade detail" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Facade detail</strong><span>Quality craftsmanship throughout</span></div></div>
+        <div class="project-shot"><img src="/projects/11.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Building exterior</strong><span>Premium residences in Yeshwantpur</span></div></div><div class="project-shot"><img src="/projects/22.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Orchids entrance</strong><span>A welcoming first impression</span></div></div><div class="project-shot"><img src="/projects/33.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Project view</strong><span>Designed for elevated living</span></div></div><div class="project-shot"><img src="/projects/44.webp" alt="" loading="lazy" decoding="async" /><div class="project-shot-copy"><strong>Facade detail</strong><span>Quality craftsmanship throughout</span></div></div>
       </div>
     </div>
   </div>
