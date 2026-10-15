@@ -1228,7 +1228,45 @@ footer.w-full > div{
   footer.w-full h2{font-size:1.65rem!important}
 }
 </style>
-</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="relative h-screen w-full overflow-hidden" aria-label="Home banner"><img src="/assets/home-hero-banner.png" alt="Stellar Heights by Jankal Group. Live a legacy of distinction. Exclusive 3 and 4 BHK residences in Sarjapur." class="absolute inset-0 h-full w-full object-cover" width="1920" height="1080" decoding="async" fetchpriority="high" /><div class="absolute inset-0 bg-black/15"></div></section><section class="home-intro-section" aria-label="About Jankal Group">
+<style id="home-hero-mobile">
+.home-hero{position:relative;width:100%;overflow:hidden;background:#cfe0f0}
+.home-hero__desktop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.home-hero__shade{position:absolute;inset:0;background:rgba(0,0,0,.15);pointer-events:none;z-index:1;display:none}
+.home-hero__mobile{position:relative;width:100%;z-index:0}
+.home-hero__frame{position:relative;width:100%;aspect-ratio:819 / 1024}
+.home-hero__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.home-hero__slide.is-active{opacity:1;pointer-events:auto}
+.home-hero__slide img{width:100%;height:100%;object-fit:contain;object-position:center top;display:block}
+.home-hero__dots{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:2;display:flex;gap:.45rem;align-items:center}
+.home-hero__dot{width:.45rem;height:.45rem;border-radius:999px;border:0;padding:0;background:rgba(15,23,42,.35);cursor:pointer;transition:background .25s ease, transform .25s ease}
+.home-hero__dot.is-active{background:#0f172a;transform:scale(1.2)}
+@media (max-width:767px){
+  .home-hero{height:auto}
+}
+@media (min-width:768px){
+  .home-hero{height:100svh;background:#0f1a30}
+  .home-hero__desktop,.home-hero__shade{display:block}
+  .home-hero__mobile{display:none}
+}
+</style>
+</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="home-hero" aria-label="Home banner">
+  <img class="home-hero__desktop" src="/assets/home-hero-banner.png" alt="Stellar Heights by Jankal Group. Live a legacy of distinction. Exclusive 3 and 4 BHK residences in Sarjapur." width="1920" height="1080" decoding="async" fetchpriority="high" />
+  <div class="home-hero__shade" aria-hidden="true"></div>
+  <div class="home-hero__mobile" data-home-hero-mobile>
+    <div class="home-hero__frame">
+      <div class="home-hero__slide is-active">
+        <img src="/assets/home-hero-mobile-1.jpg" alt="Stellar Heights. More room for everything that matters. Exclusive 3 BHK apartments." width="819" height="1024" decoding="async" fetchpriority="high" />
+      </div>
+      <div class="home-hero__slide">
+        <img src="/assets/home-hero-mobile-2.jpg" alt="Stellar Heights. More room for everything that matters. Spacious layouts from 1655 to 1990 sqft." width="819" height="1024" decoding="async" />
+      </div>
+    </div>
+    <div class="home-hero__dots" role="tablist" aria-label="Banner slides">
+      <button type="button" class="home-hero__dot is-active" aria-label="Show banner 1" data-home-hero-dot="0"></button>
+      <button type="button" class="home-hero__dot" aria-label="Show banner 2" data-home-hero-dot="1"></button>
+    </div>
+  </div>
+</section><section class="home-intro-section" aria-label="About Jankal Group">
   <div class="home-intro-shell animate-fade-up">
     <div class="home-intro-brand">
       <img class="home-intro-logo" src="/logo.png" alt="Jankal Group Logo" />
@@ -1523,6 +1561,50 @@ footer.w-full > div{
   window.addEventListener("pageshow", function(e){
     if (e.persisted) toHero();
   });
+})();
+</script>
+<script id="home-hero-mobile-script">
+(function(){
+  var root = document.querySelector("[data-home-hero-mobile]");
+  if (!root) return;
+  var slides = Array.prototype.slice.call(root.querySelectorAll(".home-hero__slide"));
+  var dots = Array.prototype.slice.call(root.querySelectorAll("[data-home-hero-dot]"));
+  if (slides.length < 2) return;
+  var i = 0;
+  var timer = null;
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, idx){ s.classList.toggle("is-active", idx === i); });
+    dots.forEach(function(d, idx){ d.classList.toggle("is-active", idx === i); });
+  }
+  function next(){ show(i + 1); }
+  function start(){
+    stop();
+    if (window.matchMedia("(max-width:767px)").matches) {
+      timer = setInterval(next, 4200);
+    }
+  }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function(d){
+    d.addEventListener("click", function(){
+      show(parseInt(d.getAttribute("data-home-hero-dot"), 10) || 0);
+      start();
+    });
+  });
+  var x0 = null;
+  root.addEventListener("touchstart", function(e){
+    x0 = e.changedTouches[0].clientX;
+    stop();
+  }, {passive:true});
+  root.addEventListener("touchend", function(e){
+    if (x0 == null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    start();
+  }, {passive:true});
+  window.addEventListener("resize", start);
+  start();
 })();
 </script>
 </body></html>
