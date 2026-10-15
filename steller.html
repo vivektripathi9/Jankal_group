@@ -1022,7 +1022,7 @@ html.js .pagehero__sub { animation-delay: .32s; }
   background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.28) 45%, rgba(0,0,0,0) 100%);
 }
 .hero--banner .hero__frame-img { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, calc(100svh * 2.25)); z-index: 1; }
-.hero--banner .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.hero--banner .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 /* only on very wide, short windows: soft blurred edges instead of cutting the headline */
 .hero__blur { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) brightness(.6); }
 @media (min-width: 961px) and (max-width: 1440px) { .hero--banner .hero__frame-img { width: min(100%, calc(100svh * 2.25)); } }
@@ -1030,7 +1030,7 @@ html.js .pagehero__sub { animation-delay: .32s; }
 .hero--banner .hero__chip--right { display: inline-block; right: auto; left: 24px; z-index: 2; }
 @media (min-width: 961px) and (max-width: 1440px) { .hero--banner { height: 100svh; margin-top: 0; } }
 @media (max-width: 960px) { .hero--banner { height: auto; aspect-ratio: 16 / 9; } }
-@media (max-width: 760px) { .hero--banner { aspect-ratio: 1080 / 1350; } .hero--banner .hero__chip--right { display: none; } }
+@media (max-width: 760px) { .hero--banner { aspect-ratio: 819 / 1024; } .hero--banner .hero__chip--right { display: none; } }
 
 /* ---------- about: stats band ---------- */
 .stats { background: var(--navy); background-image: var(--chain); background-size: 96px 160px; padding: clamp(40px, 5vw, 64px) 0; }
@@ -1480,15 +1480,9 @@ body.is-sub .pagehero--post, .subpage .pagehero--post { padding: 32px 0 20px !im
   .article__body h2 { font-size: 1.15rem !important; }
   .article__body p, .article__body .article__intro { font-size: 0.97rem; }
 }
-/* banner (2400Ã—1200): never trim the headline or the "Exclusive 3 BHK" line */
+/* banner: full image, no crop of building */
 @media (min-width: 761px) {
-  .hero--banner .hero__frame-img { width: min(100%, calc((100svh - var(--navh, 84px)) * 2.1)); }
-  .hero--banner .hero__img { object-position: 85% 55%; }
-}
-
-/* ---------- banner: show the designer's image exactly as designed, full width, nothing trimmed ---------- */
-@media (min-width: 761px) {
-  .hero--banner { height: auto !important; aspect-ratio: 2 / 1; background: none; }
+  .hero--banner { height: auto !important; aspect-ratio: 16 / 9; background: none; }
   .hero--banner .hero__blur { display: none !important; }
   .hero--banner .hero__frame-img { position: absolute; inset: 0; left: 0; transform: none; width: 100% !important; }
   .hero--banner .hero__img { object-fit: cover; object-position: center; }
@@ -1946,6 +1940,12 @@ html.has-site-nav nav.fixed.top-0:not(.site-nav){
   background-image:linear-gradient(rgba(10,22,35,.58), rgba(10,22,35,.64)),url("/images/footer-background.png");
   background-position:center;background-size:cover;background-repeat:no-repeat;color:#fff;
 }
+@media (max-width:767px){
+  .site-footer{
+    background-image:linear-gradient(rgba(10,22,35,.45), rgba(10,22,35,.55)),url("/images/footer-background-mobile.jpg");
+    background-position:center top;
+  }
+}
 .site-footer *{color:#fff!important}
 .site-footer-copy h2 span{color:#D4A574!important}
 .site-footer a:hover{color:#D4AF37!important}
@@ -2025,10 +2025,10 @@ header.nav{display:none!important}
 
 <!-- HERO -->
 <section class="hero hero--banner" id="home">
-  <img src="assets/banner-desktop.jpg" alt="" aria-hidden="true" class="hero__blur">
+  <img src="/assets/stellar-hero-desktop.jpg" alt="" aria-hidden="true" class="hero__blur">
   <picture class="hero__frame-img">
-    <source media="(max-width: 760px)" srcset="assets/banner-mobile.jpg">
-    <img src="assets/banner-desktop.jpg" alt="Stellar Heights â€” More room for everything that matters. Exclusively 3 BHK apartments, spacious layouts from 1655 to 1990 sq ft." class="hero__img">
+    <source media="(max-width: 760px)" srcset="/assets/stellar-hero-mobile.jpg">
+    <img src="/assets/stellar-hero-desktop.jpg" alt="Stellar Heights. Modern residences with spacious layouts in Sarjapur." class="hero__img">
   </picture>
   <span class="hero__chip hero__chip--right">RERA PRM/KA/RERA/1251/308/PR/220126/008422</span>
 </section>
