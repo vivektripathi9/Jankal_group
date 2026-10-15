@@ -584,6 +584,9 @@ main .opacity-0:not(.animate-fade-up){
 .home-sectors{
   --home-display:"Cormorant Garamond","Instrument Serif",Georgia,serif;
   --home-sans:"Outfit","Instrument Sans",system-ui,sans-serif;
+  /* Keep sticky navy sector cards inside this block so they don't sit on the footer */
+  overflow:clip;
+  padding-bottom:1.5rem;
 }
 .home-sectors h2{
   font-family:var(--home-display)!important;
@@ -710,7 +713,7 @@ footer.w-full{
 }
 footer.w-full{
   background-color:transparent!important;
-  background-image:linear-gradient(rgba(10,22,35,.58), rgba(10,22,35,.64)),url("/images/footer-background.png")!important;
+  background-image:url("/images/footer-background.png")!important;
   background-position:center!important;
   background-size:cover!important;
   background-repeat:no-repeat!important;
