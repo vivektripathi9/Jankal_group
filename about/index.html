@@ -1,8 +1,8 @@
-<!DOCTYPE html><!--wC0nXJYdxdx1HYzDVlxa8--><html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/><meta charSet="utf-8"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<!DOCTYPE html><!--wC0nXJYdxdx1HYzDVlxa8--><html class="jankal-type" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <meta name="jankal-static" content="1" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/8e6fa89aa22d24ec-s.p.3aec397d.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/a218039a3287bcfd-s.p.4a23d71b.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/c875c6f5d3e977ac-s.p.80fc2c9e.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e2334d715941921e-s.p.d82a9aff.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/f06bf9da926bae75-s.p.c68a79fb.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" as="image" href="/logo.png"/><link rel="preload" as="image" href="/images/building-for-eternity.png"/><link rel="stylesheet" href="/_next/static/chunks/9b329ed0fe56e559.css" data-precedence="next"/><!-- purged next script preload --><!-- purged next script: 2408db8861534cd0.js --><!-- purged next script: e3c838b1b5004803.js --><!-- purged next script: 9ccad128ee45e4f6.js --><!-- purged next script: turbopack-ca7219acf858f759.js --><!-- purged next script: ff1a16fafef87110.js --><!-- purged next script: 247eb132b7f7b574.js --><!-- purged next script: 1c65f9b189d582fb.js --><!-- disabled about chunk 7683eb0fbe2f2918.js --><!-- disabled about chunk c6046838bae4ff24.js --><meta name="next-size-adjust" content=""/><title>Jankal Group</title><meta name="description" content="Jankal Group"/><link rel="icon" href="/favicon.ico?favicon.9116a471.ico" sizes="48x48" type="image/x-icon"/><!-- purged next script: a6dad97d9634a72d.js --><style id="about-hero-overrides">
+<meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/logo.png"/><link rel="preload" as="image" href="/images/building-for-eternity.png"/><link rel="stylesheet" href="/_next/static/chunks/9b329ed0fe56e559.css" data-precedence="next"/><!-- purged next script preload --><!-- purged next script: 2408db8861534cd0.js --><!-- purged next script: e3c838b1b5004803.js --><!-- purged next script: 9ccad128ee45e4f6.js --><!-- purged next script: turbopack-ca7219acf858f759.js --><!-- purged next script: ff1a16fafef87110.js --><!-- purged next script: 247eb132b7f7b574.js --><!-- purged next script: 1c65f9b189d582fb.js --><!-- disabled about chunk 7683eb0fbe2f2918.js --><!-- disabled about chunk c6046838bae4ff24.js --><meta name="next-size-adjust" content=""/><title>Jankal Group</title><meta name="description" content="Jankal Group"/><link rel="icon" href="/favicon.ico?favicon.9116a471.ico" sizes="48x48" type="image/x-icon"/><!-- purged next script: a6dad97d9634a72d.js --><style id="about-hero-overrides">
 .about-hero-media{
   margin-inline:auto;
   width:min(94%,1120px);
@@ -151,6 +151,44 @@
 }
 .about-commitment p{line-height:1.35!important;}
 .about-commitment .font-bold{font-weight:500!important;font-style:italic;}
+.about-pledge{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(16rem,.7fr);
+  gap:clamp(2rem,3.5vw,3.5rem);
+  align-items:stretch;
+  padding-top:1.75rem;
+  border-top:1px solid rgba(212,165,116,.55);
+}
+.about-pledge .about-commitment{
+  margin:0!important;
+  text-align:left!important;
+}
+.about-pledge .about-stats{
+  display:flex!important;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:0;
+  margin:0;
+  padding-left:clamp(1.5rem,2.2vw,2.25rem);
+  border-left:1px solid rgba(212,165,116,.55);
+}
+.about-pledge .about-stat{
+  align-items:flex-start!important;
+  text-align:left!important;
+  width:100%;
+  padding:.35rem 0;
+  border-bottom:0;
+}
+@media (max-width:800px){
+  .about-pledge{grid-template-columns:1fr;gap:1.75rem}
+  .about-pledge .about-stats{
+    border-left:0;
+    padding-left:0;
+    padding-top:1.15rem;
+    border-top:1px solid rgba(212,165,116,.55);
+  }
+}
 
 :root{
   --about-display:"Cormorant Garamond","Instrument Serif",Georgia,serif;
@@ -189,11 +227,18 @@ p,span,a,li,button{
   font-family:var(--about-sans);
 }
 /* Stats numbers stay display serif, premium */
+.about-stat{container-type:inline-size;min-width:0}
 .about-stat-num{
   font-family:var(--about-display)!important;
   font-weight:400!important;
   letter-spacing:-0.03em!important;
   font-variant-numeric:tabular-nums;
+  display:block;
+  max-width:100%;
+  white-space:nowrap!important;
+  line-height:1.05!important;
+  font-size:clamp(1.35rem, 4.6vw, 3.4rem)!important;
+  font-size:clamp(1.35rem, 16cqi, 4.25rem)!important;
 }
 .about-stat span:not(.about-stat-num){
   font-family:var(--about-sans)!important;
@@ -431,7 +476,7 @@ section .lg\:text-\[28px\]{
 </style>
 
 <style id="about-logo-style">
-.about-logo-section{background:transparent}
+.about-logo-section{display:none!important}
 .about-logo-inner{width:min(48rem,100%)}
 .about-logo-label{
   font-family:var(--about-display),"Cormorant Garamond",Georgia,serif!important;
@@ -912,6 +957,44 @@ main .animate-fade-up{
 .site-menu-links a.is-active{color:#fff}
 .site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
 .site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-menu-links .site-menu-group > .site-menu-projects{border-bottom:none}
+.site-menu.open .site-menu-group:nth-child(3) > a{transition-delay:.3s}
+.site-menu.is-closing .site-menu-group:nth-child(3) > a{transition-delay:.08s}
+.site-menu-sub{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  padding:0 0 0 2.5rem;
+  transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1), opacity .32s ease, padding .42s cubic-bezier(.22,1,.36,1);
+}
+.site-menu-sub-clip{overflow:hidden;min-height:0}
+.site-menu-group:hover > .site-menu-sub,
+.site-menu-group:focus-within > .site-menu-sub,
+.site-menu-group.is-open > .site-menu-sub{
+  grid-template-rows:1fr;
+  opacity:1;
+  padding-bottom:.45rem;
+}
+.site-menu-links .site-menu-sub a,
+.site-menu.open .site-menu-links .site-menu-sub a{
+  font-size:1rem;font-weight:500;padding:.42rem 0;border-bottom:none;
+  color:rgba(255,255,255,.78);
+  opacity:0;
+  transform:translateY(-6px);
+  transition:color .2s ease, opacity .34s ease, transform .42s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a,
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a,
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a:nth-child(2){transition-delay:.06s}
+.site-menu-links .site-menu-sub a:hover,
+.site-menu-links .site-menu-sub a:focus-visible{color:#D4AF37}
 .site-menu-foot{
   margin:1.75rem 0 0;
   padding-top:1.25rem;
@@ -1630,15 +1713,56 @@ footer.w-full > div{
 .jk-footer-note.is-error{color:#F3B7A2}
 .jk-footer-note.is-success{color:var(--jk-gold-soft)}
 .jk-footer-legal{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;gap:.25rem;padding-top:1.15rem;
+  display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;
+  text-align:center;gap:.75rem;padding-top:1.15rem;
   font-size:.75rem;color:rgba(255,255,255,.5);
+  white-space:nowrap;
 }
-.jk-footer-legal p{margin:0}
+.jk-footer-legal p{margin:0;white-space:nowrap}
 </style>
 
+<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/>
+<style id="about-pledge-balance">
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-pledge .about-commitment p{
+  font-size:clamp(20px,1.7vw,24px)!important;
+  font-weight:400!important;
+  line-height:1.6!important;
+  letter-spacing:0!important;
+  color:#2b3a52!important;
+  margin:0 0 1.15rem!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-pledge .about-commitment p:last-child{margin-bottom:0!important}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-pledge .about-commitment .font-bold{
+  font-weight:500!important;
+  font-style:italic;
+  color:#1a2a3a;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-pledge .about-stat-num{
+  font-size:clamp(1.85rem,2.4vw,2.5rem)!important;
+  line-height:1.05!important;
+  margin:0 0 .15rem!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-pledge .about-stat span:not(.about-stat-num){
+  text-transform:none!important;
+  letter-spacing:0!important;
+  font-size:16px!important;
+  font-weight:400!important;
+  line-height:1.35!important;
+  color:#34465c!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .about-mvp-phil-title{
+  font-family:"Jankal Poppins",sans-serif!important;
+  font-size:var(--text-body)!important;
+  font-weight:300!important;
+  font-style:normal!important;
+  line-height:var(--leading-body)!important;
+  letter-spacing:0!important;
+  max-width:none!important;
+  color:#2b3a52!important;
+}
+</style>
 </head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased">
-<div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#F5F4F0]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="px-6 pt-32 pb-8 sm:px-12 sm:pt-40 lg:px-16 lg:pt-44"><div class="mx-auto max-w-7xl"><div class="flex flex-col items-center text-center opacity-0"><h1 class="mb-6 text-[40px] font-normal leading-[135%] tracking-[-0.02em] text-[#2b3a52] sm:text-[52px] lg:mb-8 lg:text-[64px]" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">Building For<!-- --> <span class="italic text-[#D4A574]">Eternity</span></h1><p class="max-w-2xl text-base leading-relaxed text-[#2b3a52] sm:text-lg lg:text-xl">Jankal Group is a distinguished, family-owned enterprise with a longstanding construction industry presence spanning several decades</p></div><div class="about-hero-media mx-auto mt-12 w-[88%] max-w-4xl opacity-0 lg:mt-16"><div class="about-hero-frame relative w-full overflow-hidden rounded-2xl lg:rounded-3xl"><img alt="Building for Eternity - twilight sanctuary with reflective waters" decoding="async" data-nimg="fill" class="about-hero-img" width="2046" height="768" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;object-fit:contain" src="/images/building-for-eternity.png"/><div class="about-hero-caption"><div class="about-hero-caption-inner"><span class="about-hero-caption-kicker">A family name</span><h2 class="about-hero-caption-title">Where light meets <em>legacy</em></h2><span class="about-hero-caption-line"></span><p class="about-hero-caption-sub">Quiet craft, lasting presence, and homes shaped for generations.</p></div></div></div></div></div></section><section class="px-6 py-16 sm:px-12 lg:px-16 lg:py-24"><div class="mx-auto max-w-5xl"><div class="about-commitment mb-16 text-center opacity-0 lg:mb-24" style="font-family:var(--about-display), &quot;Cormorant Garamond&quot;, serif;letter-spacing:-0.02em;line-height:125%"><p class="mb-8 text-xl text-[#2b3a52] sm:text-2xl lg:mb-12 lg:text-[28px]">Our unwavering commitment to<!-- --> <span class="font-bold">quality and excellence</span> drives us to create innovative spaces that foster the growth and progress of the nation.</p><p class="text-xl text-[#2b3a52] sm:text-2xl lg:text-[28px]">We steward our firm with the honour of our family name at its heart, striving each day to elevate it through the quality of every project we undertake.</p></div><div class="about-stats grid grid-cols-1 gap-12 opacity-0 sm:grid-cols-3"><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">21M sq.ft+</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Luxurious Residences</span></div><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">3k+</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Residential Plots</span></div><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">1.5k</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Homes</span></div></div></div></section><section id="vision-mission" class="about-mvp px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-mvp-grid mx-auto"><div class="about-mvp-row about-mvp-row--vision"><div class="about-mvp-card"><div class="about-mvp-index">01</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Vision</span></div><p class="about-mvp-copy">To craft enduring landmarks that honour craftsmanship, elevate everyday living, and carry the Jankal name with integrity across generations. We envision homes, workplaces, and public works that feel timeless: thoughtfully planned, finely built, and ready for the lives that will unfold within them tomorrow.</p></div><figure class="about-mvp-media"><img src="/images/about-vision.avif" alt="Vision for enduring landmarks" loading="lazy" decoding="async" /></figure></div><div class="about-mvp-row about-mvp-row--mission"><figure class="about-mvp-media"><img src="/images/about-mission.avif" alt="Mission to build connected communities" loading="lazy" decoding="async" /></figure><div class="about-mvp-card"><div class="about-mvp-index">02</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Mission</span></div><p class="about-mvp-copy">We build spaces that connect people and strengthen community. We design and build thoughtful, inclusive spaces that bring people together and strengthen community connections.</p></div></div><div class="about-mvp-row about-mvp-row--philosophy"><div class="about-mvp-philosophy"><div class="about-mvp-index">03</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Philosophy  -  God is in the Details</span></div><h2 class="about-mvp-phil-title">The magic lies in the fine, subtle details, for they are the threads that elevate something from simple to exceptional.</h2></div><figure class="about-mvp-media"><img src="/images/about-philosophy.png" alt="Philosophy of care in every detail" loading="lazy" decoding="async" /></figure></div></div></section><section id="leadership" class="about-founders px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-founders-inner mx-auto"><div class="about-founders-head"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span>Hear from our Founders</span></div><div class="about-founders-stage" data-founders-stage><article class="about-founder-slide is-active" data-founder-slide><blockquote>"At Jankal, we build spaces that last. Our focus is on quality and innovation, creating environments that people can trust and enjoy for generations to come."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Ramesh L</p><p class="about-founder-role">Managing Director</p></div></article><article class="about-founder-slide" data-founder-slide><blockquote>"In every project, our choice of location carries purpose. We seek out emerging destinations, guided by years of expertise in selecting land that is both legally sound and truly worth investing in."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Surendra Babu P</p><p class="about-founder-role">Managing Director</p></div></article><article class="about-founder-slide" data-founder-slide><blockquote>"By tending to the finest details, life flows with greater ease, and the spaces we build quietly shape the rhythm of each person's journey."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Prajwal Ramesh</p><p class="about-founder-role">Director of Projects</p></div></article></div><div class="about-founders-dots" data-founder-dots role="tablist" aria-label="Founder quotes"><button type="button" class="is-active" aria-label="Show founder 1"></button><button type="button" aria-label="Show founder 2"></button><button type="button" aria-label="Show founder 3"></button></div></div></section><section class="about-logo-section px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-logo-inner mx-auto max-w-4xl"><div class="about-logo-head mb-6 text-center"><span class="about-logo-label">Our Logo</span></div><div class="about-logo-stage mb-8 flex justify-center"><div class="about-logo-flip relative h-40 w-40 sm:h-48 sm:w-48 lg:h-56 lg:w-56"><div class="about-logo-face about-logo-face-front"><img alt="Jankal Group Logo - Eagle" loading="lazy" decoding="async" data-nimg="fill" class="object-contain about-logo-img" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></div><div class="about-logo-face about-logo-face-back" aria-hidden="true"><img alt="" loading="lazy" decoding="async" data-nimg="fill" class="object-contain about-logo-img" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></div></div></div><p class="about-logo-copy text-center">An eagle flying toward the sun embodies our relentless pursuit of new horizons and ambition to reach greater heights.</p></div></section>
+<div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#F5F4F0]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="px-6 pt-32 pb-8 sm:px-12 sm:pt-40 lg:px-16 lg:pt-44"><div class="mx-auto max-w-7xl"><div class="flex flex-col items-center text-center opacity-0"><h1 class="type-h1 mb-6 text-[40px] font-normal leading-[135%] tracking-[-0.02em] text-[#2b3a52] sm:text-[52px] lg:mb-8 lg:text-[64px]" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">Building For<!-- --> <span class="italic text-[#D4A574]">Eternity</span></h1><p class="max-w-2xl text-base leading-relaxed text-[#2b3a52] sm:text-lg lg:text-xl">Jankal Group is a distinguished, family-owned enterprise with a longstanding construction industry presence spanning several decades</p></div><div class="about-hero-media mx-auto mt-12 w-[88%] max-w-4xl opacity-0 lg:mt-16"><div class="about-hero-frame relative w-full overflow-hidden rounded-2xl lg:rounded-3xl"><img alt="Building for Eternity - twilight sanctuary with reflective waters" decoding="async" data-nimg="fill" class="about-hero-img" width="2046" height="768" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;object-fit:contain" src="/images/building-for-eternity.png"/><div class="about-hero-caption"><div class="about-hero-caption-inner"><span class="about-hero-caption-kicker">A family name</span><h2 class="type-h2 about-hero-caption-title">Where light meets <em>legacy</em></h2><span class="about-hero-caption-line"></span><p class="about-hero-caption-sub">Quiet craft, lasting presence, and homes shaped for generations.</p></div></div></div></div></div></section><section class="px-6 py-16 sm:px-12 lg:px-16 lg:py-24"><div class="about-pledge mx-auto max-w-6xl"><div class="about-commitment mb-16 text-center opacity-0 lg:mb-24" style="font-family:var(--about-display), &quot;Cormorant Garamond&quot;, serif;letter-spacing:-0.02em;line-height:125%"><p class="mb-8 text-xl text-[#2b3a52] sm:text-2xl lg:mb-12 lg:text-[28px]">Our unwavering commitment to<!-- --> <span class="font-bold">quality and excellence</span> drives us to create innovative spaces that foster the growth and progress of the nation.</p><p class="text-xl text-[#2b3a52] sm:text-2xl lg:text-[28px]">We steward our firm with the honour of our family name at its heart, striving each day to elevate it through the quality of every project we undertake.</p></div><div class="about-stats grid grid-cols-1 gap-12 opacity-0 sm:grid-cols-3"><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">21M sq.ft+</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Luxurious Residences</span></div><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">3k+</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Residential Plots</span></div><div class="about-stat flex flex-col items-center text-center"><span class="about-stat-num mb-2 text-5xl font-normal text-[#D4A574] sm:text-6xl lg:text-7xl" style="font-family:var(--font-instrument-serif), &quot;Instrument Serif&quot;, serif">1.5k</span><span class="text-base font-medium text-[#2b3a52] lg:text-lg">Homes</span></div></div></div></section><section id="vision-mission" class="about-mvp px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-mvp-grid mx-auto"><div class="about-mvp-row about-mvp-row--vision"><div class="about-mvp-card"><div class="about-mvp-index">01</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Vision</span></div><p class="about-mvp-copy">To craft enduring landmarks that honour craftsmanship, elevate everyday living, and carry the Jankal name with integrity across generations. We envision homes, workplaces, and public works that feel timeless: thoughtfully planned, finely built, and ready for the lives that will unfold within them tomorrow.</p></div><figure class="about-mvp-media"><img src="/images/about-vision.avif" alt="Vision for enduring landmarks" loading="lazy" decoding="async" /></figure></div><div class="about-mvp-row about-mvp-row--mission"><figure class="about-mvp-media"><img src="/images/about-mission.avif" alt="Mission to build connected communities" loading="lazy" decoding="async" /></figure><div class="about-mvp-card"><div class="about-mvp-index">02</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Mission</span></div><p class="about-mvp-copy">We build spaces that connect people and strengthen community. We design and build thoughtful, inclusive spaces that bring people together and strengthen community connections.</p></div></div><div class="about-mvp-row about-mvp-row--philosophy"><div class="about-mvp-philosophy"><div class="about-mvp-index">03</div><div class="about-mvp-label"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span class="text-sm font-medium text-[#D4A574]">Philosophy  -  God is in the Details</span></div><h2 class="type-h2 about-mvp-phil-title">The magic lies in the fine, subtle details, for they are the threads that elevate something from simple to exceptional.</h2></div><figure class="about-mvp-media"><img src="/images/about-philosophy.png" alt="Philosophy of care in every detail" loading="lazy" decoding="async" /></figure></div></div></section><section id="leadership" class="about-founders px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-founders-inner mx-auto"><div class="about-founders-head"><svg class="h-5 w-5 text-[#D4A574]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="15" y2="15"></line><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg><span>Hear from our Founders</span></div><div class="about-founders-stage" data-founders-stage><article class="about-founder-slide is-active" data-founder-slide><blockquote>"At Jankal, we build spaces that last. Our focus is on quality and innovation, creating environments that people can trust and enjoy for generations to come."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Ramesh L</p><p class="about-founder-role">Managing Director</p></div></article><article class="about-founder-slide" data-founder-slide><blockquote>"In every project, our choice of location carries purpose. We seek out emerging destinations, guided by years of expertise in selecting land that is both legally sound and truly worth investing in."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Surendra Babu P</p><p class="about-founder-role">Managing Director</p></div></article><article class="about-founder-slide" data-founder-slide><blockquote>"By tending to the finest details, life flows with greater ease, and the spaces we build quietly shape the rhythm of each person's journey."</blockquote><div class="about-founder-meta"><p class="about-founder-name">Prajwal Ramesh</p><p class="about-founder-role">Director of Projects</p></div></article></div><div class="about-founders-dots" data-founder-dots role="tablist" aria-label="Founder quotes"><button type="button" class="is-active" aria-label="Show founder 1"></button><button type="button" aria-label="Show founder 2"></button><button type="button" aria-label="Show founder 3"></button></div></div></section><section class="about-logo-section px-6 py-16 opacity-0 sm:px-12 lg:px-16 lg:py-24"><div class="about-logo-inner mx-auto max-w-4xl"><div class="about-logo-head mb-6 text-center"><span class="about-logo-label">Our Logo</span></div><div class="about-logo-stage mb-8 flex justify-center"><div class="about-logo-flip relative h-40 w-40 sm:h-48 sm:w-48 lg:h-56 lg:w-56"><div class="about-logo-face about-logo-face-front"><img alt="Jankal Group Logo - Eagle" loading="lazy" decoding="async" data-nimg="fill" class="object-contain about-logo-img" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></div><div class="about-logo-face about-logo-face-back" aria-hidden="true"><img alt="" loading="lazy" decoding="async" data-nimg="fill" class="object-contain about-logo-img" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></div></div></div><p class="about-logo-copy text-center">An eagle flying toward the sun embodies our relentless pursuit of new horizons and ambition to reach greater heights.</p></div></section>
 
 
 <footer class="jk-footer" id="site-footer-contact">
@@ -1664,14 +1788,14 @@ footer.w-full > div{
         </nav>
       </div>
       <div class="jk-footer-info">
-        <h4>Site Address</h4>
+        <h4 class="type-h4">Site Address</h4>
         <address>
           Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
           beside Indus International School,<br />
           Sarjapur Hobli, Anekal Taluk,<br />
           Bengaluru Urban, Karnataka 562125
         </address>
-        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <h4 class="type-h4 jk-footer-h4-gap">Office Address</h4>
         <address>
           272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
@@ -1684,7 +1808,7 @@ footer.w-full > div{
         </div>
       </div>
       <div class="jk-footer-form">
-        <h4>Contact Us</h4>
+        <h4 class="type-h4">Contact Us</h4>
         <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
           <div class="jk-footer-row">
             <label>Your name
@@ -1954,12 +2078,13 @@ footer.w-full > div{
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
       a.classList.remove("is-active");
+      if (a.classList.contains("site-menu-projects")) return;
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
       var label = (a.querySelector("span:last-child") || a).textContent.trim();
@@ -1980,12 +2105,11 @@ footer.w-full > div{
       nav.setAttribute("data-site-nav", "1");
       document.body.appendChild(nav);
     }
-    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
+    if (!nav.querySelector(".site-nav-burger-lines") || nav.querySelector(".site-nav-contact")) {
       nav.innerHTML =
         '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
         '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
         '<div class="site-nav-actions">' +
-        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
         '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
         '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
         '</div>';
@@ -1998,10 +2122,10 @@ footer.w-full > div{
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v5" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
-      menu.dataset.menuV = "pages-v3";
+      menu.dataset.menuV = "pages-v5";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
@@ -2042,6 +2166,15 @@ footer.w-full > div{
       if (e.target === menu) closeMenu();
     });
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      if (a.classList.contains("site-menu-projects")) {
+        a.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+          if (!fine && a.parentElement) a.parentElement.classList.toggle("is-open");
+        });
+        return;
+      }
       a.addEventListener("click", closeMenu);
     });
   }

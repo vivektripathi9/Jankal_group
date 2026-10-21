@@ -1,8 +1,8 @@
-<!DOCTYPE html><!--wC0nXJYdxdx1HYzDVlxa8--><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<!DOCTYPE html><!--wC0nXJYdxdx1HYzDVlxa8--><html class="jankal-type" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <meta name="jankal-static" content="1" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/8e6fa89aa22d24ec-s.p.3aec397d.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/a218039a3287bcfd-s.p.4a23d71b.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/c875c6f5d3e977ac-s.p.80fc2c9e.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e2334d715941921e-s.p.d82a9aff.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/f06bf9da926bae75-s.p.c68a79fb.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" as="image" href="/logo.png"/><link rel="stylesheet" href="/_next/static/chunks/9b329ed0fe56e559.css" data-precedence="next"/><!-- purged next script preload --><!-- purged next script: 2408db8861534cd0.js --><!-- purged next script: e3c838b1b5004803.js --><!-- purged next script: 9ccad128ee45e4f6.js --><!-- purged next script: turbopack-ca7219acf858f759.js --><!-- purged next script: ff1a16fafef87110.js --><!-- purged next script: 247eb132b7f7b574.js --><!-- purged next script: 1c65f9b189d582fb.js --><!-- disabled projects chunk 7a9792dde09d7306.js --><!-- disabled projects chunk c6046838bae4ff24.js --><meta name="next-size-adjust" content=""/><title>Jankal Group</title><meta name="description" content="Jankal Group"/><link rel="icon" href="/favicon.ico?favicon.9116a471.ico" sizes="48x48" type="image/x-icon"/><!-- purged next script: a6dad97d9634a72d.js --><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/><style id="projects-fade-fallback">
+<meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/logo.png"/><link rel="stylesheet" href="/_next/static/chunks/9b329ed0fe56e559.css" data-precedence="next"/><!-- purged next script preload --><!-- purged next script: 2408db8861534cd0.js --><!-- purged next script: e3c838b1b5004803.js --><!-- purged next script: 9ccad128ee45e4f6.js --><!-- purged next script: turbopack-ca7219acf858f759.js --><!-- purged next script: ff1a16fafef87110.js --><!-- purged next script: 247eb132b7f7b574.js --><!-- purged next script: 1c65f9b189d582fb.js --><!-- disabled projects chunk 7a9792dde09d7306.js --><!-- disabled projects chunk c6046838bae4ff24.js --><meta name="next-size-adjust" content=""/><title>Jankal Group</title><meta name="description" content="Jankal Group"/><link rel="icon" href="/favicon.ico?favicon.9116a471.ico" sizes="48x48" type="image/x-icon"/><!-- purged next script: a6dad97d9634a72d.js --><style id="projects-fade-fallback">
 main .opacity-0{
   transition:opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
   transform:translateY(18px);
@@ -46,14 +46,13 @@ p,span,a,li,button{
 .projects-hero{
   position:relative;
   width:100%;
-  height:100vh;
-  height:100dvh;
-  min-height:100vh;
-  min-height:100dvh;
+  height:auto;
+  aspect-ratio:16 / 9;
+  min-height:0;
   margin:0;
   padding:0;
   overflow:hidden;
-  background:#0a111f;
+  background:#0f1a30;
   display:flex;
   align-items:flex-end;
 }
@@ -77,9 +76,7 @@ p,span,a,li,button{
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:
-    linear-gradient(90deg, rgba(8,14,26,.78) 0%, rgba(8,14,26,.45) 42%, rgba(8,14,26,.12) 68%, transparent 100%),
-    linear-gradient(180deg, rgba(8,14,26,.42) 0%, transparent 34%, transparent 55%, rgba(8,14,26,.55) 100%);
+  background:linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 58%, rgba(0,0,0,.5) 100%);
 }
 .projects-hero-inner{
   position:relative;
@@ -89,8 +86,9 @@ p,span,a,li,button{
   padding:0 0 clamp(3.25rem,8vh,5.5rem);
   text-align:left;
 }
-@media (max-width:720px){
-  .projects-hero-media img{object-position:center top}
+@media (max-width:760px){
+  .projects-hero{aspect-ratio:819 / 1024}
+  .projects-hero-media img{object-position:center}
   .projects-hero-inner{
     width:min(36rem, calc(100% - 2.5rem));
     margin-left:1.25rem;
@@ -98,8 +96,7 @@ p,span,a,li,button{
     padding-bottom:2.75rem;
   }
   .projects-hero-shade{
-    background:
-      linear-gradient(180deg, rgba(8,14,26,.5) 0%, rgba(8,14,26,.28) 40%, rgba(8,14,26,.72) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 62%, rgba(0,0,0,.55) 100%);
   }
 }
 .projects-hero-title{
@@ -676,6 +673,44 @@ section.syndicate .syndicate-sub{
 .site-menu-links a.is-active{color:#fff}
 .site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
 .site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-menu-links .site-menu-group > .site-menu-projects{border-bottom:none}
+.site-menu.open .site-menu-group:nth-child(3) > a{transition-delay:.3s}
+.site-menu.is-closing .site-menu-group:nth-child(3) > a{transition-delay:.08s}
+.site-menu-sub{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  padding:0 0 0 2.5rem;
+  transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1), opacity .32s ease, padding .42s cubic-bezier(.22,1,.36,1);
+}
+.site-menu-sub-clip{overflow:hidden;min-height:0}
+.site-menu-group:hover > .site-menu-sub,
+.site-menu-group:focus-within > .site-menu-sub,
+.site-menu-group.is-open > .site-menu-sub{
+  grid-template-rows:1fr;
+  opacity:1;
+  padding-bottom:.45rem;
+}
+.site-menu-links .site-menu-sub a,
+.site-menu.open .site-menu-links .site-menu-sub a{
+  font-size:1rem;font-weight:500;padding:.42rem 0;border-bottom:none;
+  color:rgba(255,255,255,.78);
+  opacity:0;
+  transform:translateY(-6px);
+  transition:color .2s ease, opacity .34s ease, transform .42s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a,
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a,
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a:nth-child(2){transition-delay:.06s}
+.site-menu-links .site-menu-sub a:hover,
+.site-menu-links .site-menu-sub a:focus-visible{color:#D4AF37}
 .site-menu-foot{
   margin:1.75rem 0 0;
   padding-top:1.25rem;
@@ -1393,23 +1428,24 @@ footer.w-full > div{
 .jk-footer-note.is-error{color:#F3B7A2}
 .jk-footer-note.is-success{color:var(--jk-gold-soft)}
 .jk-footer-legal{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;gap:.25rem;padding-top:1.15rem;
+  display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;
+  text-align:center;gap:.75rem;padding-top:1.15rem;
   font-size:.75rem;color:rgba(255,255,255,.5);
+  white-space:nowrap;
 }
-.jk-footer-legal p{margin:0}
+.jk-footer-legal p{margin:0;white-space:nowrap}
 </style>
 
-</head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero" aria-labelledby="projects-hero-title">
+<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/></head><body class="instrument_sans_1ebed184-module__bblteq__variable instrument_serif_72bbfbb4-module__cRt5FG__variable poppins_85bd1f39-module___lhE-a__variable antialiased"><div hidden=""><!--$--><!--/$--></div><main class="relative min-h-screen w-full bg-[#1a2a3a]"><nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 sm:p-8"><a class="relative block h-20 w-20 sm:h-24 sm:w-24" href="/"><img alt="Jankal Group Logo" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/logo.png"/></a><button class="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white" aria-label="Open menu"><div class="flex flex-col space-y-1.5"><span class="block h-0.5 w-5 bg-black"></span><span class="block h-0.5 w-5 bg-black"></span></div></button></nav><section class="projects-hero" aria-labelledby="projects-hero-title">
   <div class="projects-hero-media">
     <picture>
-      <source media="(max-width:720px)" srcset="/assets/projects-hero-mobile.jpg" />
-      <img src="/assets/projects-hero-desktop.jpg" alt="Stellar Heights aerial view of Jankal residences and amenities" width="1024" height="576" decoding="async" fetchpriority="high" />
+      <source media="(max-width:760px)" srcset="/assets/stellar-hero-mobile.jpg" />
+      <img src="/assets/stellar-hero-desktop.jpg" alt="Stellar Heights. Modern residences with spacious layouts in Sarjapur." width="1024" height="576" decoding="async" fetchpriority="high" />
     </picture>
   </div>
   <div class="projects-hero-shade" aria-hidden="true"></div>
   <div class="projects-hero-inner animate-fade-up">
-    <h1 id="projects-hero-title" class="projects-hero-title">Our Projects</h1>
+    <h1 id="projects-hero-title" class="type-h1 projects-hero-title">Our Projects</h1>
     <p class="projects-hero-copy">Take a look at Jankal&#x27;s signature projects, crafted to elevate everyday living with spaces that blend quality, style, and timeless appeal.</p>
   </div>
 </section><section class="project-feature animate-fade-up" id="columbia-bellaza" aria-labelledby="columbia-title">
@@ -1419,7 +1455,7 @@ footer.w-full > div{
         <span class="project-feature-index">01</span>
         <span class="project-feature-loc">JP Nagar Phase 8 · Residential</span>
       </div>
-      <h2 id="columbia-title" class="project-feature-title">Columbia Bellaza</h2>
+      <h2 id="columbia-title" class="type-h2 project-feature-title">Columbia Bellaza</h2>
       <p class="project-feature-desc">Marvelous Residential development in JP Nagar Phase 8</p>
     </header>
     <div class="project-marquee" aria-label="Columbia Bellaza gallery">
@@ -1436,7 +1472,7 @@ footer.w-full > div{
         <span class="project-feature-index">02</span>
         <span class="project-feature-loc">Yeshwantpur · 2 &amp; 3 BHK</span>
       </div>
-      <h2 id="orchids-title" class="project-feature-title">Orchids</h2>
+      <h2 id="orchids-title" class="type-h2 project-feature-title">Orchids</h2>
       <p class="project-feature-desc">2,3 BHK Located in Yeshwantpur, Bangalore, Orchids is a premium housing project launched by Jankal Infinity Projects.</p>
     </header>
     <div class="project-marquee" aria-label="Orchids gallery">
@@ -1470,14 +1506,14 @@ footer.w-full > div{
         </nav>
       </div>
       <div class="jk-footer-info">
-        <h4>Site Address</h4>
+        <h4 class="type-h4">Site Address</h4>
         <address>
           Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
           beside Indus International School,<br />
           Sarjapur Hobli, Anekal Taluk,<br />
           Bengaluru Urban, Karnataka 562125
         </address>
-        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <h4 class="type-h4 jk-footer-h4-gap">Office Address</h4>
         <address>
           272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
@@ -1490,7 +1526,7 @@ footer.w-full > div{
         </div>
       </div>
       <div class="jk-footer-form">
-        <h4>Contact Us</h4>
+        <h4 class="type-h4">Contact Us</h4>
         <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
           <div class="jk-footer-row">
             <label>Your name
@@ -1523,12 +1559,13 @@ footer.w-full > div{
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
       a.classList.remove("is-active");
+      if (a.classList.contains("site-menu-projects")) return;
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
       var label = (a.querySelector("span:last-child") || a).textContent.trim();
@@ -1549,12 +1586,11 @@ footer.w-full > div{
       nav.setAttribute("data-site-nav", "1");
       document.body.appendChild(nav);
     }
-    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
+    if (!nav.querySelector(".site-nav-burger-lines") || nav.querySelector(".site-nav-contact")) {
       nav.innerHTML =
         '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
         '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
         '<div class="site-nav-actions">' +
-        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
         '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
         '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
         '</div>';
@@ -1567,10 +1603,10 @@ footer.w-full > div{
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v5" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
-      menu.dataset.menuV = "pages-v3";
+      menu.dataset.menuV = "pages-v5";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
@@ -1611,6 +1647,15 @@ footer.w-full > div{
       if (e.target === menu) closeMenu();
     });
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      if (a.classList.contains("site-menu-projects")) {
+        a.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+          if (!fine && a.parentElement) a.parentElement.classList.toggle("is-open");
+        });
+        return;
+      }
       a.addEventListener("click", closeMenu);
     });
   }

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="jankal-type" lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Stellar Heights by Jankal Group â€” 3 BHK Homes, Sarjapurâ€“Attibele Road, Bengaluru</title>
 <meta name="description" content="Stellar Heights by Jankal Group: exclusively 3 BHK homes of 1655â€“1990 sq ft beside Indus International School on Sarjapurâ€“Attibele Road, Bengaluru. RERA PRM/KA/RERA/1251/308/PR/220126/008422.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+
 <style>
 /* ==========================================================
    Stellar Heights â€” Jankal Group
@@ -358,11 +358,14 @@ html.js .amenities--gallery .section-head.reveal::before {
   font-size: clamp(2.2rem, 4.2vw, 3.4rem);
 }
 .amenities--gallery .section-head p {
-  max-width: 46ch;
+  max-width: 42rem;
   margin: 16px auto 0;
   color: #7a7f89;
   font-size: 1rem;
   line-height: 1.7;
+}
+@media (max-width: 639px) {
+  .amenities--gallery .section-head p br { display: none; }
 }
 .amenity-carousel {
   --amenity-gap: 1.5rem;
@@ -425,13 +428,7 @@ html.js .amenities--gallery .section-head.reveal::before {
   line-height: 1.2;
   color: #0f1a30;
 }
-.amenity-carousel__card p {
-  margin: 0;
-  font-size: .95rem;
-  line-height: 1.65;
-  color: #6b7280;
-  max-width: 36ch;
-}
+.amenity-carousel__card p { display: none; }
 .amenity-carousel__nav {
   position: absolute;
   top: clamp(4.5rem, 12vw, 7.5rem);
@@ -693,7 +690,7 @@ html.js .amenities--gallery .section-head.reveal::before {
 .life__media figcaption { position: absolute; left: 14px; bottom: 12px; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,.9); padding: 5px 12px; border-radius: var(--pill); background: rgba(18,32,61,.45); backdrop-filter: blur(6px); }
 .life__text h3, .life__pair h3 { font-family: var(--serif); font-size: clamp(1.6rem, 2.2vw, 2.2rem); color: var(--navy); line-height: 1.15; margin-bottom: 16px; }
 .life__text h3::before, .life__pair h3::before { content: ""; display: block; width: 40px; height: 1px; background: var(--gold); margin-bottom: 18px; }
-.life__text p, .life__pair p { color: var(--muted); font-size: 0.95rem; max-width: 48ch; }
+.life__text p, .life__pair p { display: none; }
 .life__list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .life__list li { padding: 8px 16px; border: 1px solid var(--gold); border-radius: var(--pill); font-size: 0.82rem; font-weight: 500; color: var(--navy); }
 .life__pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 3vw, 48px); margin-bottom: clamp(48px, 6vw, 88px); }
@@ -707,7 +704,7 @@ html.js .amenities--gallery .section-head.reveal::before {
 .life__stage-text { max-width: 480px; }
 .life__stage-text h3 { font-family: var(--serif); font-size: clamp(1.8rem, 2.6vw, 2.6rem); line-height: 1.15; margin-bottom: 16px; }
 .life__stage-text h3::before { content: ""; display: block; width: 40px; height: 1px; background: var(--gold-soft); margin-bottom: 18px; }
-.life__stage-text p { color: rgba(255,255,255,.8); font-size: 0.95rem; }
+.life__stage-text p { display: none; }
 @media (max-width: 860px) {
   .life__row, .life__pair, { grid-template-columns: 1fr; }
   .life__row { grid-template-columns: 1fr; }
@@ -1763,6 +1760,44 @@ body.is-sub .pagehero--post, .subpage .pagehero--post { padding: 32px 0 20px !im
 .site-menu-links a.is-active{color:#fff}
 .site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
 .site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-menu-links .site-menu-group > .site-menu-projects{border-bottom:none}
+.site-menu.open .site-menu-group:nth-child(3) > a{transition-delay:.3s}
+.site-menu.is-closing .site-menu-group:nth-child(3) > a{transition-delay:.08s}
+.site-menu-sub{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  padding:0 0 0 2.5rem;
+  transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1), opacity .32s ease, padding .42s cubic-bezier(.22,1,.36,1);
+}
+.site-menu-sub-clip{overflow:hidden;min-height:0}
+.site-menu-group:hover > .site-menu-sub,
+.site-menu-group:focus-within > .site-menu-sub,
+.site-menu-group.is-open > .site-menu-sub{
+  grid-template-rows:1fr;
+  opacity:1;
+  padding-bottom:.45rem;
+}
+.site-menu-links .site-menu-sub a,
+.site-menu.open .site-menu-links .site-menu-sub a{
+  font-size:1rem;font-weight:500;padding:.42rem 0;border-bottom:none;
+  color:rgba(255,255,255,.78);
+  opacity:0;
+  transform:translateY(-6px);
+  transition:color .2s ease, opacity .34s ease, transform .42s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a,
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a,
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a:nth-child(2){transition-delay:.06s}
+.site-menu-links .site-menu-sub a:hover,
+.site-menu-links .site-menu-sub a:focus-visible{color:#D4AF37}
 .site-menu-foot{
   margin:1.75rem 0 0;
   padding-top:1.25rem;
@@ -2147,14 +2182,15 @@ header.nav{display:none!important}
 .jk-footer-note.is-error{color:#F3B7A2}
 .jk-footer-note.is-success{color:var(--jk-gold-soft)}
 .jk-footer-legal{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;gap:.25rem;padding-top:1.15rem;
+  display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;
+  text-align:center;gap:.75rem;padding-top:1.15rem;
   font-size:.75rem;color:rgba(255,255,255,.5);
+  white-space:nowrap;
 }
-.jk-footer-legal p{margin:0}
+.jk-footer-legal p{margin:0;white-space:nowrap}
 </style>
 
-</head>
+<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/></head>
 <body>
 
 
@@ -2184,12 +2220,12 @@ header.nav{display:none!important}
   <div class="wrap">
     <div class="location__intro">
       <div class="section-head">
-        <h2 class="h-serif">Location Advantages</h2>
-        <h3 class="location__sub">Where Work, Learning &amp; Growth Come Together</h3>
+        <h2 class="type-h2 h-serif">Location Advantages</h2>
+        <h3 class="type-h3 location__sub">Where Work, Learning &amp; Growth Come Together</h3>
         <p>From global workspaces and premier schools to landmark upcoming developments, everything that defines tomorrow's lifestyle is within easy reach.</p>
       </div>
       <div class="future">
-        <h3>The Future Takes Shape Here</h3>
+        <h3 class="type-h3">The Future Takes Shape Here</h3>
         <ul>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9h5v12M8 21V4h6v17M14 21v-8h7v8M3 21h18M5 12h1M5 15h1M10 7h2M10 10h2M10 13h2M17 16h1M17 19h1"/></svg><span>Swift City â€”<br>a growth corridor</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 17l-2 4M15 17l2 4M9 14h.5M14.5 14h.5"/></svg><span>Proposed Sarjapura &amp;<br>Attibele metro stations</span></li>
@@ -2256,13 +2292,13 @@ header.nav{display:none!important}
 <section class="intro" id="company">
   <div class="wrap intro__grid">
     <div class="intro__text">
-      <h2 class="h-serif">Building For <em>Eternity</em></h2>
+      <h2 class="type-h2 h-serif">Building For <em>Eternity</em></h2>
       <p class="lead">Every structure we build is a monument to the power of human imagination and hard work.</p>
       <p>Privacy is not an afterthought here; it is thoughtfully designed into every residence. With no common walls, homes planned without direct door-to-door alignment, and windows carefully positioned to avoid overlooking one another, every detail creates a greater sense of calm, comfort and personal space.</p>
       <p>Beyond your front door, a Bali-themed clubhouse, a moonlight dinner deck, and grounds planned around 70% open space bring people together without ever crowding them â€” so you can enjoy home the way it is meant to be: peacefully.</p>
     </div>
     <figure class="intro__figure">
-      <img src="assets/Stellar%20Residences%20at%20Sunset.png" alt="Stellar Heights residences at sunset">
+      <img src="assets/stellar-building-eternity.jpg" alt="Stellar Heights residences" width="1080" height="1350">
       
     </figure>
   </div>
@@ -2272,7 +2308,7 @@ header.nav{display:none!important}
 <section class="overview" id="project">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Project Overview</h2>
+      <h2 class="type-h2 h-serif">Project Overview</h2>
       <p>Exclusively 3 BHK â€” a community on Sarjapuraâ€“Attibele Road, Bengaluru, beside Indus International School.</p>
     </div>
     <ul class="overview__list">
@@ -2290,7 +2326,7 @@ header.nav{display:none!important}
 <section class="homefeat" id="living">
   <div class="wrap homefeat__grid">
     <div class="homefeat__list">
-      <h2 class="h-serif">Designed Around Real Living</h2>
+      <h2 class="type-h2 h-serif">Designed Around Real Living</h2>
       <p class="homefeat__sub">Every detail is thoughtfully considered to create a home that feels intuitive, comfortable, and effortless to live in. A seamless blend of smart planning, openness, and practicality ensures spaces that not only look refined but work beautifully for everyday life.</p>
     <ul class="features">
     <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18M8 7v5M14 12v5M11 17v-5"/><rect x="3" y="4" width="18" height="16" rx="1"/></svg><span>No common walls</span></li>
@@ -2308,7 +2344,7 @@ header.nav{display:none!important}
   </ul>
     </div>
     <figure class="homefeat__figure">
-      <img src="assets/Golden-Hour%20Luxury%20Residence.png" alt="Stellar Heights luxury residence at golden hour">
+      <img src="assets/stellar-real-living.jpg" alt="Stellar Heights entrance" width="1080" height="1350">
       
     </figure>
   </div>
@@ -2318,7 +2354,7 @@ header.nav{display:none!important}
 <section class="specs" id="specs">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Specifications</h2>
+      <h2 class="type-h2 h-serif">Specifications</h2>
       <p>What goes into every home and every common area. Open any line for the detail.</p>
     </div>
     <div class="strips">
@@ -2414,7 +2450,7 @@ header.nav{display:none!important}
   <div class="wrap">
     <div class="section-head">
       <span class="section-eyebrow">Site Plan</span>
-      <h2 class="h-serif">The Master Plan For Complete Living</h2>
+      <h2 class="type-h2 h-serif">The Master Plan For Complete Living</h2>
       <p>Fifteen homes on each floor, set around a single loop with the courts, play areas and amphitheatre at the edges of the site.</p>
     </div>
 
@@ -2436,7 +2472,6 @@ header.nav{display:none!important}
             <button type="button" class="master__pin" style="--x:82%; --y:78%" data-id="11" aria-label="11: Transformer">11</button>
             <button type="button" class="master__pin" style="--x:14%; --y:58%" data-id="12" aria-label="12: Organic waste converter">12</button>
             <button type="button" class="master__pin" style="--x:18%; --y:48%" data-id="13" aria-label="13: Children waiting area">13</button>
-            <button type="button" class="master__pin" style="--x:55%; --y:80%" data-id="14" aria-label="14: Moonlight dinner deck">14</button>
           </div>
           <div class="master__tip" id="siteTip" role="status" aria-live="polite">
             <span class="master__tip-num" id="siteTipNum">1</span>
@@ -2446,7 +2481,7 @@ header.nav{display:none!important}
         </div>
       </figure>
       <aside class="master__legend" aria-label="Site plan legend">
-        <h3 class="master__legend-title">Legend</h3>
+        <h3 class="type-h3 master__legend-title">Legend</h3>
         <ol class="master__legend-list">
           <li><div class="master__legend-item"><span class="master__legend-num">1</span><span>Entry / Exit</span></div></li>
           <li><div class="master__legend-item"><span class="master__legend-num">2</span><span>Pavilion</span></div></li>
@@ -2461,10 +2496,9 @@ header.nav{display:none!important}
           <li><div class="master__legend-item"><span class="master__legend-num">11</span><span>Transformer</span></div></li>
           <li><div class="master__legend-item"><span class="master__legend-num">12</span><span>Organic waste converter</span></div></li>
           <li><div class="master__legend-item"><span class="master__legend-num">13</span><span>Children waiting area</span></div></li>
-          <li><div class="master__legend-item"><span class="master__legend-num">14</span><span>Moonlight dinner deck</span></div></li>
         </ol>
       </aside>
-    </div>
+      </div>
   </div>
 </section>
 
@@ -2472,21 +2506,21 @@ header.nav{display:none!important}
 <section class="amenities amenities--lead" id="amenities">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Curated For Every Part Of Your Life</h2>
+      <h2 class="type-h2 h-serif">Curated For Every Part Of Your Life</h2>
       <p>A thoughtfully assembled collection of amenities designed to energise, connect, and unwind. From fitness and recreation to social spaces and quiet corners, every element is planned to support a balanced and fulfilling everyday lifestyle.</p>
       <p class="amenities__note">Every amenity below is for residents and their guests. Use the gallery to explore each space; the sections that follow explain how they fit into everyday life.</p>
     </div>
     <div class="amenities__overview amenities__overview--three">
       <article class="amenities__cat">
-        <h3>Energise</h3>
+        <h3 class="type-h3">Energise</h3>
         <p>Fully-equipped gym Â· Lap and kids pool Â· Open-air yoga deck</p>
       </article>
       <article class="amenities__cat">
-        <h3>Connect</h3>
+        <h3 class="type-h3">Connect</h3>
         <p>Pickleball / tennis courts Â· Outdoor community kitchen Â· Gazebo Â· Amphitheatre</p>
       </article>
       <article class="amenities__cat">
-        <h3>Unwind</h3>
+        <h3 class="type-h3">Unwind</h3>
         <p>Childrenâ€™s play area Â· Toddler sand pit Â· Senior citizen seating</p>
       </article>
     </div>
@@ -2496,23 +2530,23 @@ header.nav{display:none!important}
 <section class="additions">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Thoughtful Everyday Additions</h2>
+      <h2 class="type-h2 h-serif">Thoughtful Everyday Additions</h2>
       <p>Small, carefully planned features that make ordinary days easier â€” from the lobby to the school gate to evenings under the open sky.</p>
     </div>
     <div class="additions__grid additions__grid--three">
       <article>
         <figure><img src="assets/entrance-lobby.jpg" alt="Entrance lobby at Stellar Heights"></figure>
-        <h3>An Arrival Worth Coming Home To</h3>
+        <h3 class="type-h3">An Arrival Worth Coming Home To</h3>
         <p>The experience begins with a thoughtfully designed lobby that reflects warmth and comfort. A dedicated cloak room for parcel collection adds everyday convenience, so deliveries are received seamlessly and securely.</p>
       </article>
       <article>
         <figure><img src="assets/moonlight-deck.jpg" alt="Moonlight dinner deck at night"></figure>
-        <h3>Moonlight Dinner Deck</h3>
+        <h3 class="type-h3">Moonlight Dinner Deck</h3>
         <p>A striking terrace space, designed for evening tea, family dinners, quiet phone conversations, or simply unwinding beneath the open sky â€” where everyday moments feel elevated.</p>
       </article>
       <article>
         <figure><img src="assets/school-bus.jpg" alt="Monitored school bus waiting area"></figure>
-        <h3>Monitored School Bus Waiting Area</h3>
+        <h3 class="type-h3">Monitored School Bus Waiting Area</h3>
         <p>A safe, comfortable, and monitored school bus waiting area designed to bring greater ease and peace of mind to everyday living â€” especially useful with Indus International School just minutes away.</p>
       </article>
     </div>
@@ -2522,8 +2556,8 @@ header.nav{display:none!important}
 <section class="amenities amenities--gallery" id="amenity-gallery">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Explore Every Amenity</h2>
-      <p>Scroll through the spaces you will use most - each is part of the landscaped campus, not tucked away in a basement. Tap the arrows or swipe to see more.</p>
+      <h2 class="type-h2 h-serif">Explore Every Amenity</h2>
+      <p>Scroll through the spaces you will use most - each is part of the landscaped campus,<br>not tucked away in a basement. Tap the arrows or swipe to see more.</p>
     </div>
   </div>
 
@@ -2536,64 +2570,64 @@ header.nav{display:none!important}
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/gym.jpg" alt="Fully-equipped gym"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Fully-Equipped Gym</h3>
+          <h3 class="type-h3">Fully-Equipped Gym</h3>
           <p>Cardio and strength equipment for daily workouts - train before work or unwind in the evening without a gym membership elsewhere.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/pickleball-court.jpg" alt="Pickleball and tennis courts"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Pickleball / Tennis Courts</h3>
+          <h3 class="type-h3">Pickleball / Tennis Courts</h3>
           <p>Two dedicated racket-sport courts for badminton, tennis, and pickleball - casual games with neighbours or regular league-style play.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/kids-play.jpg" alt="Children's play area"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Children's Play Area</h3>
+          <h3 class="type-h3">Children's Play Area</h3>
           <p>A safe, open play zone with equipment suited to school-age children - visible from much of the campus so parents can relax nearby.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/pool.jpg" alt="Lap and kids pool"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Lap and Kids Pool</h3>
+          <h3 class="type-h3">Lap and Kids Pool</h3>
           <p>A lap pool for exercise and a separate shallow area for children - swimming lessons, weekend fun, and fitness in one address.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/bbq.jpg" alt="Outdoor community kitchen"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Outdoor Community Kitchen</h3>
+          <h3 class="type-h3">Outdoor Community Kitchen</h3>
           <p>An open-air kitchen beside the amphitheatre - cook, grill, and gather with neighbours over food and conversation.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/sand-pit.jpg" alt="Toddler sand pit"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Toddler Sand Pit</h3>
+          <h3 class="type-h3">Toddler Sand Pit</h3>
           <p>A soft, enclosed play surface for the youngest residents - separate from the main play area so little ones can explore safely.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/yoga-deck.jpg" alt="Open-air yoga deck"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Open-Air Yoga Deck</h3>
+          <h3 class="type-h3">Open-Air Yoga Deck</h3>
           <p>Practice yoga, stretch, or meditate in fresh air - a quiet counterpoint to the gym and pool when you want slower movement.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/gazebo.jpg" alt="Gazebo"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Gazebo</h3>
+          <h3 class="type-h3">Gazebo</h3>
           <p>A shaded outdoor pavilion for reading, conversation, or watching the grounds - a pause point anywhere on the campus loop.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/senior-seating.jpg" alt="Senior citizen seating"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Senior Citizen Seating</h3>
+          <h3 class="type-h3">Senior Citizen Seating</h3>
           <p>Comfortable, shaded seating along landscaped paths - designed so older family members can enjoy the outdoors at their own pace.</p>
         </article>
         <article class="amenity-carousel__card">
           <figure class="amenity-carousel__media"><img src="assets/amphitheatre.jpg" alt="Amphitheatre"></figure>
           <span class="amenity-carousel__rule" aria-hidden="true"></span>
-          <h3>Amphitheatre</h3>
+          <h3 class="type-h3">Amphitheatre</h3>
           <p>A cosy outdoor amphitheatre for intimate gatherings and karaoke nights, with an adjoining community kitchen nearby.</p>
         </article>
-      </div>
+  </div>
     </div>
     <button type="button" class="amenity-carousel__nav amenity-carousel__nav--next" id="amenityNext" aria-label="Next amenities">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
@@ -2604,18 +2638,18 @@ header.nav{display:none!important}
 <section class="life" id="life">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h-serif">Signature Spaces In Detail</h2>
+      <h2 class="type-h2 h-serif">Signature Spaces In Detail</h2>
       <p>The amenities that define Stellar Heights â€” how each space is meant to be used, and who it serves in your household.</p>
     </div>
 
     <div class="life__pair">
       <article>
-        <h3>Bali Themed Clubhouse</h3>
+        <h3 class="type-h3">Bali Themed Clubhouse</h3>
         <p>The clubhouse at Stellar Heights is designed as a space to connect, celebrate, and unwind. Inspired by the calm elegance of Bali, it brings together refined interiors and inviting social spaces. From memorable gatherings in the banquet hall to relaxed evenings at the bar counter, every space is crafted for meaningful interactions.</p>
         <figure class="life__media"><img src="assets/bali-clubhouse.jpg" alt="Bali themed clubhouse banquet hall"></figure>
       </article>
       <article>
-        <h3>Play Without Limits</h3>
+        <h3 class="type-h3">Play Without Limits</h3>
         <p>A versatile racket sport zone designed for badminton, tennis and pickleball â€” giving you the freedom to play, compete, and stay active your way.</p>
         <figure class="life__media"><img src="assets/play-without-limits.jpg" alt="Racket sports courts"></figure>
       </article>
@@ -2623,12 +2657,12 @@ header.nav{display:none!important}
 
     <div class="life__pair">
       <article>
-        <h3>Swim Into Balance</h3>
+        <h3 class="type-h3">Swim Into Balance</h3>
         <p>A well-designed lap pool ideal for both exercise and relaxation, offering a refreshing escape that fits seamlessly into your daily routine â€” alongside a kidsâ€™ pool for family play.</p>
         <figure class="life__media"><img src="assets/pool.jpg" alt="Lap pool"></figure>
       </article>
       <article>
-        <h3>Strength, Every Day</h3>
+        <h3 class="type-h3">Strength, Every Day</h3>
         <p>A complete fitness experience designed to keep you strong, active, and balanced. From focused workouts in the fully equipped gym to mindful moments on the open-air yoga deck, every space helps you make wellness a natural part of everyday life.</p>
         <figure class="life__media"><img src="assets/strength.jpg" alt="Gym"></figure>
       </article>
@@ -2640,7 +2674,7 @@ header.nav{display:none!important}
         <figure class="life__media"><img src="assets/hobby-room.jpg" alt="Hobby room"></figure>
       </div>
       <div class="life__text">
-        <h3>A Space To Work, To Evolve, To Achieve</h3>
+        <h3 class="type-h3">A Space To Work, To Evolve, To Achieve</h3>
         <p>A thoughtfully designed terrace space that brings together focus and inspiration. Whether you're working towards your aspirations, exploring new ideas, or simply unwinding with a book, this is a space created for personal growth, creativity, and quiet productivity.</p>
         <ul class="life__list"><li>Co-working space</li><li>Library</li><li>Hobby room</li></ul>
       </div>
@@ -2651,7 +2685,7 @@ header.nav{display:none!important}
     <img src="assets/amphitheatre.jpg" alt="Outdoor amphitheatre at night">
     <div class="wrap life__stage-inner">
       <div class="life__stage-text">
-        <h3>Where Moments Take Centre Stage</h3>
+        <h3 class="type-h3">Where Moments Take Centre Stage</h3>
         <p>A cosy outdoor amphitheatre designed for intimate gatherings, karaoke nights, and shared moments, with an adjoining community kitchen that brings people together over food and conversation. A warm, inviting space where laughter lingers and evenings come alive.</p>
       </div>
     </div>
@@ -2674,7 +2708,7 @@ header.nav{display:none!important}
           <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
-        </div>
+      </div>
         <nav class="jk-footer-menu" aria-label="Footer navigation">
           <a href="/">Home</a>
           <a href="/about/">About</a>
@@ -2682,17 +2716,17 @@ header.nav{display:none!important}
           <a href="/careers/">Careers</a>
           <a href="/contact.html">Contact</a>
           <a href="/steller.html">Stellar Heights</a>
-        </nav>
-      </div>
+      </nav>
+    </div>
       <div class="jk-footer-info">
-        <h4>Site Address</h4>
+        <h4 class="type-h4">Site Address</h4>
         <address>
           Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
           beside Indus International School,<br />
           Sarjapur Hobli, Anekal Taluk,<br />
           Bengaluru Urban, Karnataka 562125
         </address>
-        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <h4 class="type-h4 jk-footer-h4-gap">Office Address</h4>
         <address>
           272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
@@ -2702,10 +2736,10 @@ header.nav{display:none!important}
           <a href="mailto:info@jankal.in">info@jankal.in</a><br />
           <a href="tel:+919594959014">+91 95949 59014</a><br />
           <a href="https://www.jankalstellarheights.in" target="_blank" rel="noopener noreferrer">www.jankalstellarheights.in</a>
+    </div>
         </div>
-      </div>
       <div class="jk-footer-form">
-        <h4>Contact Us</h4>
+        <h4 class="type-h4">Contact Us</h4>
         <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
           <div class="jk-footer-row">
             <label>Your name
@@ -2723,9 +2757,9 @@ header.nav{display:none!important}
           </label>
           <button class="jk-footer-submit" type="submit">Submit</button>
           <p class="jk-footer-note">We&apos;ll call you back within one working day.</p>
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
     <div class="jk-footer-legal">
       <p>&copy; 2026 Jankal Stellar Heights. All rights reserved.</p>
       <p>Digital partner PINAKKAA</p>
@@ -3009,8 +3043,7 @@ header.nav{display:none!important}
       '10': 'Senior citizen seating',
       '11': 'Transformer',
       '12': 'Organic waste converter',
-      '13': 'Children waiting area',
-      '14': 'Moonlight dinner deck'
+      '13': 'Children waiting area'
     };
 
     var activeId = null;
@@ -3095,12 +3128,13 @@ header.nav{display:none!important}
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
       a.classList.remove("is-active");
+      if (a.classList.contains("site-menu-projects")) return;
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
       var label = (a.querySelector("span:last-child") || a).textContent.trim();
@@ -3121,12 +3155,11 @@ header.nav{display:none!important}
       nav.setAttribute("data-site-nav", "1");
       document.body.appendChild(nav);
     }
-    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
+    if (!nav.querySelector(".site-nav-burger-lines") || nav.querySelector(".site-nav-contact")) {
       nav.innerHTML =
         '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
         '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
         '<div class="site-nav-actions">' +
-        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
         '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
         '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
         '</div>';
@@ -3139,10 +3172,10 @@ header.nav{display:none!important}
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v5" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
-      menu.dataset.menuV = "pages-v3";
+      menu.dataset.menuV = "pages-v5";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
@@ -3183,6 +3216,15 @@ header.nav{display:none!important}
       if (e.target === menu) closeMenu();
     });
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      if (a.classList.contains("site-menu-projects")) {
+        a.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+          if (!fine && a.parentElement) a.parentElement.classList.toggle("is-open");
+        });
+        return;
+      }
       a.addEventListener("click", closeMenu);
     });
   }

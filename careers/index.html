@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="jankal-type" lang="en">
 <head>
   <meta charset="utf-8" /><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
@@ -10,9 +10,9 @@
   <title>Careers | Jankal Group</title>
   <meta name="description" content="Join Jankal Group. Explore openings for engineers, foremen, and partners building enduring landmarks across Karnataka." />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  
+  
 <style id="site-nav-style">
 /* Match main-site React navbar (index/projects/careers) */
 .site-nav{
@@ -278,6 +278,44 @@
 .site-menu-links a.is-active{color:#fff}
 .site-menu-links a.is-active .site-menu-idx{color:rgba(255,255,255,.45)}
 .site-menu-links a.site-menu-accent{color:#fff}
+.site-menu-group{display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-menu-links .site-menu-group > .site-menu-projects{border-bottom:none}
+.site-menu.open .site-menu-group:nth-child(3) > a{transition-delay:.3s}
+.site-menu.is-closing .site-menu-group:nth-child(3) > a{transition-delay:.08s}
+.site-menu-sub{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  padding:0 0 0 2.5rem;
+  transition:grid-template-rows .42s cubic-bezier(.22,1,.36,1), opacity .32s ease, padding .42s cubic-bezier(.22,1,.36,1);
+}
+.site-menu-sub-clip{overflow:hidden;min-height:0}
+.site-menu-group:hover > .site-menu-sub,
+.site-menu-group:focus-within > .site-menu-sub,
+.site-menu-group.is-open > .site-menu-sub{
+  grid-template-rows:1fr;
+  opacity:1;
+  padding-bottom:.45rem;
+}
+.site-menu-links .site-menu-sub a,
+.site-menu.open .site-menu-links .site-menu-sub a{
+  font-size:1rem;font-weight:500;padding:.42rem 0;border-bottom:none;
+  color:rgba(255,255,255,.78);
+  opacity:0;
+  transform:translateY(-6px);
+  transition:color .2s ease, opacity .34s ease, transform .42s cubic-bezier(.22,1,.36,1), padding-left .2s ease;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a,
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a,
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a{
+  opacity:1;
+  transform:none;
+}
+.site-menu.open .site-menu-group:hover > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group:focus-within > .site-menu-sub a:nth-child(2),
+.site-menu.open .site-menu-group.is-open > .site-menu-sub a:nth-child(2){transition-delay:.06s}
+.site-menu-links .site-menu-sub a:hover,
+.site-menu-links .site-menu-sub a:focus-visible{color:#D4AF37}
 .site-menu-foot{
   margin:1.75rem 0 0;
   padding-top:1.25rem;
@@ -1111,24 +1149,24 @@ body.apply-modal-open{overflow:hidden}
 .jk-footer-note.is-error{color:#F3B7A2}
 .jk-footer-note.is-success{color:var(--jk-gold-soft)}
 .jk-footer-legal{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;gap:.25rem;padding-top:1.15rem;
+  display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;
+  text-align:center;gap:.75rem;padding-top:1.15rem;
   font-size:.75rem;color:rgba(255,255,255,.5);
+  white-space:nowrap;
 }
-.jk-footer-legal p{margin:0}
+.jk-footer-legal p{margin:0;white-space:nowrap}
 </style>
 
-</head>
+<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/></head>
 <body>
 <header class="site-nav" id="siteNav" data-site-nav>
   <a class="site-nav-logo" href="/" aria-label="Jankal Group home">
     <img src="/logo.png" alt="Jankal Group Logo" />
   </a>
   <div class="site-nav-actions">
-    <a class="site-nav-contact" href="/contact.html">Contact</a>
-    <button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">
-      <span class="site-nav-burger-lines"><span></span><span></span></span>
-    </button>
+  <button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">
+    <span class="site-nav-burger-lines"><span></span><span></span></span>
+  </button>
   </div>
 </header>
 
@@ -1136,7 +1174,7 @@ body.apply-modal-open{overflow:hidden}
   <section class="careers-hero" aria-label="Careers hero">
     <div class="careers-hero-bg" aria-hidden="true"></div>
     <div class="careers-hero-inner">
-      <h1 class="careers-hero-brand">Jankal <em>Careers</em></h1>
+      <h1 class="type-h1 careers-hero-brand">Careers</h1>
       <p class="careers-hero-lead">Build landmarks that outlast us. Join a family-led construction group shaping homes, infrastructure, and communities across Karnataka.</p>
       <div class="careers-hero-actions">
         <button class="btn btn-ghost" type="button" data-apply-open>
@@ -1154,27 +1192,27 @@ body.apply-modal-open{overflow:hidden}
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         Why Jankal
       </p>
-      <h2 class="careers-title reveal">Work that carries our name</h2>
+      <h2 class="type-h2 careers-title reveal">Work that carries our name</h2>
       <p class="careers-sub reveal">We hire for craft, character, and care. Every site, drawing, and delivery reflects the honour of a family enterprise built over decades.</p>
       <div class="why-grid">
         <article class="why-item reveal">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h3>Enduring craft</h3>
+          <h3 class="type-h3">Enduring craft</h3>
           <p>Projects designed and built to last, with standards that protect the Jankal name.</p>
         </article>
         <article class="why-item reveal">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 10l7-7 7 7"/><path d="M5 21h14"/></svg></div>
-          <h3>Real growth</h3>
+          <h3 class="type-h3">Real growth</h3>
           <p>Hands-on responsibility across residential, commercial, and government works.</p>
         </article>
         <article class="why-item reveal">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Trusted integrity</h3>
+          <h3 class="type-h3">Trusted integrity</h3>
           <p>Transparent teams, clear communication, and pride in every handover.</p>
         </article>
         <article class="why-item reveal">
           <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Shared purpose</h3>
+          <h3 class="type-h3">Shared purpose</h3>
           <p>Collaborate with partners and crews who build communities, not just structures.</p>
         </article>
       </div>
@@ -1187,13 +1225,13 @@ body.apply-modal-open{overflow:hidden}
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
         Current openings
       </p>
-      <h2 class="careers-title reveal">Roles open now</h2>
+      <h2 class="type-h2 careers-title reveal">Roles open now</h2>
       <p class="careers-sub reveal">Explore live positions across engineering, site leadership, and partnership opportunities.</p>
       <div class="openings-list">
         <a class="opening opening--navy reveal" href="#" data-apply-open data-apply-role="Civil Senior Engineers">
           <div class="opening-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <div class="opening-body">
-            <h3>Civil Senior Engineers</h3>
+            <h3 class="type-h3">Civil Senior Engineers</h3>
             <div class="opening-meta">
               <span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/></svg>2 Positions</span>
               <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Karnataka sites</span>
@@ -1205,7 +1243,7 @@ body.apply-modal-open{overflow:hidden}
         <a class="opening opening--gold reveal" href="#" data-apply-open data-apply-role="Foremen">
           <div class="opening-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V10l7-5 7 5v10"/><path d="M9 20v-5h6v5"/><path d="M12 5V3"/></svg></div>
           <div class="opening-body">
-            <h3>Foremen</h3>
+            <h3 class="type-h3">Foremen</h3>
             <div class="opening-meta">
               <span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/></svg>10 Positions</span>
               <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Multiple locations</span>
@@ -1217,7 +1255,7 @@ body.apply-modal-open{overflow:hidden}
         <a class="opening opening--slate reveal" href="#" data-apply-open data-apply-role="Contractors & Vendors">
           <div class="opening-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/></svg></div>
           <div class="opening-body">
-            <h3>Contractors &amp; Vendors</h3>
+            <h3 class="type-h3">Contractors &amp; Vendors</h3>
             <div class="opening-meta">
               <span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Open for collaboration</span>
               <span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Partner network</span>
@@ -1232,34 +1270,34 @@ body.apply-modal-open{overflow:hidden}
   <section class="careers-section careers-partners" id="partners" aria-label="Contractors and vendors">
     <div class="careers-shell">
       <div class="partner-intro">
-        <p class="careers-kicker reveal">
+          <p class="careers-kicker reveal">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
-          Partners
-        </p>
-        <h2 class="careers-title reveal">Build with the Jankal syndicate</h2>
-        <p class="careers-sub reveal">We welcome capable contractors and vendors who share our standards for quality, safety, and delivery timelines.</p>
-      </div>
+            Partners
+          </p>
+        <h2 class="type-h2 careers-title reveal">Build with the Jankal syndicate</h2>
+          <p class="careers-sub reveal">We welcome capable contractors and vendors who share our standards for quality, safety, and delivery timelines.</p>
+        </div>
 
       <div class="partner-pillars">
         <article class="partner-pillar reveal">
           <div class="partner-pillar-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
           </div>
-          <h3>Materials &amp; trades</h3>
+          <h3 class="type-h3">Materials &amp; trades</h3>
           <p>Material supply and specialised trade packages aligned to project specs and schedules.</p>
         </article>
         <article class="partner-pillar reveal">
           <div class="partner-pillar-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg>
           </div>
-          <h3>Site execution</h3>
+          <h3 class="type-h3">Site execution</h3>
           <p>Support across residential and infrastructure works with crews who meet site standards.</p>
         </article>
         <article class="partner-pillar reveal">
           <div class="partner-pillar-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <h3>Lasting collaboration</h3>
+          <h3 class="type-h3">Lasting collaboration</h3>
           <p>Long-term partnerships with clear scope, accountability, and shared delivery goals.</p>
         </article>
       </div>
@@ -1293,7 +1331,7 @@ body.apply-modal-open{overflow:hidden}
           <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V23h-4V8.5z"/></svg></a>
-        </div>
+      </div>
         <nav class="jk-footer-menu" aria-label="Footer navigation">
           <a href="/">Home</a>
           <a href="/about/">About</a>
@@ -1302,16 +1340,16 @@ body.apply-modal-open{overflow:hidden}
           <a href="/contact.html">Contact</a>
           <a href="/steller.html">Stellar Heights</a>
         </nav>
-      </div>
+    </div>
       <div class="jk-footer-info">
-        <h4>Site Address</h4>
+        <h4 class="type-h4">Site Address</h4>
         <address>
           Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
           beside Indus International School,<br />
           Sarjapur Hobli, Anekal Taluk,<br />
           Bengaluru Urban, Karnataka 562125
         </address>
-        <h4 class="jk-footer-h4-gap">Office Address</h4>
+        <h4 class="type-h4 jk-footer-h4-gap">Office Address</h4>
         <address>
           272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
@@ -1321,10 +1359,10 @@ body.apply-modal-open{overflow:hidden}
           <a href="mailto:info@jankal.in">info@jankal.in</a><br />
           <a href="tel:+919594959014">+91 95949 59014</a><br />
           <a href="https://www.jankalstellarheights.in" target="_blank" rel="noopener noreferrer">www.jankalstellarheights.in</a>
-        </div>
-      </div>
+  </div>
+    </div>
       <div class="jk-footer-form">
-        <h4>Contact Us</h4>
+        <h4 class="type-h4">Contact Us</h4>
         <form class="jk-footer-formbox" action="#" method="post" novalidate data-jk-footer-form>
           <div class="jk-footer-row">
             <label>Your name
@@ -1333,7 +1371,7 @@ body.apply-modal-open{overflow:hidden}
             <label>Phone
               <input type="tel" name="phone" autocomplete="tel" required />
             </label>
-          </div>
+    </div>
           <label>Email
             <input type="email" name="email" autocomplete="email" />
           </label>
@@ -1343,13 +1381,13 @@ body.apply-modal-open{overflow:hidden}
           <button class="jk-footer-submit" type="submit">Submit</button>
           <p class="jk-footer-note">We&apos;ll call you back within one working day.</p>
         </form>
+  </div>
       </div>
-    </div>
     <div class="jk-footer-legal">
       <p>&copy; 2026 Jankal Stellar Heights. All rights reserved.</p>
       <p>Digital partner PINAKKAA</p>
+      </div>
     </div>
-  </div>
 </footer>
 
 
@@ -1360,7 +1398,7 @@ body.apply-modal-open{overflow:hidden}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <p class="apply-modal-kicker">Apply</p>
-    <h2 class="apply-modal-title" id="applyModalTitle">Join the Jankal team</h2>
+    <h2 class="type-h2 apply-modal-title" id="applyModalTitle">Join the Jankal team</h2>
     <p class="apply-modal-lead">Share your details and we will get back to you about open roles and collaboration.</p>
     <div class="apply-form-success" id="applyFormSuccess" aria-live="polite">Thank you. Your application details are ready to send. If your email client did not open, write to info@jankal.in.</div>
     <form class="apply-form" id="applyForm" novalidate>
@@ -1372,8 +1410,8 @@ body.apply-modal-open{overflow:hidden}
         <div class="apply-field">
           <label for="applyPhone">Phone</label>
           <input id="applyPhone" name="phone" type="tel" autocomplete="tel" required placeholder="97407 02358" />
-        </div>
       </div>
+        </div>
       <div class="apply-field">
         <label for="applyEmail">Email</label>
         <input id="applyEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
@@ -1388,7 +1426,7 @@ body.apply-modal-open{overflow:hidden}
             <option value="Contractors & Vendors">Contractors &amp; Vendors</option>
             <option value="Other / General">Other / General</option>
           </select>
-        </div>
+      </div>
         <div class="apply-field">
           <label for="applyExp">Experience</label>
           <input id="applyExp" name="experience" type="text" placeholder="e.g. 5 years" />
@@ -1397,12 +1435,12 @@ body.apply-modal-open{overflow:hidden}
       <div class="apply-field">
         <label for="applyMessage">Message</label>
         <textarea id="applyMessage" name="message" placeholder="Briefly introduce yourself and why you want to join"></textarea>
-      </div>
+    </div>
       <p class="apply-form-note">Please attach your resume when the email draft opens, or send it separately to info@jankal.in.</p>
       <div class="apply-form-actions">
         <button class="btn btn-gold" type="submit">Submit application</button>
         <button class="btn btn-ghost" type="button" id="applyModalCancel" style="color:var(--ink);border-color:rgba(26,42,58,.25)">Cancel</button>
-      </div>
+  </div>
     </form>
   </div>
 </div>
@@ -1519,12 +1557,13 @@ body.apply-modal-open{overflow:hidden}
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><a href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a class="site-menu-accent" href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
       a.classList.remove("is-active");
+      if (a.classList.contains("site-menu-projects")) return;
       var href = a.getAttribute("href") || "";
       var base = href.split("#")[0].replace(/\/$/, "") || "/";
       var label = (a.querySelector("span:last-child") || a).textContent.trim();
@@ -1545,12 +1584,11 @@ body.apply-modal-open{overflow:hidden}
       nav.setAttribute("data-site-nav", "1");
       document.body.appendChild(nav);
     }
-    if (!nav.querySelector(".site-nav-burger-lines") || !nav.querySelector(".site-nav-contact")) {
+    if (!nav.querySelector(".site-nav-burger-lines") || nav.querySelector(".site-nav-contact")) {
       nav.innerHTML =
         '<a class="site-nav-logo" href="/" aria-label="Jankal Group home">' +
         '<img src="/logo.png" alt="Jankal Group Logo" /></a>' +
         '<div class="site-nav-actions">' +
-        '<a class="site-nav-contact" href="/contact.html">Contact</a>' +
         '<button class="site-nav-burger" type="button" id="siteNavBurger" aria-label="Open menu">' +
         '<span class="site-nav-burger-lines"><span></span><span></span></span></button>' +
         '</div>';
@@ -1563,10 +1601,10 @@ body.apply-modal-open{overflow:hidden}
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (menu.dataset.menuV !== "pages-v3" || !menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v5" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
-      menu.dataset.menuV = "pages-v3";
+      menu.dataset.menuV = "pages-v5";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
@@ -1607,6 +1645,15 @@ body.apply-modal-open{overflow:hidden}
       if (e.target === menu) closeMenu();
     });
     menu.querySelectorAll(".site-menu-links a").forEach(function(a){
+      if (a.classList.contains("site-menu-projects")) {
+        a.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+          if (!fine && a.parentElement) a.parentElement.classList.toggle("is-open");
+        });
+        return;
+      }
       a.addEventListener("click", closeMenu);
     });
   }

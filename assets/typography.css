@@ -1,0 +1,489 @@
+/* Jankal typography. One source of truth. Edit the tokens below to update the site. */
+
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jankal Poppins";
+  src: url("/assets/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: "Jankal Poppins", sans-serif;
+  --font-body: "Jankal Poppins", sans-serif;
+  --leading-h1: 1.12;
+  --leading-h2: 1.2;
+  --leading-h3: 1.25;
+  --leading-h4: 1.35;
+  --leading-body: 1.7;
+  --leading-ui: 1.4;
+  --tracking-h1: -0.02em;
+  --tracking-h2: -0.015em;
+  --tracking-h3: -0.01em;
+  --tracking-h4: -0.005em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-button: 0.04em;
+
+  /* Mobile, below 640px */
+  --text-h1: 36px;
+  --text-h2: 29px;
+  --text-h3: 23px;
+  --text-h4: 20px;
+  --text-h5: 18px;
+  --text-h6: 14px;
+  --text-body-lg: 16px;
+  --text-body: 14px;
+  --text-body-sm: 13px;
+  --text-caption: 12px;
+  --text-nav: 13px;
+  --text-button: 13px;
+  --text-eyebrow: 10px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --text-h1: 44px;
+    --text-h2: 34px;
+    --text-h3: 26px;
+    --text-h4: 22px;
+    --text-h5: 19px;
+    --text-h6: 15px;
+    --text-body-lg: 17px;
+    --text-body: 15px;
+    --text-body-sm: 14px;
+    --text-caption: 12px;
+    --text-nav: 14px;
+    --text-button: 14px;
+    --text-eyebrow: 11px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-h1: 56px;
+    --text-h2: 40px;
+    --text-h3: 30px;
+    --text-h4: 24px;
+    --text-h5: 20px;
+    --text-h6: 16px;
+    --text-body-lg: 18px;
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-caption: 12px;
+    --text-nav: 14px;
+    --text-button: 14px;
+    --text-eyebrow: 12px;
+  }
+}
+
+html.jankal-type,
+html.jankal-type body {
+  --serif: var(--font-heading);
+  --sans: var(--font-body);
+  --home-display: var(--font-heading);
+  --home-sans: var(--font-body);
+  --projects-display: var(--font-heading);
+  --projects-sans: var(--font-body);
+  --about-display: var(--font-heading);
+  --about-sans: var(--font-body);
+  --jk-serif: var(--font-heading);
+  --jk-sans: var(--font-body);
+  --font-instrument-serif: var(--font-heading);
+  --font-instrument-sans: var(--font-body);
+}
+
+/* Five class tokens beat older !important heading rules without touching layout. */
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type body,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type body * {
+  font-family: var(--font-body) !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type body {
+  font-size: var(--text-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-body) !important;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h1, .type-h1),
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(.careers-hero-brand, .contact-hero-brand, .projects-hero-title) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h1) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-h1) !important;
+  letter-spacing: var(--tracking-h1) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h2, .type-h2),
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(.h-serif, .careers-title, .contact-title, .project-feature-title, .apply-modal-title) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h2) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-h2) !important;
+  letter-spacing: var(--tracking-h2) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h3, .type-h3) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h3) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-h3) !important;
+  letter-spacing: var(--tracking-h3) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h4, .type-h4) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h4) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-h4) !important;
+  letter-spacing: var(--tracking-h4) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h5, .type-h5) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h5) !important;
+  font-weight: 600 !important;
+  line-height: var(--leading-h4) !important;
+  letter-spacing: var(--tracking-h4) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h6, .type-h6, .jk-footer-line) {
+  font-family: var(--font-heading) !important;
+  font-size: var(--text-h6) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-h4) !important;
+  letter-spacing: var(--tracking-h4) !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(p, .type-body, li, dd, .home-vm-text, .about-mvp-copy, .about-logo-copy, blockquote) {
+  font-size: var(--text-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-body) !important;
+  letter-spacing: 0 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-body-lg,
+  .lead,
+  .careers-hero-lead,
+  .careers-sub,
+  .section-head p,
+  .intro__text .lead,
+  .about-commitment p
+) {
+  font-size: var(--text-body-lg) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-body) !important;
+  letter-spacing: 0 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer-line {
+  font-size: var(--text-h6) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-h4) !important;
+  letter-spacing: var(--tracking-h4) !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-body-sm,
+  address,
+  .jk-footer-legal,
+  .jk-footer-contact,
+  .about-founder-name
+) {
+  font-size: var(--text-body-sm) !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type label {
+  font-size: var(--text-body-sm) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-ui) !important;
+  letter-spacing: 0 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-caption,
+  .jk-footer-note,
+  .hero__chip,
+  .about-founder-role,
+  .site-menu-foot,
+  figcaption,
+  .site-menu-idx
+) {
+  font-size: var(--text-caption) !important;
+  font-weight: 400 !important;
+  line-height: var(--leading-ui) !important;
+  letter-spacing: 0.02em !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-nav,
+  .site-menu-links a,
+  .jk-footer-menu a
+) {
+  font-size: var(--text-nav) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-ui) !important;
+  letter-spacing: 0.01em !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-button,
+  button,
+  .btn,
+  .jk-footer-submit,
+  input[type="submit"],
+  input[type="button"]
+) {
+  font-size: var(--text-button) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-ui) !important;
+  letter-spacing: var(--tracking-button) !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  .type-eyebrow,
+  .section-eyebrow,
+  .careers-kicker,
+  .contact-kicker,
+  .site-menu-kicker,
+  .about-hero-caption-kicker,
+  .about-logo-label,
+  .about-founders-head span,
+  .home-vm-label span,
+  .home-intro-title,
+  .about-mvp-label span,
+  .vm__eyebrow
+) {
+  font-size: var(--text-eyebrow) !important;
+  font-weight: 500 !important;
+  line-height: var(--leading-ui) !important;
+  letter-spacing: var(--tracking-eyebrow) !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="url"],
+  textarea,
+  select
+) {
+  font-size: var(--text-body) !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type strong,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type b {
+  font-weight: 700 !important;
+}
+
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type :is(h1, h2, h3, h4, h5, h6) em {
+  font-style: italic !important;
+}
+
+/* Footer stays smaller than page headings and body copy. */
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer h4 {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.01em !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-line {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer address,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-contact,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-contact a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-menu a {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.02em !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer label {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer input,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer textarea {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-submit {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-note {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-legal,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-legal p {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 720px) {
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-legal,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type .jk-footer .jk-footer-legal p {
+    font-size: clamp(8px, 2.35vw, 12px) !important;
+  }
+}
+
+/* Stellar page: heading, subheading, and description stay distinct and smaller. */
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h2,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .h-serif {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h3,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top summary {
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0 !important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top p,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top li,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .lead,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .section-head p {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+}
+@media (min-width: 640px) {
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h2,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .h-serif {
+    font-size: 26px !important;
+  }
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h3,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top summary {
+    font-size: 18px !important;
+  }
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top p,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top li,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .lead,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .section-head p {
+    font-size: 15px !important;
+  }
+}
+@media (min-width: 1024px) {
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h2,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .h-serif {
+    font-size: 30px !important;
+  }
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top h3,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top summary {
+    font-size: 20px !important;
+  }
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top p,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top li,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .lead,
+  html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .section-head p {
+    font-size: 15px !important;
+  }
+}
