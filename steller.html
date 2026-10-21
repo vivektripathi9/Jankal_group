@@ -2190,7 +2190,269 @@ header.nav{display:none!important}
 .jk-footer-legal p{margin:0;white-space:nowrap}
 </style>
 
-<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/></head>
+<link rel="stylesheet" href="/assets/typography.css" id="jankal-type-sheet"/>
+<style id="locx-style">
+.locx{
+  background:#f6f5f2;
+  padding:clamp(56px,8vw,96px) 0;
+}
+.locx__wrap{
+  width:min(1120px,calc(100% - 40px));
+  margin:0 auto;
+}
+.locx__head{
+  text-align:center;
+  max-width:40rem;
+  margin:0 auto clamp(28px,4vw,40px);
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .locx__eyebrow{
+  margin:0 0 12px;
+  font-size:11px!important;
+  font-weight:500!important;
+  letter-spacing:0.16em!important;
+  text-transform:uppercase;
+  color:#c4a265!important;
+  line-height:1.4!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .locx__title{
+  margin:0;
+  font-size:clamp(30px,3.4vw,42px)!important;
+  font-weight:500!important;
+  line-height:1.15!important;
+  letter-spacing:-0.02em!important;
+  color:#1c2430!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .locx__title em{
+  font-style:italic!important;
+  font-weight:400!important;
+  color:#c4a265!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .locx__lead{
+  margin:14px auto 0;
+  max-width:38rem;
+  font-size:16px!important;
+  font-weight:400!important;
+  line-height:1.6!important;
+  letter-spacing:0!important;
+  color:#8a9098!important;
+}
+.locx__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr);
+  gap:18px;
+  align-items:stretch;
+}
+.locx__map,
+.locx__panel{
+  background:#fff;
+  border:1px solid #eceae4;
+  border-radius:22px;
+  box-shadow:0 12px 32px rgba(28,36,48,.05);
+  min-width:0;
+}
+.locx__map{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.locx__map iframe{
+  flex:1;
+  width:100%;
+  min-height:440px;
+  border:0;
+  display:block;
+}
+.locx__map figcaption{
+  margin:0;
+  padding:12px 18px 14px;
+  border-top:1px solid #f0eeea;
+}
+.locx__map figcaption a{
+  color:#3d4654;
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+}
+.locx__map figcaption a:hover{color:#c4a265}
+.locx__panel{
+  padding:22px 22px 8px;
+  display:flex;
+  flex-direction:column;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .locx__kicker{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:11px!important;
+  font-weight:500!important;
+  letter-spacing:0.16em!important;
+  text-transform:uppercase;
+  color:#c4a265!important;
+  line-height:1.4!important;
+}
+.locx__tabs{
+  display:flex;
+  gap:4px;
+  padding:4px;
+  margin:0 0 6px;
+  background:#f3f2ef;
+  border-radius:999px;
+}
+.locx__tabs button{
+  flex:1 1 0;
+  border:0;
+  background:transparent;
+  color:#5c6572;
+  border-radius:999px;
+  padding:8px 6px;
+  font-size:13px!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+  line-height:1.2!important;
+  cursor:pointer;
+}
+.locx__tabs button[aria-selected="true"]{
+  background:#1c2430;
+  color:#fff;
+}
+.locx__pane{margin:0}
+.locx__row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  padding:13px 4px;
+  border-bottom:1px solid #f0eeea;
+  color:#2a3140;
+  font-size:15px;
+  line-height:1.35;
+}
+.locx__pane .locx__row:last-child{border-bottom:0}
+.locx__row b{
+  font-weight:400;
+  color:#8a9098;
+  white-space:nowrap;
+  font-size:14px;
+}
+@media (max-width:860px){
+  .locx__grid{grid-template-columns:1fr}
+  .locx__map iframe{min-height:320px}
+  .locx__tabs{flex-wrap:wrap;border-radius:16px}
+  .locx__tabs button{flex:1 1 42%}
+}
+.ovx{
+  background:#fff;
+  padding:clamp(56px,8vw,96px) 0 clamp(48px,6vw,72px);
+}
+.ovx__wrap{
+  width:min(1040px,calc(100% - 48px));
+  margin:0 auto;
+  text-align:center;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__eyebrow,
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__exclusive{
+  margin:0;
+  font-size:11px!important;
+  font-weight:500!important;
+  letter-spacing:0.18em!important;
+  text-transform:uppercase;
+  color:#c4a265!important;
+  line-height:1.4!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__title{
+  margin:10px 0 0;
+  font-size:clamp(32px,3.6vw,44px)!important;
+  font-weight:500!important;
+  line-height:1.15!important;
+  letter-spacing:-0.02em!important;
+  color:#1c2740!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__lead{
+  margin:12px auto 0;
+  max-width:28rem;
+  font-size:15px!important;
+  font-weight:400!important;
+  line-height:1.6!important;
+  letter-spacing:0!important;
+  color:#9aa0a8!important;
+}
+.ovx__rule{
+  height:1px;
+  margin:28px auto 32px;
+  background:#e4d3b0;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__hero{
+  margin:14px 0 0;
+  color:#1c2740!important;
+  line-height:1!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__hero-num{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  font-size:clamp(64px,7vw,84px)!important;
+  letter-spacing:-0.03em!important;
+  line-height:0.9!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__hero-bhk{
+  font-size:clamp(36px,4.2vw,52px)!important;
+  font-weight:500!important;
+  letter-spacing:0.04em!important;
+  line-height:1!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__area{
+  margin:10px 0 0;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  font-size:18px!important;
+  line-height:1.4!important;
+  color:#8d94a0!important;
+}
+.ovx__stats{
+  list-style:none;
+  margin:42px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  text-align:left;
+}
+.ovx__stats li{
+  padding:16px 16px 4px;
+  border-top:1px solid #ece7df;
+  border-left:1px solid #f1eee8;
+  display:grid;
+  gap:6px;
+}
+.ovx__stats li:first-child{border-left:0}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__idx{
+  font-size:11px!important;
+  font-weight:500!important;
+  letter-spacing:0.08em!important;
+  color:#c4a265!important;
+  line-height:1!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__stats strong{
+  font-size:22px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+  letter-spacing:-0.01em!important;
+  color:#1c2740!important;
+}
+html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__stats span:not(.ovx__idx){
+  font-size:13px!important;
+  font-weight:400!important;
+  line-height:1.4!important;
+  color:#9aa0a8!important;
+}
+@media (max-width:800px){
+  .ovx__stats{grid-template-columns:1fr 1fr}
+  .ovx__stats li{border-left:0}
+  .ovx__stats li:nth-child(even){border-left:1px solid #f1eee8}
+  .ovx__stats li:last-child{grid-column:1 / -1}
+}
+</style>
+</head>
 <body>
 
 
@@ -2216,77 +2478,79 @@ header.nav{display:none!important}
 </section>
 
 <!-- LOCATION -->
-<section class="location" id="location">
-  <div class="wrap">
-    <div class="location__intro">
-      <div class="section-head">
-        <h2 class="type-h2 h-serif">Location Advantages</h2>
-        <h3 class="type-h3 location__sub">Where Work, Learning &amp; Growth Come Together</h3>
-        <p>From global workspaces and premier schools to landmark upcoming developments, everything that defines tomorrow's lifestyle is within easy reach.</p>
-      </div>
-      <div class="future">
-        <h3 class="type-h3">The Future Takes Shape Here</h3>
-        <ul>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9h5v12M8 21V4h6v17M14 21v-8h7v8M3 21h18M5 12h1M5 15h1M10 7h2M10 10h2M10 13h2M17 16h1M17 19h1"/></svg><span>Swift City â€”<br>a growth corridor</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 17l-2 4M15 17l2 4M9 14h.5M14.5 14h.5"/></svg><span>Proposed Sarjapura &amp;<br>Attibele metro stations</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13l8-1 4-8 2 1-2 7 6 2-1 2-6-1-3 5-2-1 1-5-6-1z"/></svg><span>Proposed Hosur<br>international airport</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 10 4M20 20 14 4M12 8v2M12 13v2M12 18v2"/></svg><span>STRR road<br>connectivity</span></li>
-        </ul>
-      </div>
+<section class="locx" id="location">
+  <div class="locx__wrap">
+    <div class="locx__head">
+      <p class="locx__eyebrow">Sarjapura-Attibele Road, Bengaluru</p>
+      <h2 class="locx__title">Location <em>Advantages</em></h2>
+      <p class="locx__lead">Where work, learning and growth come together: global workspaces, premier schools and tomorrow's landmarks, all within easy reach.</p>
     </div>
-
-    <div class="location__grid">
-      <figure class="location__map map-embed">
+    <div class="locx__grid">
+      <figure class="locx__map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.1534537019!2d77.7768976!3d12.8333587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae73003563c8a7%3A0xced49a6a47dc62fa!2sJANKAL%20STELLAR%20HEIGHTS!5e0!3m2!1sen!2sin!4v1790344302104!5m2!1sen!2sin" title="Jankal Stellar Heights on Google Maps" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         <figcaption><a href="https://www.google.com/maps/search/?api=1&query=JANKAL+STELLAR+HEIGHTS" target="_blank" rel="noopener">Open in Google Maps</a></figcaption>
       </figure>
-      <div class="location__acc">
-      <details class="loc">
-        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 12h18"/></svg><span>Workplaces</span></summary>
-        <ul>
-          <li><span>New Infosys head office</span><b>10 mins</b></li>
-          <li><span>Bommasandra industrial area</span><b>12â€“15 mins</b></li>
-          <li><span>Biocon</span><b>12â€“15 mins</b></li>
-          <li><span>Electronic City (Infosys, Wipro, Tech Mahindra)</span><b>20â€“25 mins</b></li>
-          <li><span>Wipro SEZ</span><b>25â€“30 mins</b></li>
-          <li><span>RGA Tech Park</span><b>25â€“30 mins</b></li>
-        </ul>
-      </details>
-      <details class="loc">
-        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg><span>Educational Institutes</span></summary>
-        <ul>
-          <li><span>Indus International School</span><b>2 mins</b></li>
-          <li><span>Azim Premji University</span><b>8â€“10 mins</b></li>
-          <li><span>St. Philomena's School</span><b>8â€“10 mins</b></li>
-          <li><span>Alliance University</span><b>10â€“15 mins</b></li>
-          <li><span>Delhi Public School (Sarjapura)</span><b>15â€“20 mins</b></li>
-        </ul>
-      </details>
-      <details class="loc">
-        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1 11H5zM3 9l2-5h14l2 5M9 13v2M15 13v2"/></svg><span>Retail &amp; Lifestyle</span></summary>
-        <ul>
-          <li><span>People Mart</span><b>2 mins</b></li>
-          <li><span>D-Mart, Sarjapura</span><b>5â€“7 mins</b></li>
-          <li><span>Upcoming ATCO Mall</span><b>5 mins</b></li>
-          <li><span>Cult Fitness</span><b>3â€“5 mins</b></li>
-          <li><span>Upcoming Prestige Nexus Mall</span><b>5 mins</b></li>
-          <li><span>Clover Greens Golf Course</span><b>8â€“10 mins</b></li>
-        </ul>
-      </details>
-      <details class="loc">
-        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M12 8v8M8 12h8"/></svg><span>Hospitals</span></summary>
-        <ul>
-          <li><span>BMS Multispeciality Hospital</span><b>15â€“18 mins</b></li>
-          <li><span>Kauvery Hospital</span><b>20â€“25 mins</b></li>
-          <li><span>Narayana Health City</span><b>20â€“25 mins</b></li>
-          <li><span>Spandana Heart Hospital</span><b>8â€“10 mins</b></li>
-          <li><span>Belenus Champion Hospital</span><b>18â€“20 mins</b></li>
-        </ul>
-      </details>
+      <div class="locx__panel">
+        <p class="locx__kicker">Minutes from home</p>
+        <div class="locx__tabs" role="tablist" aria-label="Minutes from home">
+          <button type="button" role="tab" id="locx-tab-work" aria-selected="true" aria-controls="locx-pane-work" data-loc-tab="work">Workplaces</button>
+          <button type="button" role="tab" id="locx-tab-edu" aria-selected="false" aria-controls="locx-pane-edu" data-loc-tab="edu">Education</button>
+          <button type="button" role="tab" id="locx-tab-life" aria-selected="false" aria-controls="locx-pane-life" data-loc-tab="life">Lifestyle</button>
+          <button type="button" role="tab" id="locx-tab-hosp" aria-selected="false" aria-controls="locx-pane-hosp" data-loc-tab="hosp">Hospitals</button>
+        </div>
+        <div class="locx__pane" id="locx-pane-work" role="tabpanel" aria-labelledby="locx-tab-work" data-loc-pane="work">
+          <div class="locx__row"><span>New Infosys head office</span><b>10 mins</b></div>
+          <div class="locx__row"><span>Bommasandra industrial area</span><b>12-15 mins</b></div>
+          <div class="locx__row"><span>Biocon</span><b>12-15 mins</b></div>
+          <div class="locx__row"><span>Electronic City (Infosys, Wipro, Tech Mahindra)</span><b>20-25 mins</b></div>
+          <div class="locx__row"><span>Wipro SEZ</span><b>25-30 mins</b></div>
+          <div class="locx__row"><span>RGA Tech Park</span><b>25-30 mins</b></div>
+        </div>
+        <div class="locx__pane" id="locx-pane-edu" role="tabpanel" aria-labelledby="locx-tab-edu" data-loc-pane="edu" hidden>
+          <div class="locx__row"><span>Indus International School</span><b>2 mins</b></div>
+          <div class="locx__row"><span>Azim Premji University</span><b>8-10 mins</b></div>
+          <div class="locx__row"><span>St. Philomena's School</span><b>8-10 mins</b></div>
+          <div class="locx__row"><span>Alliance University</span><b>10-15 mins</b></div>
+          <div class="locx__row"><span>Delhi Public School (Sarjapura)</span><b>15-20 mins</b></div>
+        </div>
+        <div class="locx__pane" id="locx-pane-life" role="tabpanel" aria-labelledby="locx-tab-life" data-loc-pane="life" hidden>
+          <div class="locx__row"><span>People Mart</span><b>2 mins</b></div>
+          <div class="locx__row"><span>Cult Fitness</span><b>3-5 mins</b></div>
+          <div class="locx__row"><span>Upcoming ATCO Mall</span><b>5 mins</b></div>
+          <div class="locx__row"><span>Upcoming Prestige Nexus Mall</span><b>5 mins</b></div>
+          <div class="locx__row"><span>D-Mart, Sarjapura</span><b>5-7 mins</b></div>
+          <div class="locx__row"><span>Clover Greens Golf Course</span><b>8-10 mins</b></div>
+        </div>
+        <div class="locx__pane" id="locx-pane-hosp" role="tabpanel" aria-labelledby="locx-tab-hosp" data-loc-pane="hosp" hidden>
+          <div class="locx__row"><span>BMS Multispeciality Hospital</span><b>15-18 mins</b></div>
+          <div class="locx__row"><span>Kauvery Hospital</span><b>20-25 mins</b></div>
+          <div class="locx__row"><span>Narayana Health City</span><b>20-25 mins</b></div>
+          <div class="locx__row"><span>Spandana Heart Hospital</span><b>8-10 mins</b></div>
+          <div class="locx__row"><span>Belenus Champion Hospital</span><b>18-20 mins</b></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var root = document.querySelector(".locx");
+  if (!root) return;
+  var tabs = root.querySelectorAll("[data-loc-tab]");
+  var panes = root.querySelectorAll("[data-loc-pane]");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      var id = tab.getAttribute("data-loc-tab");
+      tabs.forEach(function(item){
+        item.setAttribute("aria-selected", item === tab ? "true" : "false");
+      });
+      panes.forEach(function(pane){
+        pane.hidden = pane.getAttribute("data-loc-pane") !== id;
+      });
+    });
+  });
+})();
+</script>
 
 <!-- INTRO -->
 <section class="intro" id="company">
@@ -2305,19 +2569,21 @@ header.nav{display:none!important}
 </section>
 
 <!-- PROJECT OVERVIEW -->
-<section class="overview" id="project">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="type-h2 h-serif">Project Overview</h2>
-      <p>Exclusively 3 BHK â€” a community on Sarjapuraâ€“Attibele Road, Bengaluru, beside Indus International School.</p>
-    </div>
-    <ul class="overview__list">
-      <li><strong>Exclusively 3 BHK</strong><span>1655 â€“ 1990 sq ft</span></li>
-      <li><strong>2 acres</strong><span>total land area</span></li>
-      <li><strong>250 sq ft</strong><span>spacious balcony</span></li>
-      <li><strong>G + 10</strong><span>floors</span></li>
-      <li><strong>70%</strong><span>open space</span></li>
-      <li><strong>100%</strong><span>Vastu compliant</span></li>
+<section class="ovx" id="project">
+  <div class="ovx__wrap">
+    <p class="ovx__eyebrow">Land &amp; project</p>
+    <h2 class="ovx__title">Project Overview</h2>
+    <p class="ovx__lead">A community on Sarjapura-Attibele Road, Bengaluru, beside Indus International School.</p>
+    <div class="ovx__rule" aria-hidden="true"></div>
+    <p class="ovx__exclusive">Exclusively</p>
+    <p class="ovx__hero"><span class="ovx__hero-num">3</span> <span class="ovx__hero-bhk">BHK</span></p>
+    <p class="ovx__area">1655 - 1990 sq ft</p>
+    <ul class="ovx__stats">
+      <li><span class="ovx__idx">01</span><strong>2 acres</strong><span>total land area</span></li>
+      <li><span class="ovx__idx">02</span><strong>250 sq ft</strong><span>spacious balcony</span></li>
+      <li><span class="ovx__idx">03</span><strong>G + 10</strong><span>floors</span></li>
+      <li><span class="ovx__idx">04</span><strong>70%</strong><span>open space</span></li>
+      <li><span class="ovx__idx">05</span><strong>100%</strong><span>Vastu compliant</span></li>
     </ul>
   </div>
 </section>
@@ -2946,12 +3212,12 @@ header.nav{display:none!important}
 
   /* Section shells */
   [
-    '.overview .wrap',
+    '.ovx__wrap',
     '.intro .wrap',
     '.homefeat .wrap',
     '.specs .wrap',
     '.plans .wrap',
-    '.location .wrap',
+    '.locx__wrap',
     '.amenities--lead .wrap',
     '.amenities--gallery .amenity-carousel',
     '.additions .wrap',
@@ -2986,7 +3252,7 @@ header.nav{display:none!important}
 
   /* Staggered grids / lists */
   [
-    '.overview__list',
+    '.ovx__stats',
     '.amenities__overview',
     '.additions__grid',
     '.features',
