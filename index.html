@@ -1516,16 +1516,16 @@ footer.w-full > div{
       <div class="jk-footer-info">
         <h4 class="type-h4">Site Address</h4>
         <address>
-          Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
+          <a href="https://www.google.com/maps/place/JANKAL+STELLAR+HEIGHTS/@12.8333587,77.7768976,17z/data=!4m6!3m5!1s0x3bae73003563c8a7:0xced49a6a47dc62fa!8m2!3d12.8333587!4d77.7768976!16s%2Fg%2F11x2x07p5t" target="_blank" rel="noopener noreferrer">Sy No.s 236 &amp; 237, S. Medahalli Village,<br />
           beside Indus International School,<br />
           Sarjapur Hobli, Anekal Taluk,<br />
-          Bengaluru Urban, Karnataka 562125
+          Bengaluru Urban, Karnataka 562125</a>
         </address>
         <h4 class="type-h4 jk-footer-h4-gap">Office Address</h4>
         <address>
-          272, 12th Cross Rd, near Srinivas Temple,<br />
+          <a href="https://www.google.com/maps/place/JANKAL+group+Head+office/@13.0081162,77.5470812,17z/data=!4m6!3m5!1s0x3bae3d002242b4df:0xbe08ff4ecacc6b58!8m2!3d13.0081162!4d77.5470812!16s%2Fg%2F11w8thzg5c" target="_blank" rel="noopener noreferrer">272, 12th Cross Rd, near Srinivas Temple,<br />
           Mahalakshmipuram Layout, Nagapura,<br />
-          Bengaluru, Karnataka 560086
+          Bengaluru, Karnataka 560086</a>
         </address>
         <div class="jk-footer-contact">
           <a href="mailto:info@jankal.in">info@jankal.in</a><br />
@@ -1662,7 +1662,7 @@ footer.w-full > div{
   if (window.__jankalSiteNavBooted) return;
   window.__jankalSiteNavBooted = true;
 
-  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
+  var MENU_INNER = '<div class="site-menu-panel"><button class="site-menu-close" type="button" id="siteMenuClose" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><p class="site-menu-kicker">Navigate</p><nav class="site-menu-links" id="siteMenuLinks"><a href="/"><span class="site-menu-idx">01</span><span>Home</span></a><a href="/about/"><span class="site-menu-idx">02</span><span>About</span></a><div class="site-menu-group"><a class="site-menu-projects" href="/projects/"><span class="site-menu-idx">03</span><span>Projects</span></a><div class="site-menu-sub"><div class="site-menu-sub-clip"><a href="/steller.html">Ongoing project</a><a href="/projects/">Completed project</a></div></div></div><a href="/careers/"><span class="site-menu-idx">04</span><span>Careers</span></a><a href="/contact.html"><span class="site-menu-idx">05</span><span>Contact</span></a><a href="/steller.html"><span class="site-menu-idx">06</span><span>Stellar Heights</span></a></nav><p class="site-menu-foot">Jankal Group</p></div>';
 
   function markActive(menu){
     var path = location.pathname.replace(/\/$/, "") || "/";
@@ -1706,10 +1706,10 @@ footer.w-full > div{
       menu.id = "siteMenu";
       document.body.appendChild(menu);
     }
-    if (menu.dataset.menuV !== "pages-v5" || !menu.querySelector(".site-menu-panel")) {
+    if (menu.dataset.menuV !== "pages-v6" || !menu.querySelector(".site-menu-panel")) {
       menu.className = "site-menu";
       menu.innerHTML = MENU_INNER;
-      menu.dataset.menuV = "pages-v5";
+      menu.dataset.menuV = "pages-v6";
       menu.dataset.bound = "";
     }
     menu.hidden = false;
