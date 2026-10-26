@@ -1607,18 +1607,16 @@ body.is-sub .pagehero--post, .subpage .pagehero--post { padding: 32px 0 20px !im
   display:flex;
   justify-content:flex-end;
   background:rgba(0,0,0,0);
-  backdrop-filter:blur(0);
-  -webkit-backdrop-filter:blur(0);
   opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity .45s cubic-bezier(.22,1,.36,1),visibility .45s cubic-bezier(.22,1,.36,1),background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease;
+  transition:opacity .45s cubic-bezier(.22,1,.36,1),visibility .45s cubic-bezier(.22,1,.36,1),background .45s ease;
 }
 .site-menu.open,
 .site-menu.is-closing{
   opacity:1;visibility:visible;pointer-events:auto;
   background:rgba(0,0,0,.50);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
 }
+html.menu-lock .site-nav{right:var(--menu-lock,0px)!important}
+html.menu-lock body{padding-right:var(--menu-lock,0px)}
 .site-menu.is-closing{pointer-events:none}
 .site-menu-panel{
   position:relative;
@@ -3462,11 +3460,22 @@ html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__
     if (!menu || !burger || menu.dataset.bound === "1") return;
     menu.dataset.bound = "1";
     var closeTimer = null;
+    function lockPage(){
+      var gap = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      document.documentElement.style.setProperty("--menu-lock", gap + "px");
+      document.documentElement.classList.add("menu-lock");
+      document.body.style.overflow = "hidden";
+    }
+    function unlockPage(){
+      document.body.style.overflow = "";
+      document.documentElement.classList.remove("menu-lock");
+      document.documentElement.style.removeProperty("--menu-lock");
+    }
     function openMenu(){
       if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
       menu.classList.remove("is-closing");
       menu.classList.add("open");
-      document.body.style.overflow = "hidden";
+      lockPage();
     }
     function closeMenu(){
       if (!menu.classList.contains("open") || menu.classList.contains("is-closing")) return;
@@ -3474,7 +3483,7 @@ html.jankal-type.jankal-type.jankal-type.jankal-type.jankal-type main#top .ovx__
       if (closeTimer) clearTimeout(closeTimer);
       closeTimer = setTimeout(function(){
         menu.classList.remove("open", "is-closing");
-        document.body.style.overflow = "";
+        unlockPage();
         closeTimer = null;
       }, 420);
     }
